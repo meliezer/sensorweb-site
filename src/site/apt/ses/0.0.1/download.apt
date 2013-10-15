@@ -1,0 +1,20 @@
+            ------
+            Sensor Event Service - Downloads
+            ------
+            Matthes Rieke
+            ------
+             2013-02-20
+
+
+Sensor Event Service - Downloads
+
+=====================
+
+
+*---------------+---------+-------------+
+| <<Name>>  | <<Date>> | <<Link>>  | 
+*---------------+-----------+--------------------+-------------------+----------+
+| Sensor Event Service 1.0.0 | 2012-06-04  | {{{http://52north.org/downloads/sensor-web/ses/sensor-event-service/summary}download}}  | 
+*---------------+-----------+--------------------+-------------------+----------+
+| Sensor Event Service 1.1.0 Nightly-Build / Snapshots | see repo  | {{{http://52north.org/maven/repo/snapshots/org/n52/sensorweb/ses/52n-ses-core/}snapshot repository}}  | 
+*---------------+-----------+--------------------+-------------------+----------+

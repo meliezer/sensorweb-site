@@ -1,0 +1,70 @@
+ -----
+ Sensor Bus
+ -----
+ Arne Broering
+ -----
+ 2010-01-19
+ -----
+
+Sensor Bus
+~~~~~~~~~~~~~~~~~~
+
+  The Sensor Bus establishes an intermediary layer between geosensor networks and the Sensor Web to close the conceptual gap between these two distinct layers resulting from different protocol stacks and data models.
+  Thereby, the Sensor Bus facilitates the integration of new sensors as well as new sensor web services.
+  In combination with the {{{http://52north.org/sid}Sensor Interface Descriptors}}, it enables true plug & play of sensors and minimizes the efforts of adding new sensors the Sensor Web. This functionality allows sensor vendors to easily plug-in sensors so that they are subsequently available on the Sensor Web. Service providers benefit, since they can support a wide variety of sensors by adapting their services to the Sensor Bus.
+  
+  The figure below depicts an overview of the components involved in the Sensor Bus architecture.
+  
+[../../images/SensorBus.png]
+
+  The communication is established through a publish/subscribe mechanism based on the underlying messaging technology. The Sensor Bus is adaptable to different messaging technologies. Currently, we support {{{http://java.sun.com/products/jms/}JMS}}, {{{http://www.irc.org/}IRC}}, {{{http://xmpp.org/}XMPP}}, and {{{http://www.twitter.com}Twitter}}. Services as well as sensors can publish messages to the bus and are able to subscribe for receiving messages in a push-based style. The underlying messaging technology takes care of forwarding the posted messages to the specific subscribed components. The different components (i.e., sensors and SWE services) can subscribe and publish through adapters. These adapters can be developed by sensor vendors or service providers. The adapters convert the service or sensor specific communication protocol to the internal bus protocol. We have also built a generic sensor adapter based on the {{{http://52north.org/sid}Sensor Interface Descriptor}} concept as shown in the figure below. Combined with a plug & play framework for establishing the semantic matchings between sensors and services, this work is described in this {{{http://www.mdpi.com/1424-8220/11/8/7568/}article}}.
+  
+[../../images/SensorBus_with_SID.png]
+  
+  The Sensor Bus is developed by the {{{http://swsl.uni-muenster.de}Sensor Web and Simluation Lab (SWSL)}} at the Institute for Geoinformatics (ifgi) and the 52North Sensor Web community in the project "Flexible and Efficient Integration of Sensors and Sensor Web Services" funded by the European Regional Development Fund (ERDF) for NRW (grant number N 114/2008) of the European Union.
+  
+  For more information to the Sensor Bus and for access to the source code please contact Arne Broering (broering [at] 52north.org).
+  
+[]
+
+* Sensor Bus Demonstration
+
+  We have a Sensor Bus instance based on XMPP running on the XMPP server 'conference.v-swsl.uni-muenster.de'. You can use a common XMPP client (e.g. 'Pidgin') to connect to this server. The management channel of the Sensor Bus is called 'sensorbusmanagement' and is the place to start from.
+
+[]
+
+* Acknowledgements
+
+  This work is financially supported by the project <Flexible and Efficient Integration of Sensors and Sensor Web Services> funded by the European Regional Development Fund (ERDF) for NRW (contract number N 114/2008).
+
+[../../images/EFRE_logo.jpg]
+
+[]
+
+* Publications
+
+	<If you want to reference this work, please cite the following papers, thanks.>
+
+	Broering, A., Maue, P., Janowicz, K., Nuest, D. & Malewski, C. (2011): {{{http://www.mdpi.com/1424-8220/11/8/7568/}Semantically-Enabled Sensor Plug & Play for the Sensor Web}}. Sensors, 11(8), pp. 7568-7605.
+	
+	Broering, A., T. Foerster, S. Jirka & Carsten Priess (2010): {{{http://ifgi.uni-muenster.de/~arneb/comgeo2010.pdf}Sensor Bus: An Intermediary Layer for Linking Geosensor Networks and the Sensor Web}}. In: Proceedings of COM.Geo 2010, 1st International Conference on Computing for Geospatial Research and Applications, ACM. 21.-30. June 2010. Washington, USA. [{{{http://portal.acm.org/citation.cfm?id=1823854.1823870&amp;coll=GUIDE&amp;dl=GUIDE&amp;CFID=95205285&amp;CFTOKEN=18122759}final}}]
+
+	Broering, A., S. Jirka & T. Foerster (2010): {{{http://ifgi.uni-muenster.de/~arneb/OSGIS2010_Sensor_Bus.pdf}The Sensor Bus - Integrating Geosensors and the Sensor Web}}. Second Open Source GIS UK Conference - OSGIS 2010. 21.-22. June 2010. Nottingham, UK.
+	
+	Broering, A., T. Foerster & S. Jirka (2010): {{{http://ifgi.uni-muenster.de/~arneb/wot2010.pdf}Interaction Patterns for Bridging the Gap between Sensor Networks and the Sensor Web}}. In: Proceedings of 8th IEEE International Conference on Pervasive Computing and Communications: WoT 2010: First International Workshop on the Web of Things, pp 732 - 737. March 29. - April 2. 2010. Mannheim, Germany. [{{{http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=5470529}final}}]
+	
+* Code Manager
+	
+	In charge of the Sensor Bus quality management and in control of its source code is:
+	
+   * {{{http://arnebroering.de}<<Arne Broering>>}}
+   
+* Contributing Developers
+   
+   * Carsten Priess
+   
+   * Stefan Below
+   
+   * Stefan Schmedt
+   
+   * Christian Malewski

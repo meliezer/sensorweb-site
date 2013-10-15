@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   width="1027.5587"
+   height="850.39375"
+   xml:space="preserve"
+   sodipodi:docname="RESTful_SOS _current_design.svg"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><metadata
+     id="metadata8"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs6"><inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       id="perspective10" /><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath18"><path
+         d="m 0,680.315 822.047,0 L 822.047,0 0,0 0,680.315 z"
+         id="path20" /></clipPath><inkscape:perspective
+       id="perspective2900"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" /></defs><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="1028"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="982.98151"
+     inkscape:cy="381.29356"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g12" /><g
+     id="g12"
+     inkscape:groupmode="layer"
+     inkscape:label="wrs-encapsulation"
+     transform="matrix(1.25,0,0,-1.25,0,850.39375)"><g
+   id="g22"
+   transform="matrix(1.0790961,0,0,1,812.48657,137.2334)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"
+   style="fill:#0071bc;fill-opacity:1"><path
+     d="m 0,0 c 0,-15.058 -12.319,-27.377 -27.377,-27.377 l -455.482,0 c -15.058,0 -27.377,12.319 -27.377,27.377 l 0,275.62 c 0,15.057 12.319,27.377 27.377,27.377 l 455.482,0 C -12.319,302.997 0,290.677 0,275.62 L 0,0 z"
+     style="fill:#0071bc;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="path24" /></g><g
+   id="g26"
+   transform="matrix(1.0814074,0,0,1,813.79689,137.2334)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="m 0,0 c 0,-15.058 -12.319,-27.377 -27.377,-27.377 l -455.482,0 c -15.058,0 -27.377,12.319 -27.377,27.377 l 0,275.62 c 0,15.057 12.319,27.377 27.377,27.377 l 455.482,0 C -12.319,302.997 0,290.677 0,275.62 L 0,0 z"
+     style="fill:none;stroke:#666666;stroke-width:3.09546804;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     id="path28" /></g><path
+   d="m 300.063,345.043 -78.576,0 0,30.06 78.576,0 0,-30.06 z"
+   style="fill:#0071bc;fill-opacity:1;fill-rule:nonzero;stroke:#666666;stroke-width:2.18319999999999980;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+   id="path30"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949" /><path
+   d="m 299.789,305.877 -78.575,0 0,30.061 78.575,0 0,-30.061 z"
+   style="fill:#0071bc;fill-opacity:1;fill-rule:nonzero;stroke:#666666;stroke-width:2.18300009000000020;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+   id="path32"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949" /><text
+   transform="scale(1,-1)"
+   id="text34"
+   x="283.26248"
+   y="-394.73206"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"
+   style="fill:#ffffff"><tspan
+     style="font-size:31.08569908000000100px;font-variant:normal;font-weight:500;font-stretch:normal;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DIN-Medium;-inkscape-font-specification:DIN-Medium"
+     x="283.26248"
+     y="-394.73206"
+     sodipodi:role="line"
+     id="tspan36">RESTful SOS</tspan></text>
+
+
+
+
+<g
+   id="g70"
+   transform="translate(110.398,466.826)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="M 0,0 C 0,-57.677 16.174,-104.348 78.985,-104.348"
+     style="fill:none;stroke:#666666;stroke-width:3.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     id="path72" /></g><g
+   id="g74"
+   transform="translate(187.2007,349.5145)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="M 0,0 22.385,12.924 0,25.847 0,0 z"
+     style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="path76" /></g><g
+   id="g78"
+   transform="translate(802.8473,148.1338)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"
+   style="fill:#8cc63f;fill-opacity:1"><path
+     d="m 0,0 c 0,-15.058 -12.319,-27.377 -27.377,-27.377 l -255.391,0 c -15.057,0 -27.377,12.319 -27.377,27.377 l 0,251.768 c 0,15.057 12.32,27.377 27.377,27.377 l 255.391,0 C -12.319,279.145 0,266.825 0,251.768 L 0,0 z"
+     style="fill:#8cc63f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="path80" /></g><g
+   id="g82"
+   transform="translate(802.8473,148.1338)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="m 0,0 c 0,-15.058 -12.319,-27.377 -27.377,-27.377 l -255.391,0 c -15.057,0 -27.377,12.319 -27.377,27.377 l 0,251.768 c 0,15.057 12.32,27.377 27.377,27.377 l 255.391,0 C -12.319,279.145 0,266.825 0,251.768 L 0,0 z"
+     style="fill:none;stroke:#666666;stroke-width:3.2190001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     id="path84" /></g><path
+   d="m 532.809,201.986 -78.58,0 0,30.062 78.58,0 0,-30.062 z"
+   style="fill:#8cc63f;fill-opacity:1;fill-rule:nonzero;stroke:#666666;stroke-width:2.18300009000000020;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+   id="path86"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949" /><path
+   d="m 532.531,162.817 -78.576,0 0,30.062 78.576,0 0,-30.062 z"
+   style="fill:#8cc63f;fill-opacity:1;fill-rule:nonzero;stroke:#666666;stroke-width:2.18300009000000020;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+   id="path88"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949" /><text
+   transform="scale(1,-1)"
+   id="text90"
+   x="631.7041"
+   y="-388.8866"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"
+   style="fill:#4d4d4d"><tspan
+     style="font-size:31.08569908px;font-variant:normal;font-weight:500;font-stretch:normal;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:DIN-Medium;-inkscape-font-specification:DIN-Medium"
+     x="631.7041"
+     y="-388.8866"
+     sodipodi:role="line"
+     id="tspan92">SOS: O&amp;M</tspan></text>
+
+
+
+
+
+
+
+<g
+   id="g112"
+   transform="matrix(1.4771148,0,0,1,373.29358,230.2143)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="M 0,0 C 0,-57.677 -3.098,-47.348 32.985,-47.348"
+     style="fill:none;stroke:#4c4c4c;stroke-width:2.6329515;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     id="path114" /></g><g
+   id="g116"
+   transform="translate(423.99631,168.46135)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="M 0,0 22.385,12.923 0,25.847 0,0 z"
+     style="fill:#4c4c4c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="path118" /></g><g
+   id="g120"
+   transform="matrix(1.5566186,0,0,1,372.56571,308.748)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="M 0,0 C 0,57.677 3.098,53.348 -32.986,53.348"
+     style="fill:none;stroke:#4c4c4c;stroke-width:2.56483173;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     id="path122" /></g><g
+   id="g124"
+   transform="translate(324.1108,375.0596)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="M 0,0 -22.385,-12.923 0,-25.847 0,0 z"
+     style="fill:#4c4c4c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="path126" /></g>
+
+
+
+
+
+<g
+   id="g160"
+   transform="translate(122.4273,214.8104)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="M 0,0 C 0,57.678 16.174,104.348 78.985,104.348"
+     style="fill:none;stroke:#666666;stroke-width:3.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     id="path162" /></g><g
+   id="g164"
+   transform="translate(111.0635,218.5936)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><path
+     d="M 0,0 12.923,-22.386 25.847,0 0,0 z"
+     style="fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="path166" /></g><text
+   transform="scale(1,-1)"
+   id="text168"
+   x="170.39983"
+   y="-155.53023"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"
+   style="font-size:19.20000076px"><tspan
+     style="font-size:19.20000076px;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Lucida Console;-inkscape-font-specification:LucidaConsole"
+     sodipodi:role="line"
+     id="tspan170"
+     x="170.39984"
+     y="-155.53023">data encoded in</tspan><tspan
+     style="font-size:19.20000076px;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Lucida Console;-inkscape-font-specification:LucidaConsole"
+     sodipodi:role="line"
+     x="170.39983"
+     y="-131.53023"
+     id="tspan2891">desired &lt;output format&gt;</tspan><tspan
+     style="font-size:19.20000076px;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Lucida Console;-inkscape-font-specification:LucidaConsole"
+     sodipodi:role="line"
+     x="170.39984"
+     y="-107.53023"
+     id="tspan2895">(e.g., KML, CSV, RDF, ...)</tspan></text>
+
+
+
+
+<text
+   xml:space="preserve"
+   style="font-size:32px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+   x="87.295929"
+   y="-618.73102"
+   id="text3926"
+   transform="scale(1,-1)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><tspan
+     sodipodi:role="line"
+     x="87.295929"
+     y="-618.73102"
+     id="tspan3940"
+     style="font-size:19.20000076px;font-weight:bold;fill:#000000;font-family:Courier New;-inkscape-font-specification:Courier New Bold">http://foo.bar/myRESTfulSOS</tspan><tspan
+     sodipodi:role="line"
+     x="87.295929"
+     y="-594.73102"
+     style="font-size:19.20000076px;font-weight:bold;fill:#000000;font-family:Courier New;-inkscape-font-specification:Courier New Bold"
+     id="tspan2871">     /&lt;offering&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="87.295929"
+     y="-570.73102"
+     style="font-size:19.20000076px;font-weight:bold;fill:#000000;font-family:Courier New;-inkscape-font-specification:Courier New Bold"
+     id="tspan2873">     /&lt;observed property&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="87.295929"
+     y="-546.73102"
+     style="font-size:19.20000076px;font-weight:bold;fill:#000000;font-family:Courier New;-inkscape-font-specification:Courier New Bold"
+     id="tspan2875">     /&lt;feature of interest&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="87.295929"
+     y="-522.73102"
+     style="font-size:19.20000076px;font-weight:bold;fill:#000000;font-family:Courier New;-inkscape-font-specification:Courier New Bold"
+     id="tspan2877">     /&lt;procedure&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="87.295929"
+     y="-498.73105"
+     style="font-size:19.20000076px;font-weight:bold;fill:#000000;font-family:Courier New;-inkscape-font-specification:Courier New Bold"
+     id="tspan2879">     /&lt;temporal filter&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="87.295929"
+     y="-474.73105"
+     style="font-size:19.20000076px;font-weight:bold;fill:#000000;font-family:Courier New;-inkscape-font-specification:Courier New Bold"
+     id="tspan2881">     /&lt;output format&gt;</tspan></text>
+
+
+
+
+<text
+   xml:space="preserve"
+   style="font-size:32px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+   x="272.93045"
+   y="-275.93164"
+   id="text2884"
+   transform="scale(1,-1)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><tspan
+     sodipodi:role="line"
+     x="272.93045"
+     y="-275.93164"
+     style="font-size:19.20000076px;fill:#ffffff"
+     id="tspan2885">translation from O&amp;M to </tspan><tspan
+     sodipodi:role="line"
+     x="272.93045"
+     y="-251.93164"
+     style="font-size:19.20000076px;fill:#ffffff"
+     id="tspan2887">desired &lt;output format&gt;</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:32px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+   x="559.02429"
+   y="-356.97577"
+   id="text2884-1"
+   transform="scale(1,-1)"
+   inkscape:export-filename="D:\MyFiles\_MyPublications\2010_07_20_52North@GI-Forum_Semantics\RESTful_SOS_current_design.png"
+   inkscape:export-xdpi="45.808949"
+   inkscape:export-ydpi="45.808949"><tspan
+     sodipodi:role="line"
+     x="559.02429"
+     y="-356.97577"
+     style="font-size:20.8;fill:#ffffff"
+     id="tspan2888-4">&lt;Observation&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="559.02429"
+     y="-332.97577"
+     style="font-size:20.8;fill:#ffffff"
+     id="tspan2922">   &lt;procedure&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="559.02429"
+     y="-308.97577"
+     style="font-size:20.8;fill:#ff0000"
+     id="tspan2944">      thermometer_123</tspan><tspan
+     sodipodi:role="line"
+     x="559.02429"
+     y="-260.97577"
+     style="font-size:20.8;fill:#ffffff"
+     id="tspan2942">   &lt;/procedure&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="559.02429"
+     y="-236.97577"
+     style="font-size:20.8;fill:#ffffff"
+     id="tspan2940">   &lt;featureOfInterrest&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="559.02429"
+     y="-212.97577"
+     style="font-size:20.8;fill:#ff0000"
+     id="tspan2928">      Muenster</tspan><tspan
+     sodipodi:role="line"
+     x="559.02429"
+     y="-164.97577"
+     style="font-size:20.8;fill:#ffffff"
+     id="tspan2932">   &lt;/featureOfInterest&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="559.02429"
+     y="-116.97576"
+     style="font-size:20.8;fill:#ffffff"
+     id="tspan2924">   &lt;result&gt;23&lt;/result&gt;</tspan><tspan
+     sodipodi:role="line"
+     x="559.02429"
+     y="-92.975761"
+     style="font-size:20.8;fill:#ffffff"
+     id="tspan2938">&lt;/Observation&gt;</tspan></text>
+
+</g></svg>

@@ -1,0 +1,78 @@
+ -----
+ SenseBox
+ -----
+ Arne Broering, Dustin Demuth
+ -----
+ 2012-10-15
+ -----
+
+SenseBox
+~~~~~~~~~~~~~~~~~~
+
+  The <SenseBox> is a software and hardware platform, based on the {{{http://www.arduino.cc/}Arduino}} system. As a small computing device (see prototype in figure below), it can be equipped with different sensors to perceive its environment. The access to the SenseBox through applications shall be as easily as possible. Hence, the <Web of Things> paradigm is applied, i.e., the SenseBox itself hosts a Web server and a REST API which makes it available as a first class citizen on the Web.
+  An overview of the SenseBox project is given in this {{{http://www.slideshare.net/arneb/the-sensebox-project-internet-of-things-recommendations}presentation}}.
+  
+[../../images/sensebox2_small2.jpg]
+
+  []
+
+* TrafficSenseBox
+
+  In a first use case, we tested the SenseBox in a traffic monitoring scenario. The SenseBox has been deployed next to a road and its in-built ultra sonic sensor has been used to detect the number of bypassing cars and eventually determine the traffic density. This is illustrated in the figure below.
+  
+[../../images/SenseBox_carCount.png]
+
+
+* AgriSenseBox
+
+  The <AgriSenseBox>, is a Web of Things (WoT) integrated Sensor Platform for Precision Agriculture. Based upon open hardware, the AgriSenseBox provides a web server containing a RESTful interface. The sensor platform is deployable in the field and makes sensor data accessible in differing formats. The AgriSenseBox encodes measurements as {{{http://www.json.org"}JSON}} using the structure proposed by {{{http://www.opengeospatial.org/standards/om}O&M}} and hands out links to descriptions of the attached sensors. Following the principles of the WoT, sensor data is browseable by using web standards, such as HTTP and URI.
+
+[../../images/SenseBox_AgriSenseBox_Rosemary_small.jpg] AgriSenseBox applied to a Rosemary.
+
+  The AgriSenseBox consists of an {{{http://www.arduino.cc}Arduino}} Mega 2560, an Ethernet Shield with Wireless Bridge, a GPS and sensors for soil moisture, temperature and brightness. It is capable of detecting changes in the domain of the sensors, for instance by moisturing or shadowing.
+  When accessing the IP of the sensor platform, the platform responses with a json-object containing URIs to sensors attached to the sensor platform, as well as URIs to sensor descriptions of the sensors. When browsing the AgriSenseBox, this feature enables sensor recognition.
+
+  The BSc thesis introducing the AgriSenseBox can be downloaded {{{http://www.dustindemuth.de/files/bsc/thesis-demuth.pdf}here}}.
+  Source code which has been developed in this context can be found in {{{https://ifgi-vcs.uni-muenster.de/thesis-demuth/}this}} repository.
+
+  
+* Google Summer of Code 2012 SenseBox 'GIS Link to the Web of Things'
+
+  During the <Google Summer of Code> another offspring of the SenseBox has been developed which establishes a Link betwen GIS and the WoT. See the according Wiki page {{{https://wiki.52north.org/bin/view/Projects/GSoC2012ProjectsGisLinkTotheWoT}here}}.
+
+
+* SenseBox for SOS
+
+  Neither providing a RESTful service nor a web server, the <SenseBox for SOS> is a sensor platform that pushes its observations directly into the {{{http://52north.org/sos}SOS}}.
+  This offspring of the SenseBox has been introduced by 52North on the {{{http://www.intergeo.de}Intergeo 2012}} trade fair. The figure below shows how data gathered by a SenseBox prototype has been pushed to an SOS and is displayed by the {{{http://52north.org/communities/sensorweb/clients/SensorWebClient}52North SOS Client}}.
+  
+[../../images/senseBoxAtIntergeo.jpg].
+
+
+  ~~ More details about the SenseBox project are discussed on its dedictated {{{http://sensebox.uni-muenster.de}blog}}.
+  
+  ~~ The Sensor Bus is developed by the {{{http://swsl.uni-muenster.de}Sensor Web and Simluation Lab (SWSL)}} at the Institute for Geoinformatics (ifgi) and the 52\xB0North Sensor Web community in the project "Flexible and Efficient Integration of Sensors and Sensor Web Services" funded by the European Regional Development Fund (ERDF) for NRW (grant number N 114/2008) of the European Union.
+  
+  ~~ For more information to the Sensor Bus and for access to the source code please contact Arne Broering (broering [at] 52north.org).
+
+
+** Acknowledgements
+
+  This work is financially supported by the project <Flexible and Efficient Integration of Sensors and Sensor Web Services> funded by the European Regional Development Fund (ERDF) for NRW (contract number N 114/2008).
+
+[../../images/EFRE_logo.jpg]
+
+
+** Publications
+
+	<If you want to reference this work, please cite the following papers, thanks.>
+
+	Broering, A., A. Remke & D. Lasnia (2011): {{{http://arnebroering.de/sensebox_final.pdf}SenseBox - A Generic Sensor Platform for the Web of Things}}. In: 8th Annual International Conference on Mobile and Ubiquitous Systems: Computing, Networking and Services (MobiQuitous 2011). 6.-8. December 2011. Copenhagen, Denmark. LNICST, Springer, Volume 104, Part 5, pp 186-196. [{{{http://www.springerlink.com/content/x01015x37664x435/}final}}]
+
+
+** Code Manager
+	
+	In charge of the SenseBox code is:
+	
+   * {{{http://www.dustindemuth.de}Dustin Demuth}}
+   

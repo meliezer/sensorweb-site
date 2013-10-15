@@ -1,0 +1,105 @@
+ -----
+ JavaMK
+ -----
+Matthes Rieke
+ -----
+ 2011-04-05
+ -----
+
+JavaMK
+~~~~~~~~~~~~~~~~~~
+
+  The JavaMK library is a communication api for the {{{http://www.mikrokopter.de}Mikrokopter UAV}}. It is capable
+  of processing incoming raw commands, decode them (including checksum verification) and create objects
+  from these commands. A java class can register itself at the MKDataHandler for receiving any incoming commands.
+  
+  The MKDataHandler can also be used to send commands to the Mikrokopter. Refer to the JavaDoc API for a complete overview
+  of implemented incoming and outgoing commands.
+
+* Usage
+
+  To use the JavaMK library put it on the classpath of your project. RXTX and commons-logging need also to be included in the classpath (both are
+  part of the release). To get it working properly you have to put the native RXTX library fitting your operating system on the native library path
+  (e.g. <java -classpath \<your-classpath\> -Djava.library.path=lib/native/64 org.package.YourApp>).
+  
+  Inside your application just instantiate <MKDataHandler(String port)> using the COM port you want to connect the MKUSB to. Use this instance to register
+  an implementation of <ICommandListener> with the <<registerCommandListener()>> method.
+
++---------------------------+
+public void initCommunication() {
+	//the port, you could also get it from config or gui
+	String newPort = "COM1";
+
+	this.mkDataHandler = new MKDataHandler(newPort);
+	this.mkDataHandler.registerCommandListener(this);
+	
+	if (!this.mkDataHandler.isReady()) {
+		System.err.println("Error while opening COM port "+ newPort);
+	}
+	
+}
++---------------------------+
+
++---------------------------+
+public void sendCommand() {
+	//send the MK to a target position
+	this.mkDataHandler.sendCommand(new SendTargetPositionCommand(51.9, 7.87, 40, 5));
+}
++---------------------------+
+
++---------------------------+
+//method from interface ICommandListener
+public void processCommand(CommandReceive recv) {
+	if (recv instanceof FollowMeData) {
+		FollowMeData fmd = (FollowMeData) recv;
+		/*
+		 * GPS data
+		 */
+		HashMap<String, Object> data = new HashMap<String, Object>();
+		data.put("latitude", fmd.getWaypoint().getPosition().getLatitude() / 1E7);
+		data.put("longitude", fmd.getWaypoint().getPosition().getLongitude() / 1E7);
+		data.put("altitude", fmd.getWaypoint().getPosition().getAltitude() / 1E3);
+		data.put(TIME_IDENTIFIER, fmd.getSystemTime());
+
+		populateNewDataSomewhere(data);
+	}
+}
++---------------------------+
+
+* Download
+
+** Current Release
+
+  * {{{http://ifgi.uni-muenster.de/~m_riek02/JavaMK/JavaMK-0.1-release.zip}JavaMK 0.1}} (including RXTX for Linux/Windows/Mac, 32-Bit and 64-Bit)
+
+** Release Archiv
+
+  * N/A
+  
+* Documentation
+
+  * {{{http://ifgi.uni-muenster.de/~m_riek02/JavaMK/0.1/javadoc}JavaMK 0.1 JavaDoc API}}
+
+* Source code
+
+  The sources of JavaMK are managed using Apache Maven 2.2.1. Instructions on how to use Maven can be found {{{http://maven.apache.org}here}}.
+  
+  * Source repository: {{https://svn.52north.org/svn/swe/incubation/ifgicopter/JavaMK/trunk/}}
+
+* Contact
+
+  Matthes Rieke, Author of this software:
+
+    * Email: {{{mailto:m.rieke_AT_uni-muenster.de}m.rieke_AT_uni-muenster.de}}
+    
+    * Homepage: {{http://ifgi.uni-muenster.de/~m_riek02}}
+
+* Code Manager
+
+  In charge of the JavaMK quality management and in control of its source code is:
+  
+  * <<Matthes Rieke>>
+
+* Contributing Developers
+   
+    * Matthes Rieke

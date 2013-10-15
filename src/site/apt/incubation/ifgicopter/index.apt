@@ -1,0 +1,43 @@
+ -----
+ ifgicopter Projects
+ -----
+Matthes Rieke
+ -----
+ 2011-04-05
+ -----
+
+ifgicopter Projects
+~~~~~~~~~~~~~~~~~~
+
+  This projects bundles the implementation outcomes of the {{{http://purl.net/ifgi/copter}ifgicopter project}}.\
+  Several software components have been developed during diploma/master/bachelor thesis.
+
+* Components
+
+** {{{./spf/index.html}Sensor Platform Framework}}
+
+  A framework to integrate different (mobile) multi-sensor platform into the Sensor Web.\
+  Currently it features the integration of a Mikrokopter as a data source and the {{{./../sensorBus/index.html}Sensor Bus}} as an output mechanism.  
+
+** {{{./JavaMK/index.html}JavaMK}}
+
+  A communcation library for establishing connections to a Mikrokopter using Java. It is capable
+  of processing incoming raw commands, decoding them (including checksum verification), creating objects
+  from these commands and forwarding it to registered listeners.\
+  Sending of commands to the Mikrokopter is implemented as well.
+
+* Publications
+
+	Rieke, M., T. Foerster & A. Broering (2011): Unmanned Aerial Vehicles as Mobile Multi-sensor Platforms.\
+	AGILE 2011: The 14th AGILE International Conference on Geographic Information Science. 18.-21. April 2011. Utrecht, The Netherlands. 
+
+
+* Code Manager
+
+  In charge of the ifgicopter quality management and in control of its source code is:
+  
+  * <<Matthes Rieke>>
+
+* Contributing Developers
+   
+    * Matthes Rieke

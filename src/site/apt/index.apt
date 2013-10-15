@@ -1,0 +1,67 @@
+ -----
+ 52\xB0North Sensor Web Community
+ -----
+ Arne Broering
+ -----
+ 2009-06-03
+ -----
+
+Sensor Web Community
+~~~~~~~~~~~~~~~~~~
+  
+  52\xB0North's Sensor Web community focuses on the development of a broad range of services to enable the realization of  {{{http://en.wikipedia.org/wiki/Sensor_web}Sensor Web}} infrastructures.
+  
+	[]
+
+	Sensor Web infrastructures are setup to <access> real-time data observed by sensors. Thereby, <sensors> range from simple weather stations over satellites to complex 'virtual' sensors such as simulations. The Sensor Web also provides means to <task and control> such sensors, as well as to retrieve <events and alerts> triggered through sensors.
+	
+	All those functionalitites of the Sensor Web are provided in an interoperable way - meaning that services implement standardized interfaces developed by the {{{http://www.opengeospatial.org/}Open Geospatial Consortium (OGC)}} and its {{{http://ogcnetwork.org/swe}Sensor Web Enablement (SWE)}} initiative.
+
+	A comprehensive introduction into the architectural background of the OGC SWE framework can be found {{{http://geostandards.geonovum.nl/index.php/5_Sensor_Web_Enablement}here}}. A profound survey article describing the current state of the art of SWE technology can be found {{{http://www.mdpi.com/1424-8220/11/3/2652/}here}}.
+	
+	To realize Sensor Web functionality, 52\xB0North bundles developer capacities and develops different Sensor Web services and multiple client applications (see project links below). Please have a look at the {{{./demos.html}demo page}} to get an idea of what our Sensor Web components can do.
+	
+ 	[]
+ 	
+* Service Projects
+
+   * <<{{{./sos/index.html}SOS}}>> (Sensor Observation Service): provides access to sensor information (SensorML) and measured sensor observations (O&M)
+
+   * <<{{{./sas/1.0.0/index.html}SAS}}>> (Sensor Alert Service): enables real-time alerting using a pub/sub paradigm
+   
+   * <<{{{./ses/0.0.1/index.html}SES}}>> (Sensor Event Service): an enhancement and the further development of the SAS
+
+   * <<{{{./sps/1.0.0/index.html}SPS}}>> (Sensor Planning Service): tasks sensors or sensor systems
+
+   * <<{{{./wns/1.0.0/index.html}WNS}}>> (Web Notification Service): supports asynchronous notification of sensor events (tasks, observation of phenomena)
+
+   * <<{{{./discovery/index.html}Discovery}}>> - services for discovering sensors and service instances
+   
+* SWE Client Projects
+
+   * <<{{{./oxf/index.html}OX-Framework}}>> software framework which enables easy usage of SWE services and data encodings
+
+   * <<{{{./clients/Rich_OX_Client/index.html}Rich OX Client}}>> Java-Swing frontend for the OX-Framework which allows access to SOS, SAS, SES and SPS 
+   
+   * <<{{{./clients/SensorWebClient/index.html}Sensor Web Client}}>> web-based client allowing the visualisation of near-realtime sensor data
+
+   * <<{{{./clients/ArcGIS_SOS_Extension/index.html}ArcGIS SOS Extension}}>> this extension for the widely used ArcGIS software enables the usage of the SOS
+   
+   * <<{{{./clients/uDig_SOS_Plugin/index.html}uDig SOS Plugin}}>> an SOS plugin for the open source desktop GIS uDIG
+   
+   * <<{{{./clients/sos4R/index.html}sos4R}}>> an extension for the R environment for statistical computing and analysis to access Sensor Observation Services
+   
+   ~~~~~~~~~ ARNE: I removed those links, since the software is not in use anymore and not maintained.
+   ~~* <<{{{./clients/OX_WMS/index.html}OX WMS}}>> based on the OX-Framework, this server application conforms to OGC's WMS standard and acts as a proxy to an SOS by providing map layers of rendered sensor data.
+
+   ~~* <<{{{./clients/OX_RESTful_SOS/index.html}OX RESTFul SOS}}>> based on the OX-Framework, this server application provides a RESTful SOS proxy to Sensor Observation Services.
+   
+* Incubator Projects
+   
+   * <<{{{./incubation/sensorWorld/index.html}Sensor World}}>> - a simultaion environment for sensors and phenomenon distribution
+   
+   * <<{{{./incubation/sensorBus/index.html}Sensor Bus}}>> - an intermediary layer for an easy integration of sensors and the Sensor Web
+   
+   * <<{{{./incubation/sensorInterfaceDescriptors/index.html}SIDs}}>> (Sensor Interface Descriptors): describe the interface of your sensor and easily integrate it with the Sensor Web
+   
+   * <<{{{./incubation/ifgicopter/index.html}ifgicopter}}>> - software components for unmanned aerials vehicles

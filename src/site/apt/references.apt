@@ -1,0 +1,144 @@
+ -----
+ References - 52\xB0North Sensor Web Community
+ -----
+ Arne Broering
+ -----
+ 2009-06-03
+ -----
+
+References
+
+* <<EO2HEAVEN>>
+
+	The project {{{http://www.eo2heaven.org/}EO2HEAVEN}} (Earth Observation and ENVironmental modeling for the mitigation of HEAlth risks) contributes to a better understanding of the complex relationships between environmental changes and their impact on human health. The project aims at monitoring changes induced by human activities, with emphasis on atmospheric, river, lake and coastal marine pollution. EO2HEAVEN follows a multidisciplinary and user-driven approach involving public health stakeholders who work closely with technology and service providers in both the earth observation and in-situ environmental monitoring domain. The result of this collaboration will be the design and development of a GIS based upon an open and standards-based Spatial Information Infrastructure (SII) envisaged as a helpful tool for research of human exposure and early detection of infections.
+	Time Frame: 2010 - 2013
+
+	
+	
+* <<Flexible and Efficient Integration of Sensors and Sensor Web Services>>
+
+	The project 'Flexible and Efficient Integration of Sensors and Sensor Web Services' is funded by the European Regional Development Fund (ERDF) for NRW (contract number N 114/2008) of the European Union. It is a joint project with the Institute for Geoinformatics (IfGI) of the University of Muenster and aims at facilitating the integration of geosensors into the Sensor Web. The software developed within this project is described {{{http://www.52north.org/sensorBus}here}}.
+	Time Frame: 2010 - 2013
+
+	
+	
+* <<Sensor Web - Compilation (DLZ-IT BMVBS)>>
+
+	This project has been commissioned by the Service Centre Information Technology of the BMVBS (DLZ-IT BMVBS) at the {{{http://www.baw.de}German Federal Waterways Engineering and Research Institute (BAW)}}. In addition, the {{{http://www.wupperverband.de}Wupperverband}} is involved in the practical project work. The aim of the project is to advance the currently existing SWE implementations and to apply the SWE technology in the hydrological domain. The project comprises the development of Sensor Observation Service (SOS) extensions (e.g. support for generalization of sensor data), a comfortable web based SOS client application and an extended Sensor Event Service implementation including an according client. Furthermore, conceptual work is performed such as a concept for sensor discovery and input to the development of the WaterML 2.0 specification.
+	Time Frame: 2009 - 2010
+	
+	
+	
+* <<OGC Web Services, Phase 7 (OWS 7)>>
+
+	Within the {{{http://www.opengeospatial.org/projects/initiatives/ows-7}OWS-7 project}} the 52\xB0North Sensor Web community is involved in the development of event architecture components for the Sensor Web. Also, we are involved in the development of an SOS for motion imagery data. Time Frame: 2009 - 2010
+	
+	
+
+* <<h2.0>>
+
+	The aim of this project is to develop community-driven services for focused and geo-referenced monitoring of water supply and sanitation coverage in support of the specific objectives of the UN-Habitat project 'h2.0 Monitoring Services to Inform and Empower'. A Human Sensor Web is the combination of a community of individuals who report observations through existing, widespread mobile communication technology and a set of (web) services that provide means to disseminate observations made by the community and means to receive feedback to individuals, specific user groups and civil society. The Human Sensor Web enables quantitative measures of user impact and perception, and develops feedback mechanisms to support water management services. The project is financed by {{{http://www.google.org}Google.org}}.
+	Time Frame: 2009 - 2010
+
+	
+
+* <<OSIRIS>>  
+
+   {{{http://www.osiris-fp6.eu/}OSIRIS}} (Open architecture for Smart and Interoperable networks in Risk management based 
+   on In-situ Sensors) was a Sixth Framework Programme Integrated Project co-funded by the European Commission. The project 
+   aimed at designing, developing and testing a service oriented architecture for risk monitoring and crisis management. 
+   The 52\xB0North Sensor Web implementations (i.e. SOS, SAS, SPS and the according clients) were enhanced and used in a broad 
+   range of use cases ranging from forest fire fighting, to water and air pollution monitoring.
+   Within the OSIRIS project, the University of Muenster actively contributed to the development and updated the 52\xB0North Sensor Web software implementations.
+   Time Frame: 2006 - 2009
+
+
+ 
+* <<SDC4GITEWS>>
+
+   This {{{http://www.gitews.de/}project}} addresses the design and implementation of a Sensor Data Center (SDC) 
+   for the German Indonesian Tsunami Early Warning System (GITEWS).The sensors of the Tsunami Early Warning System 
+   comprise seismometers, GPS instruments, tide gauges and buoys, as well as ocean bottom pressure sensors. A version 
+   of the 52\xB0North Sensor Observation Service implementation was used to access the data from the various sensors. 
+   GITEWS is commissioned by the German Government. A consortium of nine institutions work on the project for the 
+   reconstruction of the tsunami-prone region of the Indian Ocean. The sub-project SDC4GITEWS was commissioned by 
+   the German Aerospace Center (DLR). 
+   Time Frame: 2008 - 2009
+
+   
+ 
+* <<CCIP>>
+
+   {{{http://www.esri.com}ESRI}} and 52\xB0North developed an {{{http://52north.org/maven/project-sites/swe/clients/ArcGIS_SOS_Extension/index.html}ArcGIS plug-in}} for connecting to OGC Sensor Observation Services (SOS) and to access the provided data. This comprises real-time data as well as time series data for time spans the past. Using this plug-in, users are able to load any kind of sensor data from SOS servers into local geodatabases and to perform different kinds of analysis and processing on these datasets. The development of the SOS plug-in is the result of a joint project conducted by ESRI and 52North which was stated within the Climate Challenge Integration Plugfest (CCIP) at the FOSS4G 2009 conference.
+	Time Frame: 2009
+
+
+   
+* <<GEONOVUM Consulting>>
+
+   In 2009 52\xB0North acted as a consultant for the National Spatial Data Infrastructure (NSDI) executive committee of the Netherlands, {{{http://www.geonovum.nl}GEONOVUM}}. The consulting activities focused on discovery mechanisms for the Sensor Web. Based on this {{{http://geostandards.geonovum.nl/index.php/5_Sensor_Web_Enablement}material}} we conducted SWE training for GEONOVUM.
+   Time Frame: 2009
+
+   
+
+* <<OGC Web Services, Phase 6 (OWS 6)>>
+   
+   Within the {{{http://www.opengeospatial.org/projects/initiatives/ows-6}OWS-6 project}} the 52\xB0North Sensor Web community was involved in the development of a new event architecture which is the basis for the {{{./ses/0.0.1/index.html}SES}} service. Also, we were involved in the development of an SOS for imagery data. 
+   Time Frame: 2008 - 2009
+
+   
+   
+* <<BAW SWE Testbed>>
+
+	Within this tested the {{{http://www.baw.de/vip/en/}German Federal Waterways Engineering and Research Institute}} has investigated an application of SWE standards to monitor buildings. SWE services have been deployed for the provision of sensor data. These data have been collected during construction works of the lock 'Suelfeld' which is located at the German Mittellandkanal. The results of this testbed are published as a {{{http://52north.org/joomla/components/com_publications/publications/2008/Diplomarbeit-SensorWeb_Roman-Klipp_2008-09-30.pdf}master thesis (in German)}}.
+	Time Frame: 2008
+
+
+   
+* <<Sensor Web for Water Bodies>>
+
+   The Sensor Web community is developing and adapting existing SWE applications for the {{{http://www.wupperverband.de/}Wupperverband}} (Water Body, Germany). The Wupperverband project involves developing a web-based system which provides access to and allows the visualization of sensor data time series. The Sensor Observation Service provides access to sensor data that is captured by weather stations or water gauges which are operated by the Wupperverband. Client applications based on the OX Framework enable the visualization of the data collected (e.g. combination and superimposition of time series of water levels, runoff, rainfall, etc). Furthermore controllable cameras and an alert service to supervise a water storage basin via the Sensor Planning Service and Sensor Alert Service have been implemented.
+   Time Frame: 2007 - 2008
+   
+   
+
+* <<OGC Web Services, Phase 5 (OWS 5)>>
+   
+   The University of Muenster's developments of several 52\xB0North SWE components were part of the 
+   {{{http://www.opengeospatial.org/projects/initiatives/ows-5}OGC Web Services testbed, Phase 5}}. 
+   A significant achievement was the successfully completed Compliance and Interoperability Test and 
+   Evaluation (CITE) for the 52\xB0North Sensor Observation Service and Sensor Planning Service implementations. 
+   Furthermore, the OX-Framework was used as a basis for the development of a thin map client application.
+   Time Frame: 2007 - 2008
+
+   
+   
+* <<Sensors as data sources for the geo-information infrastructure>> (<Dutch: Sensors als databronnen aan de geo-informatie infrastructuur>)
+    
+   The 52\xB0North Sensor Web implementations were used within this  {{{http://www.rgi.nl/index.php?sid=84&amp;search=project&amp;nummer=RGI-189&amp;titel=&amp;korte_titel=&amp;thema=&amp;penvoerder=&amp;partner=&amp;submit=Zoek#item_102}project}} for integrating sensors and sensor data into spatial data infrastructures. The University of Muenster used the 52\xB0North SOS implementation to set up several Sensor Observation Service instances.
+   Time Frame: 2007
+
+   
+   
+* <<Advanced Fire Information System (AFIS)>>
+
+   The {{{http://afis.meraka.org.za/afis/}AFIS project}} of the Council for Scientific and Industrial Research (CSIR) 
+   in South Africa utilizes satellite imagery to automatically detect bush fires. When a fire hotspot threats the 
+   population or the infrastructure, the person responsible is automatically notified. The AFIS project is based on 
+   the web services of the SWE framework.
+   Time Frame: 2006
+   
+   
+   
+* <<OGC Web Services Testbed, Phase 4 (OWS 4)>>
+
+   The Universty of Muenster developed the foundation of the 52\xB0North Sensor Observation Service implementation 
+   during the {{{http://www.opengeospatial.org/projects/initiatives/ows-4}OWS 4 testbed}}. This work was carried 
+   out along side the SOS specification process.
+   Time Frame: 2006
+
+
+
+
+
+ 

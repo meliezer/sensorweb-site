@@ -1,0 +1,38 @@
+ -----
+ Sensor Obeservation Service
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-06-16
+ -----
+
+Design Documentation
+~~~~~~~~~~~~~~~~~~
+
+	The design of the 52\xB0North Sensor Observation Service is based on a 4-tier web architecture 
+	as shown in the figure below.
+	
+[../images/sos_architecture.png]
+
+	The lowest layer encapsulates the access of databases and/or -sources. The sources of sensor 
+	data are very heterogeneous and range from simple text files to very complex data models. To 
+	enable the user to use different data sources, the data access for each operation is implemented 
+	using the Data Access Object (DAO) pattern. This enables the user to easily adjust the 52\xB0North 
+	SOS to already existing sensor databases or -sources through a new or changed implementation of 
+	the DAO implementations. By default the 52\xB0North SOS uses as PostGIS database to store the 
+	observation values and corresponding meta data.
+
+	The central component of the Buiness Logic Layer is the RequestOperator. It receives requests 
+	from the Presentation Layer, validates the request and forwards the request to the appropriate 
+	OperationListener. The 52\xB0North SOS contains Listeners for each supported operation, which are 
+	defined in an external config file. All Listeners implement a common interface. If you want to 
+	support an additional operation, all you have to do is to implement the Operation Listener, 
+	implement the corresponding DAO and add the Listener in the config file. The Business Logic 
+	Tier contains several other components, e.g. components for parsing/encoding responses.
+
+	The Presentation Layer of the 52\xB0North SOS consists simply of a Servlet, which handles HTTP 
+	requests and responses. If you want to support other protocols, you have to replace this Servlet 
+	with another class for communication.
+
+	
+[]

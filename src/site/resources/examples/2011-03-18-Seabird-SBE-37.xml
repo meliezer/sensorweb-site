@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:SensorML version="1.0.1"
+	xsi:schemaLocation="http://www.opengis.net/sensorML/1.0.1 http://schemas.opengis.net/sensorML/1.0.1/sensorML.xsd"
+	xmlns:sml="http://www.opengis.net/sensorML/1.0.1"
+	xmlns:swe="http://www.opengis.net/swe/1.0.1"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:gml="http://www.opengis.net/gml"
+	xmlns:sid="http://www.52north.org/SID"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<sml:member>
+		<sml:System>
+			<gml:description>A 'Seabird SBE 37' CTD sensor system for measuring marine sensor data. The contained SID is configured so that only the temperature measurements are defined as output.</gml:description>
+			
+			<sml:keywords>
+				<sml:KeywordList>
+					<sml:keyword>Seabird SBE 37</sml:keyword>
+					<sml:keyword>CTD sensor</sml:keyword>
+					<sml:keyword>Marine sensor data</sml:keyword>
+					<sml:keyword>Water temperature</sml:keyword>
+				</sml:KeywordList>
+			</sml:keywords>
+			
+			<!--sml:identification element must contain the ID of the sensor -->
+			<sml:identification>
+				<sml:IdentifierList>
+					<sml:identifier>
+						<sml:Term definition="urn:ogc:def:identifier:OGC:1.0:uniqueID">
+							<sml:value>Seabird_1</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier name="longName">
+						<sml:Term definition="urn:ogc:def:identifier:OGC:1.0:longName">
+							<sml:value>Seabird SBE 37 marine sensor system</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier name="shortName">
+						<sml:Term definition="urn:ogc:def:identifier:OGC:1.0:shortName">
+							<sml:value>Seabird SBE 37</sml:value>
+						</sml:Term>
+					</sml:identifier>
+				</sml:IdentifierList>
+			</sml:identification>
+
+			<!-- classification dummy -->
+			<sml:classification>
+				<sml:ClassifierList>
+					<sml:classifier name="intendedApplication">
+						<sml:Term definition="urn:ogc:def:classifier:OGC:1.0:application">
+							<sml:value>Oceanography</sml:value>
+						</sml:Term>
+					</sml:classifier>
+					<sml:classifier name="sensorType">
+						<sml:Term definition="urn:ogc:def:classifier:OGC:1.0:sensorType">
+							<sml:value>Seabird SBE 37</sml:value>
+						</sml:Term>
+					</sml:classifier>
+				</sml:ClassifierList>
+			</sml:classification>
+
+			<!-- sml:validTime -->
+			<sml:validTime>
+				<gml:TimePeriod>
+					<gml:beginPosition>2011-01-01</gml:beginPosition>
+					<gml:endPosition>2012-01-01</gml:endPosition>
+				</gml:TimePeriod>
+			</sml:validTime>
+
+			<!-- sml:capabilities element has to contain status and mobility information -->
+			<sml:capabilities>
+				<swe:DataRecord>
+					<!-- status indicates, whether sensor is collecting data at the moment (true) or not (false) -->
+					<swe:field name="status">
+						<swe:Boolean definition="urn:ogc:def:property:OGC:1.0:isActive">
+							<swe:value>true</swe:value>
+						</swe:Boolean>
+					</swe:field>
+					<!-- status indicates, whether sensor is mobile (true) or fixed (false) -->
+					<swe:field name="mobile">
+						<swe:Boolean definition="urn:ogc:def:property:OGC:1.0:isMobile">
+							<swe:value>true</swe:value>
+						</swe:Boolean>
+					</swe:field>
+					
+					<swe:field name="survivalRange">
+						<swe:QuantityRange definition="http://purl.oclc.org/net/ssnx/ssn#SurvivalRange">
+							<swe:uom code="m" />
+							<swe:value>-100 0</swe:value>
+						</swe:QuantityRange>
+					</swe:field>
+					
+					<swe:field name="observedBBOX">
+						<swe:Envelope referenceFrame="urn:ogc:def:crs:EPSG:4326"
+							definition="urn:ogc:def:property:OGC:1.0:observedBBOX">
+							<swe:lowerCorner>
+								<swe:Vector>
+									<swe:coordinate name="easting">
+										<swe:Quantity axisID="x">
+											<swe:uom code="deg" />
+											<swe:value>2.0</swe:value>
+										</swe:Quantity>
+									</swe:coordinate>
+									<swe:coordinate name="northing">
+										<swe:Quantity axisID="y">
+											<swe:uom code="degree" />
+											<swe:value>54.0</swe:value>
+										</swe:Quantity>
+									</swe:coordinate>
+								</swe:Vector>
+							</swe:lowerCorner>
+							<swe:upperCorner>
+								<swe:Vector>
+									<swe:coordinate name="easting">
+										<swe:Quantity axisID="x">
+											<swe:uom code="degree" />
+											<swe:value>4.2</swe:value>
+										</swe:Quantity>
+									</swe:coordinate>
+									<swe:coordinate name="northing">
+										<swe:Quantity axisID="y">
+											<swe:uom code="deg" />
+											<swe:value>60.4</swe:value>
+										</swe:Quantity>
+									</swe:coordinate>
+								</swe:Vector>
+							</swe:upperCorner>
+						</swe:Envelope>
+					</swe:field>
+
+				</swe:DataRecord>
+			</sml:capabilities>
+
+			<sml:contact>
+				<sml:ResponsibleParty gml:id="IfGI">
+					<sml:individualName>Arne Broering</sml:individualName>
+					<sml:organizationName>52 North</sml:organizationName>
+					<sml:contactInfo>
+						<sml:address>
+							<sml:deliveryPoint>Martin-Luther-King-Weg 24</sml:deliveryPoint>
+							<sml:city>Muenster</sml:city>
+							<sml:postalCode>48153</sml:postalCode>
+							<sml:country>Germany</sml:country>
+							<sml:electronicMailAddress>info@52north.org</sml:electronicMailAddress>
+						</sml:address>
+					</sml:contactInfo>
+				</sml:ResponsibleParty>
+			</sml:contact>
+
+			<!-- last measured position of sensor -->
+			<sml:position name="sensorPosition">
+				<swe:Position referenceFrame="urn:ogc:def:crs:EPSG:4326"> <!-- default to use: urn:ogc:def:crs:EPSG:4326 -->
+					<swe:location>
+						<swe:Vector gml:id="STATION_LOCATION">
+							<swe:coordinate name="easting">
+								<swe:Quantity axisID="x">
+									<swe:uom code="degree" />
+									<swe:value>3.52</swe:value>
+								</swe:Quantity>
+							</swe:coordinate>
+							<swe:coordinate name="northing">
+								<swe:Quantity axisID="y">
+									<swe:uom code="degree" />
+									<swe:value>59.64</swe:value>
+								</swe:Quantity>
+							</swe:coordinate>
+							<swe:coordinate name="altitude">
+								<swe:Quantity axisID="z">
+									<swe:uom code="m" />
+									<swe:value>-42.0</swe:value>
+								</swe:Quantity>
+							</swe:coordinate>
+						</swe:Vector>
+					</swe:location>
+				</swe:Position>
+			</sml:position>
+  
+		  <sml:interfaces>
+			<sml:InterfaceList>
+			  <sml:interface name="connector1" xlink:role="urn:ogc:def:connection:OGC:serial">
+				<sml:InterfaceDefinition>
+				
+				  <sml:applicationLayer>
+					<sid:CommandDefinition>
+					  <sid:commands>
+						<sid:CommandList>
+						  <sid:command name="getDataCommand" auto="true" interval="5">
+							<sid:Command>
+							  <swe:DataRecord gml:id="TS">
+								<swe:field name="command" xlink:role="urn:ogc:def:command:OGC:name">
+								  <swe:Text>
+									<swe:value>TS</swe:value>
+								  </swe:Text>
+								</swe:field>
+							  </swe:DataRecord>
+							</sid:Command>
+							<sid:ResponseList>
+							</sid:ResponseList>
+						  </sid:command>
+						  <sid:command name="init" auto="true" interval="1">
+						   <sid:Command>
+							<sid:CommandParameters>
+							  <swe:SimpleDataRecord gml:id="carriageReturn">
+								<swe:field name="command" xlink:role="urn:ogc:def:command:OGC:name">
+								  <swe:Text>
+									<swe:value>&#x000d;</swe:value>
+								  </swe:Text>
+								</swe:field>
+							  </swe:SimpleDataRecord>
+							</sid:CommandParameters>
+							<sid:ResponseList>
+							</sid:ResponseList>
+							 </sid:Command>
+						  </sid:command>
+						</sid:CommandList>
+					  </sid:commands>
+					</sid:CommandDefinition>
+				  </sml:applicationLayer>
+				  
+				  <sml:presentationLayer>
+					<sid:DataInputStream>
+					  <dataInputComponents>
+						<ComponentList>
+						  <component name="getDataCommand" xlink:href="#TS"/>
+						</ComponentList>
+					  </dataInputComponents>
+					</sid:DataInputStream>
+					<sid:DataOutputStream>
+					  <dataOutputComponents>
+						<ComponentList>
+						  <component name="getDataAck">
+							<swe:DataRecord gml:id="">
+							  <swe:field name="ack" xlink:role="urn:ogc:def:encoding:assertedValue">
+								<swe:Text>
+								  <swe:value xsi:nil="true"/>
+								</swe:Text>
+							  </swe:field>
+							</swe:DataRecord>
+						  </component>
+						   <component name="TS_Value">
+							<swe:DataRecord>
+							  <swe:field name="ts" />
+							</swe:DataRecord>
+						  </component>
+						  <component name="getDataNack">
+							<swe:DataRecord gml:id="">
+							  <swe:field name="nack" xlink:role="urn:ogc:def:encoding:assertedValue">
+								<swe:Text>
+								  <swe:value xsi:nil="true"/>
+								</swe:Text>
+							  </swe:field>
+							</swe:DataRecord>
+						  </component>
+						  <component name="watersensor">
+							<swe:DataRecord>
+							  <swe:field name="TEMPERATURE">
+								<swe:Quantity gml:id="TEMPERATURE" definition="http://sweet.jpl.nasa.gov/1.1/property.owl#Temperature">
+								  <swe:uom code="Cel"/>
+								</swe:Quantity>
+							  </swe:field>
+							</swe:DataRecord>
+						  </component>
+						</ComponentList>
+					  </dataOutputComponents>
+					</sid:DataOutputStream>
+				  </sml:presentationLayer>
+				  
+				  <sml:physicalLayer>
+					<sid:DataInputStream>
+					  <dataInputComponents>
+						<ComponentList>
+						  <component name="getDataCommand" xlink:href="#TS"/>
+						</ComponentList>
+					  </dataInputComponents>
+					</sid:DataInputStream>
+					<sid:DataOutputStream>
+					  <dataOutputComponents>
+						<ComponentList>
+						  <component name="getDataNack">
+							<swe:DataBlockDefinition>
+							  <swe:components name="nack"/>
+							</swe:DataBlockDefinition>
+						  </component>
+						  <component name="DataOutputStream">
+							<swe:DataBlockDefinition>
+							  <swe:components name="dataMessageBlock">
+								<swe:DataRecord>
+								  <swe:field name="Temperature">
+									<swe:Text />
+								  </swe:field>
+								  <swe:field name="Block1">
+									<swe:Text />
+								  </swe:field>
+								  <swe:field name="Block2">
+									<swe:Text />
+								  </swe:field>
+								  <swe:field name="Block3">
+									<swe:Text />
+								  </swe:field>
+								  <swe:field name="Block4">
+									<swe:Text />
+								  </swe:field>
+								   <swe:field name="Block5">
+									<swe:Text />
+								  </swe:field>
+								   <swe:field name="Block6">
+									<swe:Text />
+								  </swe:field>
+								</swe:DataRecord>
+							  </swe:components>
+							  <swe:encoding>
+								<swe:TextBlock tokenSeparator="," blockSeparator="&#x000D;" decimalSeparator="."/>
+							  </swe:encoding>
+							</swe:DataBlockDefinition>
+						  </component>
+						</ComponentList>
+					  </dataOutputComponents>
+					</sid:DataOutputStream>
+				  </sml:physicalLayer>
+				  
+				  <sml:connections>
+					<sml:ConnectionList>
+					  <sml:connection>
+						<sml:Link type="urn:ogc:def:link:OGC:sid">
+						  <sml:source ref="applicationLayer/commands/getDataCommand/TS"/>
+						  <sml:destination ref="presentationLayer/dataInputComponents/getDataCommand"/>
+						</sml:Link>
+					  </sml:connection>
+					  <sml:connection>
+						<sml:Link type="urn:ogc:def:link:OGC:sid">
+						  <sml:source ref="presentationLayer/dataInputComponents/getDataCommand"/>
+						  <sml:destination ref="physicalLayer/dataInputComponents/getDataCommand"/>
+						</sml:Link>
+					  </sml:connection>
+					   <sml:connection>
+						<sml:Link type="urn:ogc:def:link:OGC:sid">
+						  <sml:source ref="physicalLayer/dataOutputComponents/DataOutputStream/dataMessageBlock/Temperature"/>
+						  <sml:destination ref="presentationLayer/dataOutputComponents/watersensor/TEMPERATURE"/>
+						</sml:Link>
+					  </sml:connection> 
+					</sml:ConnectionList>
+				  </sml:connections>
+				</sml:InterfaceDefinition>
+			  </sml:interface>
+			</sml:InterfaceList>
+		  </sml:interfaces>
+		  
+		  <sml:outputs>
+			<!-- list containing the output phenomena of this sensor system -->
+			<sml:OutputList>
+				<sml:output name="temperatureOutput">
+					<swe:Quantity definition="http://sweet.jpl.nasa.gov/1.1/property.owl#Temperature">
+						<swe:uom code="Cel" />
+					</swe:Quantity>
+				</sml:output>
+			</sml:OutputList>
+		  </sml:outputs>
+		  
+		  <sml:components>
+			<sml:ComponentList>
+			  <sml:component name="watersensor_Parameters" xlink:role="urn:ogc:def:sensor:OGC:detector">
+				<sml:Component gml:id="detector:watersensor">
+				  <sml:inputs/>
+				  <sml:outputs/>
+				  <sml:parameters/>
+				  <sml:method/>
+				</sml:Component>
+			  </sml:component>
+			</sml:ComponentList>
+		  </sml:components>
+		  
+		  <sml:connections>
+			<sml:ConnectionList>
+			  <sml:connection>
+				<sml:Link type="urn:ogc:def:link:OGC:sid">
+				  <sml:source ref="this/interfaces/connector_serial/presentationLayer/dataOutputComponents/watersensor/TEMPERATURE"/>
+				  <sml:destination ref="this/outputs/temperatureOutput"/>
+				</sml:Link>
+			  </sml:connection>
+			</sml:ConnectionList>
+		  </sml:connections>
+		  
+		</sml:System>
+	</sml:member>
+</sml:SensorML>

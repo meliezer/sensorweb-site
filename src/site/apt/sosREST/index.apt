@@ -1,0 +1,39 @@
+ -----
+ SOS RESTful Add-on
+ -----
+ Arne Broering
+ -----
+ 2013-02-20
+ -----
+
+SOS RESTful Extension
+~~~~~~~~~~~~~~~~~~
+  
+  The SOS RESTful Extension provides a means for accessing and manipulating SOS resources (i.e., observations, capabilities, offerings, sensors, and features) in a RESTful way - that means, plain HTTP methods (GET, DELETE, POST, PUT) can be used to interact with those resources. Using REST makes client development easy and lightweight.
+
+  The implementation of this RESTful extension is based on the 52\xB0North SOS and can be easily added to existing deployments of our {{{../sos/index.html}SOS 4.0}} implementation.
+  
+  The SOS RESTful Add-on is realized as a specific <binding> for the SOS 4.0 - adding REST functionality beyond the standard KVP and SOAP bindings.
+  
+  The figure below gives an overview of this Add-on and the implemented REST API.
+
+[../images/RESTful_SOS_current_design.png]
+
+[]
+
+* Code Repository
+	
+	The source code of the SOS RESTful Extension can be found {{{https://svn.52north.org/svn/swe/main/SOS/Extensions/Binding/RESTful/trunk}here}}.
+
+* Acknowledgements
+
+[../images/DLR-logo.jpg]
+
+	This work is funded by the {{{http://www.dlr.de}German Aerospace Centre}} (Deutsches Zentrum fuer Luft- und Raumfahrt, DLR) and part of their {{{http://www.dlr.de/eoc/en/desktopdefault.aspx/tabid-5400/10196_read-21914/}Environmental and Crisis Information System}} (Umwelt- und Kriseninformationssystem, UKis).
+	
+* Code Manager
+	
+	In charge of the code management for this project is:
+	
+   * <<{{{http://52north.org/52-north-team/eike-hinderk-juerrens}Eike Hinderk Jürrens}}>>
+	

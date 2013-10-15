@@ -1,0 +1,33 @@
+ -----
+ OX Services
+ -----
+ Arne Broering
+ -----
+ 2010-07-14
+ -----
+
+OX Web Map Server
+~~~~~~~~~~~~~~~~~~
+  
+  Besides client applications which provide a classic user interface, the OX-Framework can also be used to build
+  server applications which encapsulate, chain or orchestrate other OGC services. Thereby, the access to other
+  OGC services is facilitated by the OX-Framework.
+  
+ The OX Web Map Server is such a server application built on top of the OX-Framework. This application conforms to the {{{http://www.opengeospatial.org/standards/wms}Web Map Service (WMS)}} interface. It transforms WMS requests to SOS requests and returns sensor data visualizations to the WMS client. The application realizes an opaque service chaining. The figure below shows the principle of this application.
+	
+[../../images/oxf_applications_wms.png]
+
+* Download WMS application
+
+*---------------+---------+-------------+
+| <<Name>>  | <<Date>> | <<Link>>  | 
+*---------------+-----------+--------------------+-------------------+----------+
+| 52n-swe-oxf-wms-20080307.war | 2008-12-09 | {{{http://52north.org/download/Sensor%20Web/clients/52n-swe-oxf-wms-20080307.war}download}}  | 
+*---------------+-----------+--------------------+-------------------+----------+
+
+* Code Manager
+	
+	In charge of the quality management and source code control of the OX Server Applications is:
+	
+   * {{{http://arnebroering.de}<<Arne Broering>>}}
+	

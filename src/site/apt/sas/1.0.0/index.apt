@@ -1,0 +1,28 @@
+ -----
+ Sensor Alert Service
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-06-19
+ -----
+
+	<<Please be aware that the SAS developments are currently discontinued in favour of the {{{../../ses/0.0.1/index.html}Sensor Event Service}} (SES). This new service interface enhances the SAS by adding new functionalities such as advanced filter capabilities.>>
+	
+
+Sensor Alerts Service (SAS)
+~~~~~~~~~~~~~~~~~~
+  
+	The Sensor Alert Service dispatches alerts via XMPP (extensible messaging and presence protocol). Users follow a two step process. First thing to do is to define
+	the alert condition, step two is to join the corresponding MultiUserChat (MUC). This framework provides software for sources (sensors and nodes that generate 
+	alerts), sinks (clients for receiving alerts and subscribing to alerts), and a web service part, which allows the discovery of available sensors by means of the OGC
+	GetCapabilities interface.
+    
+    
+	The Sensor Alert Service allows sensor nodes to advertise and publish observational data or its descriptive metadata repsectively. It acts as a registry providing 
+	information about available sensor systems and real time access to its observation data. The SAS currently dispatches alerts via XMPP (extensible messaging 
+	and presence protocol) and optionally via other transport protocols (supported by communication gateways like WNS, for example).
+	
+	
+	The SAS workflow is described in the following figure:	
+	
+[../../images/sas_exemplary_workflow_600.png] The SAS workflow.

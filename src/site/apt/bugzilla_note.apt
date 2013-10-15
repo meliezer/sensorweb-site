@@ -1,0 +1,23 @@
+ -----
+ Bugzilla Note - 52\xB0North Sensor Web Community
+ -----
+ Jan Drewnak
+ -----
+ 2008-06-19
+ -----
+
+Reporting Bugs
+
+* Bug Reporting Guideline
+
+    If the bug is in a 52\xB0North Sensor Web software component, send an email to swe@52north.org. Once it's confirmed as a bug, someone, possibly you, can enter it into the Bugzilla.
+    
+	If the bug is in your rug, please give it a hug and keep it snug.
+	
+* Register for the 52\xB0North Bugzilla
+
+    To register for the Bugzilla, you have to create an account at the {{{http://52north.org/twiki/bin/view/Main/WebHome}52\xB0North TWiki}}.
+
+    The login name for Bugzilla is your WikiName.
+
+    The URL of the Bugzilla is: <<{{{https://52north.org/bugzilla/}https://52north.org/bugzilla/}}>>

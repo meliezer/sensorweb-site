@@ -1,0 +1,58 @@
+ -----
+ OX Services
+ -----
+ Arne Broering
+ -----
+ 2010-07-14
+ -----
+
+OX Server Applications
+~~~~~~~~~~~~~~~~~~
+  
+  Besides client applications which provide a user interface, the OX-Framework can also be used to build
+  server applications which encapsulate, chain, or orchestrate other OGC services. Thereby, the access to other
+  OGC services is facilitated by the OX-Framework.
+  
+  
+<<OX Web Map Server>>
+  
+ The OX Web Map Server is such a server application built on top of the OX-Framework. This application conforms to the {{{http://www.opengeospatial.org/standards/wms}Web Map Service (WMS)}} interface. It transforms WMS requests to SOS requests and returns sensor data visualizations to the WMS client. The application realizes an opaque service chaining. The figure below shows the principle of this application.
+	
+[../images/oxf_applications_wms.png]
+
+ A snapshot of the OX Web Map Server can be downloaded {{{http://52north.org/download/Sensor%20Web/clients/52n-swe-oxf-wms-20080307.war}here}}.
+
+[]
+
+<<OX RESTful SOS>>
+ 
+  Another OX Server Application is the <RESTful SOS>. It encapsulates SOS instances and works as a proxy to an SOS for providing a RESTful interface to the data.
+	
+  The design principle of this application is shown in the figure below. The RESTful SOS acts as a proxy to the actual
+  SOS and transforms retrieved URL calls to SOS queries of the GetObservation operation. The proxy is also able to transform
+  the observations encoded in the Observations ans Measurements (O&M) format to other data encodings, such as RDF, KML, or a diagram representation.
+
+[../images/RESTful_SOS.png]
+
+* Code Repository
+	
+	The source code of the OX RESTful SOS can be found {{{https://svn.52north.org/svn/swe/incubation/OXRestWS/trunk/OX-RestWS/}here}}.
+
+* Publications
+
+  <This work is described in more detail in the following paper:>
+
+  K. Janowicz, A. Broering, C. Stasch, S. Schade, T. Everding & A. Llaves (2011): {{{http://www.tandfonline.com/doi/abs/10.1080/17538947.2011.614698}A RESTful Proxy and Data Model for Linked Sensor Data}}. International Journal for Digital Earth.
+  
+  A. Broering, K. Janowicz, C. Stasch, S. Schade, T. Everding, & A. Llaves (2011): {{{http://iswc2011.semanticweb.org/fileadmin/iswc/Papers/Workshops/SSN/ssn14.pdf}Demonstration - A RESTful SOS Proxy for Linked Sensor Data}}. In: K. Taylor, A. Ayyagari & D. de Roure (Eds.), 4th International Workshop on Semantic Sensor Networks 2011 (SSN 2011), Workshop of the 10th International Semantic Web Conference (ISWC 2011). 23.10.2011. Bonn, Germany. 
+  
+  K. Janowicz, A. Broering, C. Stasch & T. Everding (2010): {{{http://arnebroering.de/de2010_final_submission.pdf}Towards Meaningful URIs for Linked Sensor Data}}. In: Towards Digital Earth Workshop at Future Internet Symposium 2010 (CEUR Proceedings 640). 20th September 2010. Berlin, Germany. [{{{http://www.slideshare.net/arneb/meaningful-ur-isforlinkedsensordataforpublic}slides}}]
+  
+
+
+* Code Manager
+	
+	In charge of the code management of the OX Server Applications is:
+	
+   * {{{http://arnebroering.de}<<Arne Broering>>}}
+	

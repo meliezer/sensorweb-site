@@ -1,0 +1,77 @@
+ -----
+ Sensor Observation Service (SOS) Extension for ArcGIS Server
+ -----
+ Arne Broering
+ -----
+ 2011-11-17
+ -----
+
+Demo of the ArcGIS Server SOS Extension
+~~~~~~~~~~~~~~~~~~
+
+  This is the {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE}link}} to a demo instance of the ArcGIS Server SOS Extension.
+  This demo instance serves an air quality data set from the {{{http://www.eea.europa.eu/}European Environment Agency (EEA)}}. Please find {{{http://www.eea.europa.eu/maps/ozone/resources/about-the-data}here}} more information about the data provided by EEA.
+  
+  The excerpt of the EEA air quality data set used here includes 1.000.000 observations from around 1.500 air quality stations across Europe over a time span of one month. The figure below shows the network of air quality stations (source of background image is {{{http://www.nps.gov/}US National Park Service}})
+  
+[../images/ArcGIS-SOS-Extension/AirQualityEurope.png]
+  
+  In the following, example requests for the ArcGIS SOS Extension demo instance are presented.
+
+  In ESRI's ArcMap, you can access the following <<Map Service>> upon which this SOE is based: {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer}http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer}}
+
+  The actual ArcGIS Server SOS Extension cannot be accessed from ArcMap, since it adds functionality which is not yet covered by ESRI's REST API.
+
+  Via the specified REST API of the SOE, you can access the three resources offered by the SOE:
+
+  [[1]] <<Procedures (=sensors)>> can be accessed, e.g.:
+
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/procedures/CO-SensorNetwork}http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/procedures/CO-SensorNetwork}}
+
+  [[2]] <<Features (of interest)>> can be queried, i.e., you can define filter parameters to receive a restricted set of features. 
+  
+  For example, you can query features, by their ID, e.g. the following 4 features:
+  
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/features/query?feature=BETR701,DETH096,IT1679A,AT31401}http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/features/query?feature=BETR701,DETH096,IT1679A,AT31401}}
+
+  All IDs of registered features can be received like this:
+  
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/features}
+  http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/features}}
+
+  The feature with the property 'Ozone', observed by the sensor 'Ozone-SensorNetwork', at a given point position can be queried this way:
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/features/query?observedProperty=http%3A%2F%2Fsweet.jpl.nasa.gov%2Fontology%2Fsubstance.owl%23Ozone&amp;procedure=Ozone-SensorNetwork&amp;spatialFilter=\{x:13.128932000000077,y:48.97240100000005,spatialReference:\{wkid:4326\}\}}\
+  http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/features/query\
+  ?observedProperty=http://sweet.jpl.nasa.gov/ontology/substance.owl#Ozone&amp;procedure=Ozone-SensorNetwork\
+  &amp;spatialFilter=\{x:13.128932000000077,y:48.97240100000005,spatialReference:\{wkid:4326\}\}}}
+
+  [[3]] <<Observations>> can be queried.
+  
+  The entry point URL to the observations resource shows information about the available observations (they are grouped in so called 'observation offerings'):
+  
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/observations}
+  http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/observations}}
+
+  With the information provided by the observation offerings, the actual observations can be queried. For example, all observations for the features 'BETR701,DERP023,CH0049A', grouped by the observation offering 'CO-Offering', and measured on the 2011-10-18 at 10 o'clock (note that time zones conversion is also done by the SOE) can be accessed:
+  
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/observations/query?offering=CO-Offering&amp;featureOfInterest=BETR701,DERP023,CH0049A&amp;temporalFilter=equals:2011-10-18T10:00:00%2B00:00}
+  http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/observations/query\
+  ?offering=CO-Offering\
+  &amp;featureOfInterest=BETR701,DERP023,CH0049A\
+  &amp;temporalFilter=equals:2011-10-18T10:00:00+00:00}}
+
+  Or, all carbon monoxide measurements greater than 2500 can be queried:
+  
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/observations/query?observedProperty=http%3A%2F%2Fsweet.jpl.nasa.gov%2Fontology%2Fsubstance.owl%23CarbonMonoxide&amp;where=NUMERIC_VALUE>2500}
+  http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/observations/query\
+  ?observedProperty=http://sweet.jpl.nasa.gov/ontology/substance.owl#CarbonMonoxide\
+  &amp;where=NUMERIC_VALUE>2500}}
+
+  Or, all observations measured by the procedure 'Ozone-SensorNetwork' within a given BBOX and 'during' a given time period can be queried:
+  
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/observations/query?procedure=Ozone-SensorNetwork&amp;spatialFilter=\{xmin:0.0,ymin:40.0,xmax:2.0,ymax:43.0,spatialReference:\{wkid:4326\}\}&amp;temporalFilter=during:2011-10-19T15:00:00%2B02:00,2011-10-20T00:00:00%2B02:00}
+  http://ags.dev.52north.org:6080/arcgis/rest/services/AirQualityEurope/MapServer/exts/SosSOE/observations/query\
+    ?procedure=Ozone-SensorNetwork\
+    &amp;spatialFilter=\{xmin:0.0,ymin:40.0,xmax:2.0,ymax:43.0,spatialReference:\{wkid:4326\}\}\
+    &amp;temporalFilter=during:2011-10-19T15:00:00+02:00,2011-10-20T00:00:00+02:00}}
+  

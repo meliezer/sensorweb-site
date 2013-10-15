@@ -1,0 +1,30 @@
+ -----
+ Sensor Observation Service
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-06-16
+ -----
+
+Dependencies
+~~~~~~~~~~~~~~~~~~
+	The SOS implementation depends upon the following libraries:
+	
+	
+*---------------+---------+-------------+
+| <<lib name>>  | <<jar>> | <<license>> |
+*---------------+-----------+--------------------+
+| <<XML Beans>>      | xbean.jar | apache license 2.0 |
+*---------------+-----------+--------------------+
+| <<XML Beans>>      | servlet-api.jar | apache license 2.0 |
+*---------------+-----------+--------------------+
+|  <<XML Beans>>     | jsr173_api.jar | apache license 2.0 |
+*---------------+-----------+--------------------+
+|  <<PostGIS>>   | postgis_1.1.6.jar | GNU General Public License | 
+*---------------+-----------+--------------------+
+|  <<PostGIS>>   | postgresql-8.1-405.jdbc3.jar | BSD license | 
+*---------------+-----------+--------------------+
+|  <<Java Topology Suite>>   | jts-1.8.jar | LGPL |
+*---------------+-----------+--------------------+
+
+[]

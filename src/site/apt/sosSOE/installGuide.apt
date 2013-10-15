@@ -1,0 +1,92 @@
+﻿Installation Instructions for the ArcGIS Server SOS Extension
+~~~~~~~~~~~~~~~~~~
+
+  This page presents an installation guide for the ArcGIS Server SOS Extension from 52North. 
+
+  As an SOE for ArcGIS Server, the service needs to be installed via the ArcGIS Server Manager as an extension to a registered Map Service. To have a well-defined underlying database schema, the Map Service needs to be setup on a specific database model as described in this {{{http://ags.dev.52north.org:8080/ArcGIS_Server_SOS_Extension/dataModel.htm}document}}.
+
+  In the next sections, the necessary steps for installing the ArcGIS Server SOS Extension are described.
+
+  [[A]] Prerequisites
+
+	  You should have access to the following GIS software (it can be installed on your local machine):
+	  
+		* ArcMap 10.1
+
+	  Additionally, the following software should be installed on the machine where the SOE is supposed to run:
+	  
+		* ArcGIS Server 10.1
+
+		* ArcSDE 10.1
+
+		* Mircosoft SQL Server or SQL Server Express
+
+	  Further, you should have downloaded the latest version of the SOE from {{{./download.html}here}}.
+
+  [[B]] Building up on the Sample Database
+
+	  The SOS Extension relies on a particular data model for its underlying database. This structure of tables, their relations and attributes is described in this {{{http://ags.dev.52north.org:8080/ArcGIS_Server_SOS_Extension/dataModel.htm}document}}. A sample database following this structure can be downloaded {{{http://ags.dev.52north.org:8080/ArcGIS_Server_SOS_Extension/download/1.0/db.zip}here}}.
+
+	  [[1]] Please download the sample {{{http://ags.dev.52north.org:8080/ArcGIS_Server_SOS_Extension/download/1.0/db.zip}database}} and unzip.
+	  
+	  [[2]] Create a new blank map document in ArcMap
+	  
+	  [[3]] Connect to the downloaded FileGeodatabase "Observation.gdb"
+
+	  [[4]] Add a Database Server for SQL Express to your ArcMap via the Catalog
+
+	  [[5]] Right click on the new Database Server and click on "Permissions". Add the ArcGIS Server account "arcgis" so that it is registered user of the database server.
+
+	  [[6]] Right click on the new Database Server and select "New Geodatabase..."
+
+	  [[7]] Specify "ObservationsForSOS" as the name of the database (make sure you use exactly this name and respect capitalization).
+
+	  [[8]] Drag & drop each of the tables contained in the "Observation" FileGeodatabase on to the newly created SQL Express Geodatabase "ObservationsForSOS". Afterwards, all of the 10 tables should be contained in the Geodatabase "ObservationsForSOS". Note that the tables were renamed, e.g., from "ContactDescription" to "ObservationsForSOS.DBO.ContactDescription". Also, the table "ObservationsForSOS.DBO.Procedure_" has now an additional "_" character at the end.
+
+	  [[9]] Right click on the "ObservationsForSOS" database and select "Administration->Permissions...". There, make sure that the user "arcgis" has full access to the database.
+	  
+  Now, you have created a new database for the SOS Extension. Next, you can feed this database with your own data and import it to SQL Epress for better performance.
+
+  [[C]] Publish Database as Map Service
+
+	  Before we can deploy the SOS extension as an SOE for ArcGIS Server, you need to publish the database as a Map Service. Therefore, follow these steps:
+
+	  [[10]] Load each of the new tables from the "ObservationsForSOS" database on the map. This can be done by dragging each table onto the map display. Afterwards, 2 new layers and 8 new tables are part of the table of contents. The figure below shows the expected result in ArcMap.
+
+[../images/ArcGIS-SOS-Extension/ArcGIS_Desktop.png]
+	  
+	  [[11]] Save the map document as an .mxd file
+
+	  [[12]] look for this .mxd file in the Catalog
+
+	  [[13]] right click on the .mxd file and select “Share As Service...”
+
+	  [[14]] follow the dialog to publish your database as a Map Service
+
+  Once the Map Service is published on your ArcGIS Server, you can go to the ArcGIS Server manager (e.g., by following this link {{{http://localhost:6080/arcgis/manager/}http://localhost:6080/arcgis/manager}} in case you have local access)
+
+  [[D]] Add SOS Extension to Map Service
+  
+	  [[16]] in the manager (see figure below), go to “Site” -> “Extensions” -> “Add Extension” and upload the SOE file of the ArcGIS Server SOS extension
+
+[../images/ArcGIS-SOS-Extension/ArcGIS_Manager.png]
+
+	  [[17]] now, go back in the manager to the “Services” tab and click on the Map Service you have published earlier (step 15)
+
+	  [[18]] go to “Capabilities” of the Map Service and select the capability called “An_SOS_extension_for_ArcGIS_Server”
+
+	  [[19]] after clicking “Save & Restart”, you should have completed the installation procedure
+
+  Now you can go to <<[URL of your MapService]/exts/SOSExtension>>  to get the initial view on the SOE offerings from where you can access the resources and trigger the different queries.
+	  
+	  
+	  
+		~~~ [[]] Alternative: Setup of a new, empty File Geodatabase
+		~~~As an alternative to the usage of the sample geodatabase, an ArcMap toolbox has been implemented, which allows to create a new, empty data-base following the required data model. This ArcGIS toolbox can be downloaded here (unzip for further usage). It is especially useful in case you want to publish your own data with the SOS Extension.
+		~~~Follow these steps to initialize a new database with this toolbox:
+		~~~a. open ArcMap
+		~~~b. click on the ArcToolbox icon to open it
+		~~~c. right click on the ArcToolbox canvas and select “Add Toolbox...” from the menu.
+		~~~d. select the downloaded toolbox file “SOS-Toolbox.tbx”
+		~~~e. run the newly available toolbox by double clicking on “SOS-Toolbox” -> “CreateObservationDatabase”
+		~~~f. in the dialog (see figure below), specify (1.) the directory and (2.) the file name of the File GeoDatabase which will be created by clicking “OK”.

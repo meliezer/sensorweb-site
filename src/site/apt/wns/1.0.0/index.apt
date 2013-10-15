@@ -1,0 +1,30 @@
+ -----
+ Web Notification Service (WNS)
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-07-12
+ -----
+
+Web Notification Service (WNS)
+~~~~~~~~~~~~~~~~~~
+
+	The Web Notification Service provides asynchronous notification of sensor events (tasks, observation of phenomena). 
+
+	52\xB0North's WNS V2-00-00 has successfully completed 52\xB0North's quality assurance testing. Changes and additions to this version include:
+
+		* adaptation to the current OGC discussion paper (OGC 06-095) which comprises the current specifications
+		
+		* upgrade to Java 6.0
+		
+		* update MultiUser registration with a MulitUser
+	
+		This Java Servlet executes and manages message dialogues between a client and one or more Web Services for long asychronous processes. Acting as a protocol transducer, it translates the incoming XML encoded messages to email (SMTP), short message service (SMS), fax, phone, HTTP POST and XMPP. A SingleUser and/or MultiUser can register to receive either a notification message (one-way message) or a communication message (response to the message received is expected). 
+
+		The 52\xB0North WNS can be used by at least two other services. The 52\xB0North Sensor Planning Service (SPS) uses the WNS to communicate between the SPS and the sensor user. The 52\xB0North Sensor Alert Service (SAS) sends messages to the WNS when the messages should be received offline, i.e. on a device not connected to the internet.
+
+	The typical workflow for the WNS is shown in the following figure:
+	
+[../../images/wns_exemplary_workflow_500.png]
+
+[]

@@ -1,0 +1,31 @@
+ -----
+ Clients
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-07-19
+ -----
+
+Clients
+~~~~~~~~~~~~~~~~~~
+  
+  The 52\xB0North Sensor Web Community develops various client applications for the different SWE services.
+  Most of them are built on top of the generic {{{../oxf/index.html}OX-Framework}}. The Ox-Framework facilitates
+  the accessing and utilization of OGC web services. It provides adpater plugins for various OGC services.
+  
+  Please follow the links below to get information about our different client projects:
+  
+  * {{{./Rich_OX_Client/index.html}Rich OX Client}}
+  
+  * {{{./SensorWebClient/index.html}Sensor Web Client}}
+  
+  * {{{./ArcGIS_SOS_Extension/index.html}ArcGIS SOS Extension}}
+  
+  * {{{./uDig_SOS_Plugin/index.html}uDig Plugin}}
+  
+  * {{{./sos4R/index.html}sos4R}} - SOS for R
+  
+	
+  ~~* {{{./OX_WMS/index.html}OX Web Map Server (WMS)}}
+  
+  ~~* {{{./OX_RESTful_SOS/index.html}OX RESTful SOS}}

@@ -1,0 +1,65 @@
+ -----
+ Sensor Interface Descriptors (SIDs)
+ -----
+ Arne Broering
+ -----
+ 2010-05-14
+ -----
+
+Sensor Interface Descriptors
+~~~~~~~~~~~~~~~~~~
+
+  The Sensor Interface Descriptor (SID) XML schema is based on OGC's {{{http://www.ogcnetwork.net/sensorml}Sensor Model Language (SensorML)}} and can be used to describe the protocol of your sensor. The SID encoding is formally defined in {{{http://ifgi.uni-muenster.de/~arneb/10-134%20Sensor%20Interface%20Descriptors.pdf}this}} OGC specification. Your sensor's SID instance enables our SID interpreter to translate between the sensor's communication protocol and the SWE world. Once a sensor interface is described, the SID interpreter can work with it and is able to connect it with Sensor Web services (e.g., SOS or SPS). From then on, the sensor's functionality can be accessed in an interoperable way. The SID approach is particularly beneficial for sensor manufacturers who don't have to change their sensor's protocol or adapt their sensor interfaces to standardized approaches such as IEEE 1451. Instead, an additional interface description, the SID, enables the sensor integration with enterprise systems. Once a sensor interface is described by an SID, it can be used in multiple applications and systems by different user communities.
+  
+  The figure below illustrates the principal usage of an SID within a SWE deployment.
+  
+[../../images/SWE_deployment.png]
+
+  SensorML itself allows to describe the metadata of a sensor including its identification, classification, as well as characteristics such as the temporal availability or its position. An SID can be included in the SensorML description of a sensor. More precisely, the SID is encapsulated within the interface element of a SensorML document. While a SensorML instance is specific for one particular sensor instance, an SID is specific for a particular sensor type, since the interface/protocol is the same for all sensor instances of that particular type. Hence, SIDs can be shared with other users who are using sensors of the same type.
+
+  SIDs are the basis for minimizing the efforts for the integration of new sensors with the Sensor Web. To facilitate the creation of SIDs, we have developed a graphical tool, the SID Creator, which  supports users in creating SIDs for sensors. This tool lowers the entry threshold and eases the process of making sensors available on the Sensor Web. The following figure shows the SID Creator GUI allowing users to graphically create SIDs which describe a sensor's interface. The SID Creator is in detail described by this {{{http://arnebroering.de/_agile2011_submitted.pdf}article}}.
+  
+[../../images/SID_Creator_GUI.jpg]
+  
+  A combination of the SID concept with the {{{http://52north.org/sensorBus}Sensor Bus}} and an inclusion of a semantic mediation framework to realize true sensor plug & play is described in this {{{http://www.mdpi.com/1424-8220/11/8/7568/}work}}.
+  
+  The SID developments are carried out by members of the {{{http://swsl.uni-muenster.de}Sensor Web and Simluation Lab (SWSL)}} at the Institute for Geoinformatics (ifgi) and the 52\xB0North Sensor Web community in the project "Flexible and Efficient Integration of Sensors and Sensor Web Services" funded by the ERDF program for NRW (grant number N 114/2008) of the European Union.
+  
+  Please find here a {{{http://www.slideshare.net/arneb/sid-presentation-forsoscwithnotes}presentation}} about the SID concept or follow the links below to publications which describe the SID schema.
+  
+  For more information to Sensor Interface Descriptors and for access to the source code please contact Arne Broering (broering [at] 52north.org).
+  
+[]
+
+* Acknowledgements
+
+  This work is financially supported by the project <Flexible and Efficient Integration of Sensors and Sensor Web Services> funded by the European Regional Development Fund (ERDF) for NRW (contract number N 114/2008).
+
+[../../images/EFRE_logo.jpg]
+
+[]
+
+* Publications
+
+	<If you want to reference this work, please cite the following papers, thanks.>
+	
+	Broering, A., Maue, P., Janowicz, K., Nuest, D. & Malewski, C. (2011): {{{http://www.mdpi.com/1424-8220/11/8/7568/}Semantically-Enabled Sensor Plug & Play for the Sensor Web}}. Sensors, 11(8), pp. 7568-7605.
+	
+	Broering, A., F. Bache, T. Bartoschek & C.P.J.M. van Elzakker (2011): {{{http://arnebroering.de/_agile2011_submitted.pdf}The SID Creator: A Visual Approach for Integrating Sensors with the Sensor Web}}. The 14th AGILE International Conference on Geographic Information Science. 18.-21. April 2011. Utrecht, Netherlands.
+
+	Broering, A., S. Below & T. Foerster (2010): {{{http://ifgi.uni-muenster.de/~arneb/Broering%202010%20-%20Sensor%20Interface%20Descriptors.pdf}Declarative Sensor Interface Descriptors for the Sensor Web}}. WebMGS 2010: 1st International Workshop on Pervasive Web Mapping, Geoprocessing and Services. 26.-27. August 2010. Como, Italy.
+	
+	Broering, A. & S. Below (2010): {{{http://portal.opengeospatial.org/files/?artifact_id=39664}Sensor Interface Descriptors}}. OGC Discussion Paper. Open Geospatial Consortium. OGC 10-134.
+
+	
+* Code Manager
+	
+	In charge of the quality management and in control of the source code is:
+	
+   * <<Stefan Below>>
+   
+* Contributing Developers
+   
+   * Felix Bache
+   
+   * Arne Broering

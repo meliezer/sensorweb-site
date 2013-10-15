@@ -1,0 +1,26 @@
+ -----
+ Thin SWE Client
+ -----
+ Henning Bredel
+ -----
+ 2012-04-04
+ -----
+
+Thin SWE Client
+~~~~~~~~~~~~~~~~~~
+
+* Attention
+
+[../../../images/warning.png]
+
+	This version of the client is not under development any more and will not be updated in the future. Please take a look at {{{../index.html}later versions}}.
+
+* Description
+
+	This is the first version of the client. It provides basic interaction with a SOS and its timeseries.
+
+[../../../images/TSC_1.0_screen.png]
+
+
+  Get more detailed information from the {{{https://wiki.52north.org/bin/view/Sensornet/ThinSweClient1}related 52\xB0North Twiki site}}.
+

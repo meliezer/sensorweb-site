@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>52-North</artifactId>
+		<groupId>org.n52</groupId>
+		<version>5.6.7</version>
+	</parent>
+
+	<groupId>org.n52.swe</groupId>
+	<artifactId>52n-swe-site</artifactId>
+	<packaging>pom</packaging>
+	<version>2.0-SNAPSHOT</version> <!-- 2.0 -->
+	<name>52°North Sensor Web Community Website</name>
+
+	<properties>
+		<communityName>SensorWeb</communityName>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<issueManagement>
+		<system>Bugzilla</system>
+		<url>https://incubator.52north.org/cgi-bin/bugzilla/index.cgi</url>
+	</issueManagement>
+
+	<scm>
+		<!-- Specification of the Source-Content-Managementsystem -->
+		<connection>scm:svn:https://svn.52north.org/svn/swe/main</connection>
+		<developerConnection>
+     		 scm:svn:https://52north.org/svn/swe/main
+    	</developerConnection>
+		<url>https://svn.52north.org/svn/swe/main</url>
+	</scm>
+
+	<mailingLists>
+		<mailingList>
+			<name>Swe</name>
+			<archive>http://52north.org/pipermail/swe/</archive>
+			<post>swe@52north.org</post>
+			<subscribe>
+        mailto:swe-request@52north.org?subject=subscribe
+      </subscribe>
+			<unsubscribe>
+        mailto:swe-request@52north.org?subject=unsubscribe
+      </unsubscribe>
+		</mailingList>
+	</mailingLists>
+
+	<developers>
+		<developer>
+			<id>arneb</id>
+			<name>Arne Bröring</name>
+			<email>a.broering@52north.org</email>
+			<timezone>+2</timezone>
+			<organization>IfGI</organization>
+			<organizationUrl>http://www.ifgi.de</organizationUrl>
+			<roles>
+				<role>Member of Sensor Web Community</role>
+				<role>Software Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<build>
+		
+		<plugins>
+			<plugin>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.0-rc1</version>
+				<configuration>
+					<connectionType>connection</connectionType>
+					<runChangeLog>true</runChangeLog>
+					<goalsDirectory>./..</goalsDirectory>
+					<!--checkoutDirectory>${basedir}/src</checkoutDirectory -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<outputEncoding>UTF-8</outputEncoding>
+					<generateReports>true</generateReports>
+					<generateSitemap>true</generateSitemap>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<site>
+			<id>n52-sites-dist</id>
+			<name>repository for 52North project sites</name>
+			<url>dav:https://52north.org/maven/project-sites/swe</url>
+		</site>
+	</distributionManagement>
+
+	<url>http://52north.org/communities/sensorweb</url>
+
+	<repositories>
+		  <repository>
+			 <id>n52-releases</id>
+			 <name>52n Releases</name>
+			 <url>http://52north.org/maven/repo/releases/</url>
+			 <releases>
+				<enabled>true</enabled>
+			 </releases>
+			 <snapshots>
+				<enabled>false</enabled>
+			 </snapshots>
+		  </repository>
+	</repositories>
+	
+</project>

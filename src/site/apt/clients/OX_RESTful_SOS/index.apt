@@ -1,0 +1,58 @@
+ -----
+ OX Services
+ -----
+ Arne Broering
+ -----
+ 2010-07-14
+ -----
+
+OX RESTful SOS
+~~~~~~~~~~~~~~~~~~
+  
+  Besides client applications which provide a classic user interface, the OX-Framework can also be used to build
+  server applications which encapsulate, chain or orchestrate other OGC services. Thereby, the access to other
+  OGC services is facilitated by the OX-Framework. The RESTful SOS is such a server application which is build
+  on top of the OX-Framework. It encapsulates SOS instances and works as a proxy to an SOS for providing a RESTful interface to the data.
+	
+  The design principle of this application is shown in the figure below. The RESTful SOS acts as a proxy to the actual
+  SOS and transforms retrieved URL calls to SOS queries of the GetObservation operation. The proxy is also able to transform
+  the observations encoded in the Observations ans Measurements (O&M) format to other data encodings, such as RDF, KML, or a diagram representation.
+
+[../../images/RESTful_SOS_current_design.png]
+
+  ~~~~ Please try out the live demo of this application by following the example links below.
+	
+	~~~~* To retrieve a 'feature of interest' follow this link: {{{http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/fois/HR0002A}http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/fois/HR0002A}}
+
+	~~~~* To retrieve a 'sensor' follow this link: {{{http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/sensors/HR:0002A}http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/sensors/HR:0002A}}
+
+	~~~~* To retrieve the representation of a single 'observation' follow this link: {{{http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/observations/ids/o_6160}http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/observations/ids/o_6160}}
+	
+	~~~~* To retrieve collections of 'observations' the URL segments can be used to filter e.g. on observed properties and time. For a sample of observations encoded in RDF follow this link:
+	
+	~~~~{{{http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/observations/offering/AMMONIA_%28AIR%29/observedProperties/Concentration%5BNH3%5D/samplingTimes/2008-12-30T20:15:00%2B01,2009-01-01T06:46:00%2B01/outputFormat/RDF}http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/observations/offering/AMMONIA_(AIR)/observedProperties/Concentration[NH3]/samplingTimes/2008-12-30T20:15:00+01,2009-01-01T06:46:00+01/outputFormat/RDF}}
+
+	~~~~This observation collection can also be encoded in {{{http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/observations/offering/AMMONIA_%28AIR%29/observedProperties/Concentration%5BNH3%5D/samplingTimes/2008-12-30T20:15:00%2B01,2009-01-01T06:46:00%2B01/outputFormat/OM}O&amp;M}} or {{{http://v-swe.uni-muenster.de:8080/52nRESTfulSOS/RESTful/sos/AirBase_SOS/observations/offering/AMMONIA_%28AIR%29/observedProperties/Concentration%5BNH3%5D/samplingTimes/2008-12-30T20:15:00%2B01,2009-01-01T06:46:00%2B01/outputFormat/KML}KML}}.
+
+[]
+
+* Publications
+
+  <If you want to reference this work, please cite the following papers, thanks.>
+
+  K. Janowicz, A. Broering, C. Stasch, S. Schade, T. Everding & A. Llaves (2011): {{{http://www.tandfonline.com/doi/abs/10.1080/17538947.2011.614698}A RESTful Proxy and Data Model for Linked Sensor Data}}. International Journal for Digital Earth.
+  
+  A. Broering, K. Janowicz, C. Stasch, S. Schade, T. Everding, & A. Llaves (2011): {{{http://iswc2011.semanticweb.org/fileadmin/iswc/Papers/Workshops/SSN/ssn14.pdf}Demonstration - A RESTful SOS Proxy for Linked Sensor Data}}. In: K. Taylor, A. Ayyagari & D. de Roure (Eds.), 4th International Workshop on Semantic Sensor Networks 2011 (SSN 2011), Workshop of the 10th International Semantic Web Conference (ISWC 2011). 23.10.2011. Bonn, Germany. 
+  
+  K. Janowicz, A. Broering, C. Stasch & T. Everding (2010): {{{http://arnebroering.de/de2010_final_submission.pdf}Towards Meaningful URIs for Linked Sensor Data}}. In: Towards Digital Earth Workshop at Future Internet Symposium 2010 (CEUR Proceedings 640). 20th September 2010. Berlin, Germany. [{{{http://www.slideshare.net/arneb/meaningful-ur-isforlinkedsensordataforpublic}slides}}]
+  
+* Code Repository
+	
+	The source code of the OX RESTful SOS can be found {{{https://svn.52north.org/svn/swe/incubation/OXRestWS/trunk/OX-RestWS/}here}}.
+	
+* Code Manager
+	
+	In charge of the quality management and source code control of the OX Server Applications is:
+	
+   * {{{http://arnebroering.de}<<Arne Broering>>}}
+	

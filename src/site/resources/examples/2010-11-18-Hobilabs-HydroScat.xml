@@ -1,0 +1,327 @@
+<sml:System xmlns:sml="http://www.opengis.net/sensorML/1.0.1" xmlns:gml="http://www.opengis.net/gml" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sid="http://www.orangenkiste.de/SID/0.5.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="HydroScat">
+  
+  <sml:identification>
+    <sml:IdentifierList>
+      <sml:identifier name="uniqueID">
+        <sml:Term definition="urn:ogc:def:identifier:OGC:uniqueID">
+          <sml:value>urn:ogc:object:feature:999999</sml:value>
+        </sml:Term>
+      </sml:identifier>
+      <sml:identifier name="longName">
+        <sml:Term definition="urn:ogc:def:identifier:OGC:1.0:longName">
+          <sml:value>Fluorometer and optical backscatter sensors</sml:value>
+        </sml:Term>
+      </sml:identifier>
+    </sml:IdentifierList>
+  </sml:identification>
+  
+  <sml:capabilities>
+    <swe:SimpleDataRecord definition="urn:ogc:def:property:OGC::status">
+      <swe:field name="status">
+        <swe:Boolean>
+          <swe:value>true</swe:value>
+        </swe:Boolean>
+      </swe:field>
+      <swe:field name="mobile">
+        <swe:Boolean>
+          <swe:value>true</swe:value>
+        </swe:Boolean>
+      </swe:field>
+      <swe:field name="measuringInterval">
+        <swe:Quantity definition="urn:ogc:def:property:OGC:1.0:measuringInterval">
+          <swe:uom code="ms"/>
+          <swe:value>0.0</swe:value>
+        </swe:Quantity>
+      </swe:field>
+    </swe:SimpleDataRecord>
+  </sml:capabilities>
+  
+  <sml:contact>
+    <sml:ResponsibleParty gml:id="IfGI">
+      <sml:individualName>Arne Broering</sml:individualName>
+      <sml:organizationName>52 North</sml:organizationName>
+      <sml:contactInfo>
+        <sml:address>
+          <sml:deliveryPoint>Martin-Luther-King-Weg 24</sml:deliveryPoint>
+          <sml:city>Muenster</sml:city>
+          <sml:postalCode>48153</sml:postalCode>
+          <sml:country>Germany</sml:country>
+          <sml:electronicMailAddress>info@52north.org</sml:electronicMailAddress>
+        </sml:address>
+      </sml:contactInfo>
+    </sml:ResponsibleParty>
+  </sml:contact>
+  
+  <sml:position>
+    <swe:Position definition="urn:ogc:def:property:OGC:1.0:stationPosition" referenceFrame="urn:ogc:def:crs:EPSG:4326">
+      <swe:location>
+        <swe:Vector>
+          <swe:coordinate name="latitude">
+            <swe:Quantity axisID="y">
+              <swe:uom code="deg"/>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>-180 180</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+              <swe:value>36.0</swe:value>
+            </swe:Quantity>
+          </swe:coordinate>
+          <swe:coordinate name="longitude">
+            <swe:Quantity axisID="x">
+              <swe:uom code="deg"/>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>-180 180</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+              <swe:value>-121.0</swe:value>
+            </swe:Quantity>
+          </swe:coordinate>
+        </swe:Vector>
+      </swe:location>
+    </swe:Position>
+  </sml:position>
+  
+  <sml:interfaces>
+    <sml:InterfaceList>
+      <sml:interface name="connector1" xlink:role="urn:ogc:def:connection:OGC:serial">
+        <sml:InterfaceDefinition>
+          <sml:applicationLayer>
+            <sid:CommandDefinition>
+              <sid:commands>
+                <sid:CommandList>
+                  <sid:command name="getDataCommand" auto="true" interval="5">
+                    <sid:Command>
+                      <swe:DataRecord gml:id="getDataCommand">
+                        <swe:field name="command" xlink:role="urn:ogc:def:command:OGC:name">
+                          <swe:Text>
+                            <swe:value>C</swe:value>
+                          </swe:Text>
+                        </swe:field>
+                      </swe:DataRecord>
+                    </sid:Command>
+                    <sid:ResponseList/>
+                  </sid:command>
+                </sid:CommandList>
+              </sid:commands>
+            </sid:CommandDefinition>
+          </sml:applicationLayer>
+          <sml:presentationLayer>
+            <sid:DataInputStream>
+              <dataInputComponents>
+                <ComponentList>
+                  <component name="getDataCommand" xlink:href="#getDataCommand"/>
+                </ComponentList>
+              </dataInputComponents>
+            </sid:DataInputStream>
+            <sid:DataOutputStream>
+              <dataOutputComponents>
+                <ComponentList>
+                  <component name="getDataAck">
+                    <swe:DataRecord gml:id="">
+                      <swe:field name="ack"/>
+                    </swe:DataRecord>
+                  </component>
+                  <component name="getDataNack">
+                    <swe:DataRecord gml:id="">
+                      <swe:field name="nack">
+                        <swe:Text xsi:nil="true"/>
+                      </swe:field>
+                    </swe:DataRecord>
+                  </component>
+                  <component name="HydroScat">
+                    <swe:DataRecord>
+                      <swe:field name="MBARI">
+                        <swe:Quantity gml:id="MBARI" definition="urn:ogc:def:phenomenon:OGC:1.0.30:backscatter_470">
+                          <gml:metaDataProperty>
+                            <offering>
+                              <id>MBARI</id>
+                              <name>MBARI</name>
+                            </offering>
+                          </gml:metaDataProperty>
+                          <gml:description/>
+                          <swe:uom code="bsu"/>
+                        </swe:Quantity>
+                      </swe:field>
+                    </swe:DataRecord>
+                  </component>
+                </ComponentList>
+              </dataOutputComponents>
+            </sid:DataOutputStream>
+          </sml:presentationLayer>
+          
+          <sml:physicalLayer>
+            <sid:DataInputStream>
+              <dataInputComponents>
+                <ComponentList>
+                  <component name="getDataCommand" xlink:href="#getDataCommand"/>
+                </ComponentList>
+              </dataInputComponents>
+            </sid:DataInputStream>
+            <sid:DataOutputStream>
+              <dataOutputComponents>
+                <ComponentList>
+                  <component name="getDataAck">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="ack"/>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="getDataNack">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="nack"/>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="CBlock">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="Samples"/>
+
+                          <swe:field name="Sig1"/>
+                          <swe:field name="SigOff1"/>
+                          <swe:field name="Ref1"/>
+                          <swe:field name="RefOff1"/>
+
+                          <swe:field name="Sig2"/>
+                          <swe:field name="SigOff2"/>
+                          <swe:field name="Ref2"/>
+                          <swe:field name="RefOff2"/>
+
+                          <swe:field name="Sig3"/>
+                          <swe:field name="SigOff3"/>
+                          <swe:field name="Ref3"/>
+                          <swe:field name="RefOff3"/>
+
+                          <swe:field name="Sig4"/>
+                          <swe:field name="SigOff4"/>
+                          <swe:field name="Ref4"/>
+                          <swe:field name="RefOff4"/>
+
+                          <swe:field name="Sig5"/>
+                          <swe:field name="SigOff5"/>
+                          <swe:field name="Ref5"/>
+                          <swe:field name="RefOff5"/>
+
+                          <swe:field name="Sig6"/>
+                          <swe:field name="SigOff6"/>
+                          <swe:field name="Ref6"/>
+                          <swe:field name="RefOff6"/>
+
+                          <swe:field name="Sig7"/>
+                          <swe:field name="SigOff7"/>
+                          <swe:field name="Ref7"/>
+                          <swe:field name="RefOff7"/>
+
+                          <swe:field name="Sig8"/>
+                          <swe:field name="SigOff8"/>
+                          <swe:field name="Ref8"/>
+                          <swe:field name="RefOff8"/>
+
+                          <swe:field name="Back1"/>
+                          <swe:field name="Back2"/>
+                          <swe:field name="Back3"/>
+                          <swe:field name="Back4"/>
+                          <swe:field name="Back5"/>
+                          <swe:field name="Back6"/>
+                          <swe:field name="Back7"/>
+                          <swe:field name="Back8"/>
+
+                          <swe:field name="Gain1"/>
+                          <swe:field name="Gain2"/>
+                          <swe:field name="Gain3"/>
+                          <swe:field name="Gain4"/>
+                          <swe:field name="Gain5"/>
+                          <swe:field name="Gain6"/>
+                          <swe:field name="Gain7"/>
+                          <swe:field name="Gain8"/>
+
+                          <swe:field name="Temperature"/>
+                          <swe:field name="Pressure"/>
+                          <swe:field name="VsupA"/>
+                          <swe:field name="VsupB"/>
+                          <swe:field name="Aux"/>
+
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator="," blockSeparator="&#x000D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                </ComponentList>
+              </dataOutputComponents>
+            </sid:DataOutputStream>
+          </sml:physicalLayer>
+          <sml:connections>
+            <sml:ConnectionList>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="applicationLayer/commands/getDataCommand/getDataCommand"/>
+                  <sml:destination ref="presentationLayer/dataInputComponents/getDataCommand"/>
+                </sml:Link>
+              </sml:connection>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="presentationLayer/dataInputComponents/getDataCommand"/>
+                  <sml:destination ref="physicalLayer/dataInputComponents/getDataCommand"/>
+                </sml:Link>
+              </sml:connection>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="physicalLayer/dataOutputComponents/CBlock/data/Pressure"/>
+                  <sml:destination ref="presentationLayer/dataOutputComponents/HydroScat/MBARI"/>
+                </sml:Link>
+              </sml:connection>
+            </sml:ConnectionList>
+          </sml:connections>
+        </sml:InterfaceDefinition>
+      </sml:interface>
+    </sml:InterfaceList>
+  </sml:interfaces>
+  <sml:inputs>
+    <sml:InputList>
+      <sml:input name="backscatter_470">
+        <swe:ObservableProperty definition="urn:ogc:def:property:OGC::backscatter_470"/>
+      </sml:input>
+    </sml:InputList>
+  </sml:inputs>
+  <sml:outputs>
+    <sml:OutputList>
+      <sml:output name="MBARI">
+        <swe:Quantity definition="urn:ogc:def:phenomenon:OGC:1.0.30:backscatter_470">
+          <gml:metaDataProperty>
+            <offering>
+              <id>MBARI</id>
+              <name>MBARI</name>
+            </offering>
+          </gml:metaDataProperty>
+          <gml:description/>
+          <swe:uom code="bsu"/>
+        </swe:Quantity>
+      </sml:output>
+    </sml:OutputList>
+  </sml:outputs>
+  <sml:components>
+    <sml:ComponentList>
+      <sml:component name="HydroScat_Parameters" xlink:role="urn:ogc:def:sensor:OGC:detector">
+        <sml:Component gml:id="detector:HydroScat">
+          <sml:inputs/>
+          <sml:outputs/>
+          <sml:parameters/>
+          <sml:method/>
+        </sml:Component>
+      </sml:component>
+    </sml:ComponentList>
+  </sml:components>
+  <sml:connections>
+    <sml:ConnectionList>
+      <sml:connection>
+        <sml:Link type="urn:ogc:def:link:OGC:sid">
+          <sml:source ref="this/interfaces/connector1/presentationLayer/dataOutputComponents/HydroScat/MBARI"/>
+          <sml:destination ref="this/outputs/MBARI"/>
+        </sml:Link>
+      </sml:connection>
+    </sml:ConnectionList>
+  </sml:connections>
+</sml:System>

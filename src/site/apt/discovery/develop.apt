@@ -1,0 +1,26 @@
+ -----
+ Develop 52\xB0North Sensor Discovery Components
+ -----
+Daniel Nüst
+ -----
+ 2010-11-12
+ -----
+
+52\xB0North Sensor Discovery Components - Developer Instructions
+~~~~~~~~~~~~~~~~~~
+
+* Source Repositories
+
+  The implementations of SIR and SOR can be downloaded from the 52\xB0North SVN. They are in the SWE communities' incubation section:
+
+  [SIR] {{https://svn.52north.org/svn/swe/incubation/SIR/}} (recommended to check out trunk version)
+  
+  [SOR] {{https://svn.52north.org/svn/swe/incubation/SOR/}}
+
+* Developer Documentation
+
+  Extensive documentation for development based on the existing source code is in the 52\xB0North Wiki:
+  
+    [SIR] {{https://wiki.52north.org/bin/view/Sensornet/SensorInstanceRegistry}}
+  
+    [SOR] {{https://wiki.52north.org/bin/view/Sensornet/SensorObservableRegistry}}

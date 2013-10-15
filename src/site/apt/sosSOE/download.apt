@@ -1,0 +1,33 @@
+ -----
+ Sensor Observation Service (SOS) Extension for ArcGIS Server
+ -----
+ Arne Broering
+ -----
+ 2011-11-17
+ -----
+
+Download
+~~~~~~~~~~~~~~~~~~
+
+*---------------+-----------------+----------+----------+
+| <<Name>>      | <<Description>> | <<Date>> | <<Link>> | 
+*---------------+-----------------+----------+----------+
+| 52nArcGisSos SOE 1.0 | The 52North SOS Server Object Extension for ArcGIS Server, as an .soe file ready to be installed. | 2012-07-11 | download {{{../downloads/52nArcGisSos-2012-12-19.soe}SOE}} and {{{../downloads/Test-ObservationDB-2012-12-19.rar}Test DB}} |
+*---------------+-----------------+----------+----------+
+
+
+
+~~ Release Notes
+
+~~  These release notes summarize the main changes of the <<52\xB0North SOS SOE for ArcGIS Server>>.
+
+~~* 1.0
+
+~~  <<Supported Features>>
+
+~~  * 
+  
+~~  <<Limitations>>
+
+~~  * This version of the ArcGIS Server SOS Extension does not expose editing capabilities. It provides read-only access to observations, procedures, and features.
+	

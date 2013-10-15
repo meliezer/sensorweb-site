@@ -1,0 +1,82 @@
+ -----
+ Demos - 52\xB0North Sensor Web Community
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-06-16
+ -----
+
+Demos
+~~~~~~~~~~~~~~~~~~
+
+* Servers
+
+  The community's demo server provides services and clients in different versions and with several datasets for live testing. <<Visit {{http://sensorweb.demo.52north.org/}}>>.
+
+* Videos
+
+  Below you find a list of videos demonstrating various software components we've developed in our research projects.
+
+  
+  * <<ArcGIS Server SOS Extension ({{{http://www.youtube.com/watch?v=xcgsQGv9ggg&feature=plcp}Video}})>>
+  
+  This video presents the key features and explains some background of our {{{http://52north.org/communities/sensorweb/sosSOE/index.html}ArcGIS Server SOS Extension}}. This extension enables the ArcGIS Server to become compliant to the OGC Sensor Observation Service.
+  
+  
+  * <<Integration of Sensor Data in NASA Worldwind ({{{http://www.youtube.com/watch?v=hkBb5r-e1XI}Video on Youtube}})>>
+
+  This application makes the data coming form a Sensor Observation Service available and viewable in the NASA Worldwind virtual globe.
+	
+	
+  * <<SOS Web Form ({{{http://youtu.be/udPgAxhYFhA}Video}})>>
+		
+  This demo video shows our easy to use web form which enables you to execute the different operations of the Sensor Observation Service (SOS). Besides the retrieval of data it allows as well the insertion of observation - not only numerical but also textual.
+	
+	
+  * <<Live Sensor Data Visualisation>>
+  
+  This video presents the {{{http://ifgi.uni-muenster.de/~d_nues01/sensorvis/}SensorVis}} plug-in for the {{{./incubation/ifgicopter/spf/index.html}Sensor Platform Framework}} (SPF), a real-time visualisation and interpolation environment for mobile sensors. We demonstrate data collection using the {{{./incubation/ifgicopter/index.html}ifgicopter UAV}}, 3D visualisation based on {{{http://worldwind.arc.nasa.gov/java/}NASA World Wind for Java}} and interpolation using the {{{http://www.intamap.org/}INTAMAP}} service. The video is available in {{{http://ifgi.uni-muenster.de/~d_nues01/sensorvis/SensorVis_720p.mp4}720p (medium quality)}} and {{{http://ifgi.uni-muenster.de/~d_nues01/sensorvis/SensorVis_1080p.mp4}1080p (high quality)}} resolutions.
+
+  
+  * <<Hostage-Taking Scenario>>
+
+  This use case was developed within the OWS-6 project. It shows an emergency scenario where terrorists take hostages in a camera surveilled building. A Sensor Planning Service is used for controlling the cameras to film the intruders and a Sensor Observation Service is utilized to retrieve the video feed. Please view the {{{https://www.youtube.com/watch?v=4spsqkikClY}introduction}} video and afterwards the {{{https://www.youtube.com/watch?v=J2ZV0ZLLSDQ}application}} of the web services.
+
+	
+  
+  
+  ~~~~~~~~~~~~~~~~~~~~~ old stuff:
+  
+  ~~~* <<Mobile Sensor Platform ({{{http://ifgiweb.uni-muenster.de/~arneb/videos/roboter_video/MSP2_demo.mov}Video}})>>
+
+  ~~~This application demonstrates the usage of OGC's Sensor Planning Service (SPS) specification to control sensor systems. In this case our mobile sensor platform, a little track vehicle with several sensors attached to it, is controlled and tasked via the SPS interface.
+
+  ~~~* <<Remote Camera Control ({{{http://ifgiweb.uni-muenster.de/~arneb/videos/SPS/Demonstrator%201%20-%2004%20SPS.htm}Video}})>>
+		
+  ~~~This is another application which makes use of the Sensor Planning Service to control a camera system. The standardized SPS interface allows to communicate and task the associated cameras in an interoperable way.
+
+  ~~~* <<Facebook Application for your Home Weather Station ({{{http://ifgiweb.uni-muenster.de/~e_juer01/all-together.htm}Video}})>>
+		
+  ~~~This facebook application allows you to upload data gathered by your home weather station and to share it with other users. In the back of this application we are using an SOS which hosts the uploaded data.
+		  
+  ~~~* <<Home Weather Station ({{{http://ifgiweb.uni-muenster.de/~arneb/videos/home_weather_station_video/all_in_one_public.htm}Video}})>>
+		  
+  ~~~This software can be used to distribute data gathered by private Home Weather Stations via Sensor Web services.
+		    
+  ~~~* <<Browser-based Sensor Web Clients ({{{http://ifgiweb.uni-muenster.de/~arneb/videos/swe_client_video/swe_client_public.htm}Video}})>>
+		  
+  ~~~Here you find a demo video which shows our easy to use thin clients. They can be used to display sensors in a map to explore their geospatial context. Further on, the measured data can be visualized as time series charts.
+		    	  
+  ~~~* <<ArcGIS Sensor Data Integration ({{{http://ifgiweb.uni-muenster.de/~arneb/videos/arcgis_sos_adapter_video/ArcGIS-SOS.htm}Video}})>>
+		
+  ~~~We've develpoed a small plugin component for the widely used ArcGIS platform which enables the user to access sensor data coming from a Sensor Observation Service.
+		
+  ~~~* <<Rich OX-Client ({{{http://ifgiweb.uni-muenster.de/~arneb/videos/oxf_video/}Videos}})>>
+		
+  ~~~View this demo to get a step by step introduction of using a Sensor Observation Service to access sensor data.
+			
+  ~~~* <<Sensor Discovery>>
+		
+  ~~~These videos show the usage of our sensor discovery platform - a web service called Sensor Instance Registry (SIR). Firstly, the metadata of an existing Sensor Web service is harvested and uploaded ({{{http://ifgiweb.uni-muenster.de/~arneb/videos/SIR_Harvesting/Demonstrator%201%20-%2002a%20SIR%20Harvesting.htm}Video}}) to the SIR. Subsequently, the SIR is used to search and discover ({{{http://ifgiweb.uni-muenster.de/~arneb/videos/SIR_Searching/Demonstrator%201%20-%2002b%20SIR%20Searching.htm}Video}}) sensor assets.
+
+[]

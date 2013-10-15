@@ -1,0 +1,34 @@
+ -----
+ ArcGIS SOS Extension
+ -----
+ Arne Broering
+ -----
+ 2009-11-22
+ -----
+
+ArcGIS SOS Extension
+~~~~~~~~~~~~~~~~~~
+ 
+    This extension allows coupling OGC Sensor Observation Service instances to ArcGIS.
+	This makes it possible to load real-time as well as historic time-series data.
+	Once the data has been downloaded, users are able to apply the full range of ArcGIS
+	processing and visualization capabilities.
+
+[../../images/ArcGIS-Plugin/screenshot.png]
+
+	The ArcGIS SOS plug-in is the result of a joint project conducted by ESRI and 52\xB0North. This project started within the Climate Challenge Integration Plugfest (CCIP) at the FOSS4G 2009 conference which took place in October 2009.
+
+	At the moment the ArcGIS SOS plug-in is in its beta testing phase. As soon as a stable release is available we will put further download instructions on this web site.
+
+	Please note: The SOS Extension requires the presence of the Arc Hydro tool set within your ArcGIS installation.
+
+* Demos
+	
+	A demo video of the ArcGIS SOS extension can be found 
+	{{{http://ifgiweb.uni-muenster.de/~h_bred01/SwSl/CCIP/data-load.avi}here}}.
+
+* Code Manager
+	
+	In charge of the quality management and source code control of the ArcGIS SOS Extension is:
+	
+   * <<Henning Bredel>>

@@ -1,0 +1,26 @@
+ -----
+ Sensor Observation Service
+ -----
+ Carsten Hollmann
+ -----
+ 2013-07-26
+ -----
+
+Installtion instructions
+~~~~~~~~~~~~~~~~~~
+
+  Here you can find the installation instructions for the 52°North SOS services.
+  
+* SOS version 4.0.0
+
+  * {{{https://wiki.52north.org/bin/view/SensorWeb/SensorObservationServiceIVDocumentation#Installation}TWiki version}}
+
+* SOS version 3.5.x
+
+  * {{{https://wiki.52north.org/bin/view/SensorWeb/SosTutorial}TWiki version}}
+
+  * {{{https://svn.52north.org/svn/swe/main/SOS/Service/trunk/SOS/52n-sos/doc/howto/how2install_SOS.pdf}PDF version}}
+
+* SOS version 3.2.1
+
+  * {{{https://svn.52north.org/svn/swe/main/SOS/Service/tags/rel_v3_2_1_2012_05_09/doc/howto/how2install_SOS.pdf}PDF version}} is also part of the release package

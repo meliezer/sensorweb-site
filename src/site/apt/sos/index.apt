@@ -1,0 +1,326 @@
+ -----
+ Sensor Observation Service
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-06-16
+ -----
+
+Sensor Observation Service
+~~~~~~~~~~~~~~~~~~
+
+* 
+
+  The OGC {{{http://www.ogcnetwork.net/SOS} Sensor Observation Service}} 
+  aggregates readings from live, in-situ and remote sensors. The service provides an interface to make sensors and 
+  sensor data archives accessible via an interoperable web based interface. 
+
+** OGC SOS 2.0
+
+   The SOS 2.0 specification was adopted in 2012 and four extension are defined within the specification: Core, Enhanced, Transactional, and Result Handling.
+  
+*** Core Extension
+  
+   * <<GetCapabilities>>, for requesting a self-description of the service.
+   
+   * <<GetObservation>>, for requesting the pure sensor data encoded in {{{http://www.ogcnetwork.net/OM}Observations & Measurements 2.0 (O&M)}}
+   
+   * <<DescribeSensor>> for requesting information about a certain sensor, encoded in a {{{http://www.ogcnetwork.net/SensorML}Sensor Model Language 1.0.1 (SensorML)}} instance document.
+
+*** Enhanced Extension
+
+   * <<GetFeatureOfInterest>>, for requesting the {{{http://www.ogcnetwork.net/GML}GML 3.2.1}} encoded representation of the feature that is the target of the observation.
+   
+   * <<GetObservaitonById>>, for requesting the pure sensor data for a specific observation identifier
+
+*** Transactional Extension
+
+   * <<InsertSensor>>, for publishing new sensors.
+   
+   * <<UpdateSensorDescription>>, for updating the description of a sensor
+   
+   * <<DeleteSensor>>, for deleting a sensor
+   
+   * <<InsertObservation>>, for publishing observations for registered sensors.
+
+*** Result Handling Extension
+
+   * <<InsertResultTemplate>>, for inserting a result template into a SOS server that describes the structure of the values of a InsertResult of GetResult request.
+   
+   * <<InsertResult>>, for uploading raw values accordingly to the structure and encoding defined in the InsertResultTemplate request
+   
+   * <<GetResultTemplate>>, for getting the result structure and encoding for specific parameter constellations
+   
+   * <<GetResult>>, for getting the raw data for specific parameter constellations
+   
+   For more information about the SOS 2.0 specification, see the {{{http://www.ogcnetwork.net/SOS_2_0/tutorial}official OGC SOS 2.0 tutorial}}
+
+** OGC SOS 1.0.0
+
+  The SOS 1.0.0 specification was adopted in 2008 and four profiles are defined within the specification: core, transactional, enhanced, and entire.
+  
+*** Core Profile
+
+   * <<GetCapabilities>>, for requesting a self-description of the service.
+   
+   * <<GetObservation>>, for requesting the pure sensor data encoded in {{{http://www.ogcnetwork.net/OM}Observations & Measurements 1.0.0 (O&M)}}
+   
+   * <<DescribeSensor>>, for requesting information about the sensor itself, encoded in a {{{http://www.ogcnetwork.net/SensorML}Sensor Model Language 1.0.1 (SensorML)}} instance document.
+
+*** Transactional Profile
+
+   * <<RegisterSensor>>, for signing up new sensors.
+   
+   * <<InsertObservation>>, for inserting new observations for registered sensors.
+
+*** Enhanced Profile 
+	
+   * <<GetFeatureOfInterest>>, for requesting the {{{http://www.ogcnetwork.net/GML}GML 3.1.1}} encoded 
+   representation of the feature that is the target of the observation.
+   
+   * <<GetObservationById>>, for requesting the pure sensor data for a specific observation identifier
+   
+   * <<GetResult>>, for periodically polling of sensor data
+
+* 52\xB0North SOS implementations
+
+  The 52\xB0North SOS was used as reference for the SOS 1.0.0 compliance tests during the 
+  {{{http://www.opengeospatial.org/projects/initiatives/ows-5}OWS-5 testbed}}. After the SOS has been published 
+  as official OGC implementation specification in spring of 2008, this new implementation was implemented with the 52\xB0North SOS version 3.1.0.
+  
+  The latest implementation of the 52\xB0North SOS (version 4.0.0) was started in 2012 and was used as reference for the SOS 2.0 
+  compliance tests during the {{{http://www.opengeospatial.org/projects/initiatives/ows-9}OWS-9 testbed}}.
+  This version is recommended to all users who want to start new sensor web projects and deployments.
+
+** 52\xB0North SOS 4.0.0
+
+  The 52\xB0North SOS 4.0.0 is a complete reimplementation of 52\xB0North SOS to support the requirements of the SOS 2.0 specification.
+  
+  Here is a short list of the most important features:
+  
+   * <<SOS API>>
+    
+   * <<New database model>> to support the requirements of the SOS 2.0 specification
+    
+   * <<Persitence framework>> {{{http://www.hibernate.org/}Hibernate}} and {{{http://www.hibernatespatial.org/}Hibernate Spatial}} 
+   to easily change the underlying database management system and database model. Currently supported DBMS:
+     
+     * PostgreSQL/PostGIS
+     
+     * Oracle/Oracle Spatial
+    
+   * {{{http://docs.oracle.com/javase/7/docs/api/java/util/ServiceLoader.html}Java ServiceLoader}} concept for binding, 
+   de-/encoder and operations  (plug-and-play-mechanism to support new encodings)
+    
+   * <<Administration GUI>>: change the settings, de-/activate encodings and bindings 
+    
+   * <<Installer GUI>>: configure the database connection, create database model, configure the settings
+  
+  This SOS version implements all <<SOS 2.0>> extensions comprising the following operations:
+  
+   * GetCapabilities
+    
+   * GetObservation
+	
+   * DescribeSensor
+	
+   * GetFeatureOfInterest
+    
+   * GetObservationById
+    
+   * InsertSensor
+    
+   * UpdateSensorDescription
+    
+   * DeleteSensor
+    
+   * InsertObservation
+    
+   * InsertResultTemplate
+    
+   * InsertResult
+    
+   * GetResultTemplate
+    
+   * GetResult
+    
+  Furthermore, the following <<SOS 1.0.0>> operations are supported:
+  
+   * GetCapabilities
+    
+   * GetObservation
+	
+   * DescribeSensor
+	
+   * GetFeatureOfInterest
+   
+  Other features which are supported by 52\xB0North SOS 4.0.0
+  
+   * {{{http://www.opengeospatial.org/standards/waterml}WaterML 2.0}} encoding
+   
+   * {{{../sosREST/index.html}RESTFul binding extension}}
+   
+   * DeleteObservation operation, to delete observation by identifier (not part of the SOS 2.0 specification)
+   
+   
+  More information about the 52\xB0North SOS 4.0.0 implementation can be found in the 
+  {{{https://wiki.52north.org/bin/view/SensorWeb/SensorObservationServiceIVDocumentation}Wiki}}. 
+  There you can also find the {{{https://wiki.52north.org/bin/view/SensorWeb/SensorObservationServiceIVDocumentation#Installation} 
+  installation instructions}} and more detailed information about the supported features.
+   
+** 52\xB0North SOS 3.x development version
+
+  Since the 52\xB0North SOS was constantly improved and extended with new functionality. The 3.x development version implements the 
+  core profile comprising the mandatory operations:
+
+   * GetCapabilities
+	
+   * GetObservation
+   
+   * DescribeSensor
+
+  The transactional profile comprising of the following operations is implemented, too:
+
+   * RegisterSensor
+	
+   * InsertObservation
+
+  Additionally, the following operations are implemented: 
+	
+   * GetFeatureOfInterest
+	
+   * GetResult
+  
+  During the final phase of the OGC <<SOS 2.0>> specification process, the Core of this specification was implemented. 
+  Here is a list of the implemented SOS 2.0 operations:
+  
+   * GetCapabilities
+  	
+   * GetObservation
+	
+   * DescribeSensor
+	
+   * GetFeatureOfInterest
+    
+  The 52\xB0North SOS development version 3.5.x can be downloaded from the 
+  {{{https://svn.52north.org/svn/swe/main/SOS/Service/trunk/SOS/52n-sos/}SVN}} and here you 
+  can find the {{{https://wiki.52north.org/bin/view/SensorWeb/SosTutorial}installation instructions}}
+  
+** 52\xB0North SOS 3.x release
+  
+  The current 52\xB0North SOS 3.x release ({{{http://52north.org/downloads/sensor-web/sos/52n-sensorweb-sos-3-2-1-binary}52N-SOS-3.2.1}}) 
+  implements the core profile comprising the mandatory operations:
+
+   * GetCapabilities
+   
+   * GetObservation
+   
+   * DescribeSensor
+
+  The transactional profile comprising of the following operations is implemented, too:
+
+   * RegisterSensor
+   
+   * InsertObservation
+
+  Additionally, the following operations are implemted: 
+	
+   * GetFeatureOfInterest
+   
+   * GetResult
+
+  The 52\xB0North SOS implementations implement the latest SOS 1.0.0 and/or SOS 2.0 schema version(s). 
+    
+
+* SOS Clients
+
+  There are multiple {{{../clients/index.html}clients}} for the SOS developed by 52\xB0North. Based upon the 
+  {{{http://www.52north.org/oxf}OX-Framework}} both thin clients and thick clients can be developed for 
+  your use cases. Also other web services such as the OGC Web Processing Services can access the provided 
+  data of the 52\xB0North SOS to generate new data, compute simulations or other highler level data products. 
+  The {{{http://52north.org/communities/geostatistics/overview}52\xB0North geostatistics community}} developed 
+  the {{{http://www.nordholmen.net/sos4r}R package sos4R}} to download data from SOS servers directly into the 
+  {{{http://www.r-project.org/}R software environment}} for statistical computing and allow manifold analyses and powerful visualization.
+
+  Besides the different {{{../clients/index.html}clients}} developed within 52\xB0North, there are other
+  parties who develop interesting SOS clients. An example is the browser-based client of the Tasmanian hydrological 
+  sensor web implemented by {{{http://www.csiro.au/}CSIRO}}. Have a look and try it out yourself: 
+  {{{http://www.csiro.au/sensorweb/au.csiro.OgcThinClient/OgcThinClient.html}here}}.
+  The sensor data which can be displayed by this client is provided by a 52\xB0North SOS instance.
+
+* SOS Demo
+
+  Besides several {{{../demos.html}demo videos}} of our different SOS client applications we are maintaining running
+  demo instances which you can use for testing or hands-on experience.
+  
+  <<Examples of 52N SOS 4.0.0:>>
+  
+  1. Demo SOS 4.0.0: {{{http://sensorweb.demo.52north.org/52n-sos-webapp/client}http://sensorweb.demo.52north.org/52n-sos-webapp}}
+  
+  2. AirQuality SOS: {{{http://geoviqua.dev.52north.org/SOS-Q/client}http://geoviqua.dev.52north.org/SOS-Q}}
+  
+  3. Hydrology SOS: {{{http://geowow.dev.52north.org/52n-sos-grdc-webapp/client}http://geowow.dev.52north.org/52n-sos-grdc-webapp}}
+  
+  <<Examples of 52N SOS 3.2.1:>>
+  
+  1. Demo SOS 3.2.1: {{{http://sensorweb.demo.52north.org/52nSOSv3.2.1/}http://sensorweb.demo.52north.org/52nSOSv3.2.1}}
+  
+  2. Weather SOS: {{{http://v-swe.uni-muenster.de:8080/WeatherSOS}http://v-swe.uni-muenster.de:8080/WeatherSOS}} (external Link)
+  
+  3. PegelOnline SOS: {{{http://sensorweb.demo.52north.org/PegelOnlineSOSv2.1/}http://sensorweb.demo.52north.org/PegelOnlineSOSv2.1}}
+
+* Code Manager
+	
+	In charge of the SOS quality management and in control of its source code is:
+	
+   * {{{http://52north.org/52-north-team/carsten-hollmann}<<Carsten Hollmann>>}}
+	
+* Contributing Developers
+   
+   * Alexander C. Walkowski
+   
+   * Alexander Kmoch
+   
+   * Alexander Strotmann
+   
+   * Alexandre Robin ({{{http://www.sensiasoftware.com}Sensia Software}})
+   
+   * Carlos Giraldo ({{{http://www.itg.es/}Instituto Tecnológico de Galicia, Spain}})
+   
+   * Christian Autermann
+   
+   * Christoph Beekmanns
+   
+   * Christoph Stasch
+   
+   * Florence Tan ({{{http://www.csiro.au/}CSIRO, Australia}})
+   
+   * Geoff Williams ({{{http://www.bom.gov.au/}Bureau of Meteorology, Australia}})
+   
+   * Martin Kiesow
+   
+   * Oliver Meyer
+   
+   * Stephan Künster
+   
+   * Shane StClaire ({{{http://www.axiomalaska.com/}Axiome Alaska, USA}})
+   
+   * Victor Gonzalez ({{{http://geomati.co/en}geomati.co, Spain}})
+   
+* Credits
+
+	The development the 52°North Sensor Observation Service implementations was supported by several organizations and projects. Among other we would like to thank the following organisations and project:
+	
+   * OSIRIS (Open architecture for Smart and Interoperable networks in Risk management based on In-situ Sensors), co-funded by the Information Society and Media DG (DG INFSO) of the European Commission as part of the Sixth Framework Programme (FP6), contract number 0033475.
+   
+   * GENESIS (Generic European Sustainable Information Space for Environment), co-funded by the Information Society and Media DG (DG INFSO) of the European Commission as part of the Seventh Framework Programme (FP7), contract number 223996.
+   
+   * EO2HEAVEN (Earth Observation and Environmental Modelling for the Mitigation of Health Risks), co-funded by the European Commission as part of the Seventh Framework Programme (FP7), contract number 244100.
+   
+   * GEOWOW (GEOSS interoperability for Weather, Ocean and Water), co-funded by the European Commission as part of the Seventh Framework Programme (FP7), contract number 282915.
+   
+   * Wupperverband (Germany)
+   
+   * DLZ-IT BMVBS Information Technology Services Centre of Federal Ministry of Transport, Building and Urban Development (Germany)
+   
+   * Rijkswaterstaat (The Netherlands)

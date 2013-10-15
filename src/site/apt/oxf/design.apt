@@ -1,0 +1,53 @@
+ -----
+ OX-Framework Design Documentation
+ -----
+ Arne Br�ring
+ -----
+ 2009-06-07
+ -----
+
+Design Documentation
+~~~~~~~~~~~~~~~~~~
+  
+  Nowadays, various types of geospatial data are available on different sources through OGC Web Services. The interest to integrate the data is demanding. Thus, the SWE Working Group of the 52\xB0North Open Source initiative has come up with an integrated framework named the OGC Web Service Access Framework (OX-Framework or just OX-F) which enables the integration of data provided by these Web Services. After accessing the data the OX-Framework allows to visualize and process queried data. The variety of different services and data encodings makes it necessary to build up a very flexible architecture. This architecture is described below.
+
+	The OX-Framework decreases the complexity of OGC-based software development. It offers developers a customizable and extendable system of cooperating classes supplying a reusable design. The Ox-Famework can be used as a basis for the development of different applications. Such an application might be a thin, thick or mobile client or even a new server application which acts as a client to OGC Web Services (e.g. a WMS facade to SOS servers). Example applications already developed upon the OX-Framework are described here.
+
+	The OX-Framework's architecture and its code are divided into 3 subsystems: Core, Adapters and Utilities. This is described in the figure below. The OX-Framework (yellow parts) is surrounded by the Application which uses the framework. The architecture is structured like a typical 3 tier architecture combined of Presentation Tier, Logic Tier and Data Tier. While the Data Tier is consists of the different OGC Web Service instances. The Logic Tier is realized by the Core and the Adapters subsystems. The Presentation Tier which includes the user interface is realized by the application. However the OX-Framework offers basic UI classes in its Utilities subsystem which can be reused on the Presentation Tier.
+	
+[../images/3-Schichten-Modell_2.gif] Three Subsystems
+	
+	The Core subsystem ({{{../images/_TheWholeStory.png}see figure here}}) realizes the main business logic of the framework and therefore incorporates different data models which rely on OGC specifications.
+
+	* The Context Model (green classes) manages a client session - a so called <Context>. The Context Model relies on the {{{http://www.opengeospatial.org/standards/wmc}Web Map Context Documents specification}}.
+	
+	* The Feature Model (red classes) provides a basis for accessing, visualizing and processing of vector data. It's based on the OGC feature model described e.g. by the {{{http://www.opengeospatial.org/standards/go}GO-1 API}}.
+	
+	* The Common Capabilities Model (not displayed in the figure) implements the {{{http://www.opengeospatial.org/standards/common}OWS Common Specification}} and introduces thereby the integrative view on service access to the architecture.
+
+	[]
+
+	The ContextLayer class, which is part of the Context Model, is associated with different service connector interfaces (yellow). These connectors provide the facilities for:
+
+    * Accessing a service (ServiceAdapter). The ServiceAdapter initializes the Common Capabilities Model for particular service and is able to execute the service operations.
+    
+    * Visualizing data (Renderer). The Renderer converts received data to a graphical representation.
+    
+    * Unmarshalling of features (FeatureStore). The FeatureStore provides unmarshalling facilities for received feature data to the Feature Model.
+      Picking of features in produced visualizations (FeaturePicker).
+
+	[]
+	
+	All service connectors communicate with each other through the Core. This communication is enabled by common data models, which reflect the integrative approach of the OX-Framework.
+	
+	The ServiceAdapter subsystem contains realizations of these service connector components for specific OGC Web Services (e.g. SOS, WMS or WCS).
+	
+	The figure below shows the collaboration between different main classes and interfaces of the framework to perform the processing of a layer. This execution chain is triggered by a state change within the Context Model (e.g. a zooming or panning took place).
+
+[../images/ContextModel_LayerProcessing.png] Layer Processing
+
+	The Utilities subsystem provides functionality for specific UI-frameworks (e.g. Java Swing). The offered UI components help the developer to build up a client application or a new service using the OX-Framework.
+
+	Additionally the OX-Framework realizes a Listener-Concept which allows a high degree of extensibility and transparency and endows the developer with full control over the framework. The figure below shows the exemplary functionality of the Listener-Concept. Certain concrete classes (e.g. the ContextBoundingBox) act as EventEmitters and implement the corresponding interface. Other classes, for example a GUI equivalent to the ContextBoundingBox, listen to emitted events. So if for example a zooming or panning takes place the BoundingBox-GUI class retrieves according events and can react on them and update its display.
+	
+[../images/BoundingBox2.gif] Listener Concept

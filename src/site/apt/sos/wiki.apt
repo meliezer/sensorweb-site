@@ -1,0 +1,20 @@
+ -----
+ Sensor Observation Service
+ -----
+ Carsten Hollmann
+ -----
+ 2013-07-26
+ -----
+
+Wiki
+~~~~~~~~~~~~~~~~~~
+
+  Here you can find the Wiki pages for the 52°North SOS services.
+  
+* SOS version 4.0.0
+
+  * {{{https://wiki.52north.org/bin/view/SensorWeb/SensorObservationServiceIVDocumentation}https://wiki.52north.org/bin/view/SensorWeb/SensorObservationServiceIVDocumentation}}
+
+* SOS version 3.5.x
+
+  * {{{https://wiki.52north.org/bin/view/SensorWeb/SensorObservationService}https://wiki.52north.org/bin/view/SensorWeb/SensorObservationService}}

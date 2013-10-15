@@ -1,0 +1,477 @@
+<sml:System xmlns:sml="http://www.opengis.net/sensorML/1.0.1" xmlns:gml="http://www.opengis.net/gml" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sid="http://www.orangenkiste.de/SID/0.5.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="wetlabs">
+  
+  <sml:identification>
+    <sml:IdentifierList>
+      <sml:identifier name="uniqueID">
+        <sml:Term definition="urn:ogc:def:identifier:OGC:uniqueID">
+          <sml:value>urn:ogc:object:feature:wetlabs_test</sml:value>
+        </sml:Term>
+      </sml:identifier>
+      <sml:identifier name="longName">
+        <sml:Term definition="urn:ogc:def:identifier:OGC:1.0:longName">
+          <sml:value>wet</sml:value>
+        </sml:Term>
+      </sml:identifier>
+    </sml:IdentifierList>
+  </sml:identification>
+  
+  <sml:capabilities>
+    <swe:SimpleDataRecord definition="urn:ogc:def:property:OGC::status">
+      <swe:field name="status">
+        <swe:Boolean>
+          <swe:value>true</swe:value>
+        </swe:Boolean>
+      </swe:field>
+      <swe:field name="mobile">
+        <swe:Boolean>
+          <swe:value>false</swe:value>
+        </swe:Boolean>
+      </swe:field>
+      <swe:field name="measuringInterval">
+        <swe:Quantity definition="urn:ogc:def:property:OGC:1.0:measuringInterval">
+          <swe:uom code="ms"/>
+          <swe:value>0.0</swe:value>
+        </swe:Quantity>
+      </swe:field>
+    </swe:SimpleDataRecord>
+  </sml:capabilities>
+  
+  <sml:contact>
+    <sml:ResponsibleParty gml:id="IfGI">
+      <sml:individualName>Arne Broering</sml:individualName>
+      <sml:organizationName>52 North</sml:organizationName>
+      <sml:contactInfo>
+        <sml:address>
+          <sml:deliveryPoint>Martin-Luther-King-Weg 24</sml:deliveryPoint>
+          <sml:city>Muenster</sml:city>
+          <sml:postalCode>48153</sml:postalCode>
+          <sml:country>Germany</sml:country>
+          <sml:electronicMailAddress>info@52north.org</sml:electronicMailAddress>
+        </sml:address>
+      </sml:contactInfo>
+    </sml:ResponsibleParty>
+  </sml:contact>
+  
+  <sml:position>
+    <swe:Position definition="urn:ogc:def:property:OGC:1.0:stationPosition" referenceFrame="urn:ogc:def:crs:EPSG:4326">
+      <swe:location>
+        <swe:Vector>
+          <swe:coordinate name="latitude">
+            <swe:Quantity axisID="y">
+              <swe:uom code="deg"/>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>-180 180</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+              <swe:value>12.0</swe:value>
+            </swe:Quantity>
+          </swe:coordinate>
+          <swe:coordinate name="longitude">
+            <swe:Quantity axisID="x">
+              <swe:uom code="deg"/>
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>-180 180</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+              <swe:value>12.0</swe:value>
+            </swe:Quantity>
+          </swe:coordinate>
+        </swe:Vector>
+      </swe:location>
+    </swe:Position>
+  </sml:position>
+  
+  <sml:interfaces>
+    <sml:InterfaceList>
+      <sml:interface name="connector_serial" xlink:role="urn:ogc:def:connection:OGC:serial">
+        <sml:InterfaceDefinition>
+          <sml:applicationLayer>
+            <sid:CommandDefinition>
+              <sid:commands>
+                <sid:CommandList>
+                  <sid:command name="getDataCommand" auto="true" interval="15">
+                    <sid:Command>
+                      <swe:DataRecord gml:id="getDataCommand">
+                        <swe:field name="command" xlink:role="urn:ogc:def:command:OGC:name">
+                          <swe:Text>
+                            <swe:value>$run</swe:value>
+                          </swe:Text>
+                        </swe:field>
+                      </swe:DataRecord>
+                    </sid:Command>
+                    <sid:ResponseList/>
+                  </sid:command>
+                  <sid:command name="preGetDataCommand" auto="true" interval="1">
+                    <sid:Command>
+                      <swe:DataRecord gml:id="preCommand">
+                        <swe:field name="command" xlink:role="urn:ogc:def:command:OGC:name">
+                          <swe:Text>
+                            <swe:value>&amp;#x00D;</swe:value>
+                          </swe:Text>
+                        </swe:field>
+                      </swe:DataRecord>
+                    </sid:Command>
+                    <sid:ResponseList/>
+                  </sid:command>
+                </sid:CommandList>
+              </sid:commands>
+            </sid:CommandDefinition>
+          </sml:applicationLayer>
+          <sml:presentationLayer>
+            <sid:DataInputStream>
+              <dataInputComponents>
+                <ComponentList>
+                  <component name="getDataCommand" xlink:href="#getDataCommand"/>
+                </ComponentList>
+              </dataInputComponents>
+            </sid:DataInputStream>
+            <sid:DataOutputStream>
+              <dataOutputComponents>
+                <ComponentList>
+                  <component name="getDataAck">
+                    <swe:DataRecord gml:id="">
+                      <swe:field name="ack"/>
+                    </swe:DataRecord>
+                  </component>
+                  <component name="getDataNack">
+                    <swe:DataRecord gml:id="">
+                      <swe:field name="nack">
+                        <swe:Text xsi:nil="true"/>
+                      </swe:field>
+                    </swe:DataRecord>
+                  </component>
+                  <component name="wetlabs">
+                    <swe:DataRecord>
+                      <swe:field name="Output1">
+                        <swe:Quantity gml:id="Output1" definition="urn:ogc:def:phenomenon:OGC:1.0.30:waterlevel">
+                          <gml:metaDataProperty>
+                            <offering>
+                              <id>water</id>
+                              <name>water</name>
+                            </offering>
+                          </gml:metaDataProperty>
+                          <gml:description/>
+                          <swe:uom code="cm"/>
+                        </swe:Quantity>
+                      </swe:field>
+                    </swe:DataRecord>
+                  </component>
+                </ComponentList>
+              </dataOutputComponents>
+            </sid:DataOutputStream>
+          </sml:presentationLayer>
+          <sml:physicalLayer>
+            <sid:DataInputStream>
+              <dataInputComponents>
+                <ComponentList>
+                  <component name="getDataCommand" xlink:href="#getDataCommand"/>
+                </ComponentList>
+              </dataInputComponents>
+            </sid:DataInputStream>
+            <sid:DataOutputStream>
+              <dataOutputComponents>
+                <ComponentList>
+                  <component name="getDataAck">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="ack"/>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="getDataNack">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="nack"/>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block0">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="Field0"/>
+                          <swe:field name="Field1"/>
+                          <swe:field name="value"/>
+                          <swe:field name="Field3"/>
+                          <swe:field name="Field4"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator="&#x9;" blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block1">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="Field0"/>
+                          <swe:field name="Field1"/>
+                          <swe:field name="value"/>
+                          <swe:field name="Field3"/>
+                          <swe:field name="Field4"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator="&#x9;" blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block2">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="Field0"/>
+                          <swe:field name="Field1"/>
+                          <swe:field name="value"/>
+                          <swe:field name="Field3"/>
+                          <swe:field name="Field4"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator="&#x9;" blockSeparator="&amp;#x00D;&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                 <!--  <component name="Block28">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator="&#x9;" blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component> -->
+                  <component name="Block3">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="Field15"/>
+                          <swe:field name="FLNTU2-MB" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field17"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block4">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="ave" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field19"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block5">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="pkt" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field21"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block6">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="set" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field23"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block7">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="rat" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field25"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block8">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="rec" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field27"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block9">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="puk" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field29"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block10">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="puk" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field31"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block11">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="int" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field33"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block12">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="dat" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field35"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block13">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="clk" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field37"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block14">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="data">
+                        <swe:DataRecord>
+                          <swe:field name="mem" xlink:role="urn:ogc:def:encoding:assertedValue"/>
+                          <swe:field name="Field39"/>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="&amp;#x00D;" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                </ComponentList>
+              </dataOutputComponents>
+            </sid:DataOutputStream>
+          </sml:physicalLayer>
+          <sml:connections>
+            <sml:ConnectionList>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="applicationLayer/commands/getDataCommand/getDataCommand"/>
+                  <sml:destination ref="presentationLayer/dataInputComponents/getDataCommand"/>
+                </sml:Link>
+              </sml:connection>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="presentationLayer/dataInputComponents/getDataCommand"/>
+                  <sml:destination ref="physicalLayer/dataInputComponents/getDataCommand"/>
+                </sml:Link>
+              </sml:connection>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="physicalLayer/dataOutputComponents/Block0/data/value"/>
+                  <sml:destination ref="presentationLayer/dataOutputComponents/wetlabs/Output1"/>
+                </sml:Link>
+              </sml:connection>
+            </sml:ConnectionList>
+          </sml:connections>
+        </sml:InterfaceDefinition>
+      </sml:interface>
+    </sml:InterfaceList>
+  </sml:interfaces>
+  <sml:inputs>
+    <sml:InputList>
+      <sml:input name="waterlevel">
+        <swe:ObservableProperty definition="urn:ogc:def:property:OGC::waterlevel"/>
+      </sml:input>
+    </sml:InputList>
+  </sml:inputs>
+  <sml:outputs>
+    <sml:OutputList>
+      <sml:output name="Output1">
+        <swe:Quantity definition="urn:ogc:def:phenomenon:OGC:1.0.30:waterlevel">
+          <gml:metaDataProperty>
+            <offering>
+              <id>water</id>
+              <name>water</name>
+            </offering>
+          </gml:metaDataProperty>
+          <gml:description/>
+          <swe:uom code="cm"/>
+        </swe:Quantity>
+      </sml:output>
+    </sml:OutputList>
+  </sml:outputs>
+  <sml:components>
+    <sml:ComponentList>
+      <sml:component name="wetlabs_Parameters" xlink:role="urn:ogc:def:sensor:OGC:detector">
+        <sml:Component gml:id="detector:wetlabs">
+          <sml:inputs/>
+          <sml:outputs/>
+          <sml:parameters/>
+          <sml:method/>
+        </sml:Component>
+      </sml:component>
+    </sml:ComponentList>
+  </sml:components>
+  <sml:connections>
+    <sml:ConnectionList>
+      <sml:connection>
+        <sml:Link type="urn:ogc:def:link:OGC:sid">
+          <sml:source ref="this/interfaces/connector_serial/presentationLayer/dataOutputComponents/wetlabs/Output1"/>
+          <sml:destination ref="this/outputs/Output1"/>
+        </sml:Link>
+      </sml:connection>
+    </sml:ConnectionList>
+  </sml:connections>
+</sml:System>

@@ -1,0 +1,94 @@
+ -----
+amused - Apache Muse Derivate - OASIS Web Services Notification (WS-N) Implementation
+ -----
+ Matthes Rieke
+ -----
+ 2013-02-20
+ -----
+
+amused - Apache Muse Derivate
+~~~~~~~~~~~~~~~~~~
+
+	Amused is a fork of the discontinued {{{http://ws.apache.org/muse/}Apache Muse Project}}. The
+	{{{../ses/0.0.1/index.html}Sensor Event Service}}
+	started to integrate this framework in a very early stage. Certainly, Muse got retired officially in 2010
+	and we decided to maintain the source code and improve it by fixing bugs and incorporate enhancements.
+
+* OASIS Web Services / WS-* Implementation
+
+	Amused provides a Java implementation of the OASIS standards family for Web Services Notification (WS-N), including
+	WS-Brokered Notification, WS-Topics and WS-Resource Framework (WSRF). It uses SOAP 1.2 for message transportation.
+
+* Code Base
+
+	The code base for the fork is the official Apache Muse release version 2.2.0. Our source repository provides a
+	{{{https://svn.52north.org/svn/swe/incubation/amused/tags/muse-2.2.0-original/}tag of this version}}. 
+
+	The module structure stayed generally the same, but we applied new naming and did some adjustments to meet
+	Maven 3.x requirements.
+
+* Releases
+
+** Version 1.0.0
+
+      *	Binary download is currently only available through our Maven Release repository:
+	{{{http://52north.org/maven/repo/releases/org/n52/amused/}http://52north.org/maven/repo/releases/org/n52/amused/}}.
+	
+      * Source code is available as a tag in the SVN repository:
+	{{{https://svn.52north.org/svn/swe/incubation/amused/tags/1.0.0-release/}https://svn.52north.org/svn/swe/incubation/amused/tags/1.0.0-release/}}
+
+
+ You can use the following Maven pom.xml snippets to include the artifacts into your project:
+
+----------------------------------------
+<dependencies> <!-- example of core + wsn -->
+	<dependency>
+		<artifactId>amused-core</artifactId>
+		<groupId>org.n52.amused</groupId>
+		<version>1.0.0</version>
+	</dependency>
+	<dependency>
+		<artifactId>amused-wsn-impl</artifactId>
+		<groupId>org.n52.amused</groupId>
+		<version>1.0.0</version>
+	</dependency>
+</dependencies>
+----------------------------------------
+
+	You will need the 52°North releases repository defined in your pom.xml as well:
+	
+----------------------------------------
+<repositories>
+	<repository>
+		<id>n52-releases</id>
+		<name>52n Releases</name>
+		<url>http://52north.org/maven/repo/releases/</url>
+		<releases>
+			<enabled>true</enabled>
+		</releases>
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+	</repository>
+<repositories>
+----------------------------------------
+
+** Snapshots / Nightly Builds
+
+	Snapshots of the current development trunk are available at	{{{http://52north.org/maven/repo/snapshots/org/n52/amused/}our maven repository}}.
+  
+* Source Repository
+
+	{{{https://svn.52north.org/svn/swe/incubation/amused/trunk/}https://svn.52north.org/svn/swe/incubation/amused/trunk/}}
+
+* Code Manager
+	
+	* <<Matthes Rieke>>
+
+
+* Contributors
+
+	* Matthes Rieke
+	
+	* Former Apache Muse contributors
+	

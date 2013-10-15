@@ -1,0 +1,194 @@
+ -----
+ Sensor Event Service - SES - Web-based Complex Event Processing
+ -----
+ Matthes Rieke
+ -----
+ 2013-02-20
+ -----
+
+Sensor Event Service (SES)
+~~~~~~~~~~~~~~~~~~
+
+  The Sensor Event Service (SES) is an enhancement of {{{../../sas/1.0.0/index.html}the Sensor Alert Service (SAS)}}. Both are used to provide an
+  publish / subscribe based access to sensor data and measurements. They also provide optional methods to dynamically add new
+  sensors and send notifications to the service (see Figure 1). The SES specification is currently available as an OGC
+  discussion paper ({{{http://portal.opengeospatial.org/modules/admin/license_agreement.php?suppressHeaders=0&amp;access_license_id=3&amp;target=http://portal.opengeospatial.org/files/index.php?artifact_id=29576}OGC 08-133}}).
+  A comprehensive engineering report about the SWE Event Architecture elaborated in the OWS-6 project can be found 
+  {{{http://portal.opengeospatial.org/modules/admin/license_agreement.php?suppressHeaders=0&amp;access_license_id=3&amp;target=http://portal.opengeospatial.org/files/index.php?artifact_id=33347}here}}.
+	
+[../../images/SES/ses-overview.png]Figure 1: Overview of the SES
+	
+  The major enhancements are the SOAP binding, the increased filter capabilities and the automatic unit conversion functionality.
+	
+* SOAP Binding
+	
+  The default binding of the SES is based upon SOAP and WS-Notification but the specification allows the definition of other bindings for instance an XMPP binding compatible to the SAS. In the basic version the SES acts as a notification producer 
+	(the mandatory part in Figure 1). Figure 2 shows the methods provided by the basic SES interface. The notification producer 
+	interface provides methods to subscribe for notifications and retrieve the latest notification. The basic SES interface adds 
+	common methods from OGC and SWE. These are for instance necessary for service discovery.
+	
+[../../images/SES/ses-UML-classes-bSES.bmp]Figure 2: UML diagram of the basis SES interface (source: Echterhoff and Everding 2008)
+	
+	The extended version of the SES encompasses also the optional part of Figure 1. The extended SES interface therefore implements 
+	the basic SES interface and two interfaces from the brokered notification package of WS-Notification, namely the notification 
+	consumer and the register publisher interface (see Figure 3).
+	
+[../../images/SES/ses-UML-classes-eSES.bmp]Figure 3: UML diagram of the extended SES interface (source: Echterhoff, Everding 2008)
+	
+	The additional methods provided by the extended SES interface allow to register new publishers at the SES and to send notifications 
+	to it. In terms of WS-Notification the extended SES is a notification broker. All requests sent to the SES are encoded as SOAP 
+	messages. Examples can be found in the SES specification.
+	
+	
+* Filtering
+	
+	The notifications received by the SES are posted to topics. These topics define logical groups of notifications. They are 
+	declared following the WS-Topics standard. Figure 4 shows an overview of the topics pre-defined in the SES specification. 
+	Further topics can be added as needed. Sensor notifications are for instance posted to the measurements topic, notifications 
+	regarding the management of sensors are posted to the sensor management topic.
+	
+[../../images/SES/ses-topics.bmp]Figure 4: Pre-defined topics of the SES (source: Echterhoff, Everding 2008)
+	
+	When subscribing for notifications at the SES one can filter the notifications by topic. A system administrator for instance 
+	could only subscribe for sensor management notifications since he is not interested in the actual measurements. In addition 
+	to the topic based filtering one can define content based filter criteria to further restrict the notifications. This was 
+	already possible at the SAS but has been extended since the filter capabilities of the SAS were far from optimal. The SAS 
+	only offered two spatial filters (within bounding box and at a location) and a small set of content filters (smaller than, 
+	greater than, equals, not equal to). More enhanced spatial filters, temporal filters as well as further comparison operators 
+	and logical operators are not supported by the SAS.
+	
+	The SES addresses the content based filtering with a multi stage approach. Therefore the specification defines three filter 
+	levels each allowing more complex filters. It allows to easily extend the filter capabilities of the SES later on. The first 
+	filter level is the only mandatory one. It uses XPath expressions to define the filter statements. Using filter level 1 one 
+	can define content based filter criteria based on the syntax of a notification.
+	
+	The filtering mechanism that comes closest to the SAS filtering is filter level 2. But instead of defining an own filter 
+	language this level relies on the OGC filter encoding. In the specification of the SES the filter encoding was also 
+	extended to address some shortcomings regarding temporal filtering. In future versions of the SES version 2 of the filter 
+	encoding should be used for filter level 2. Nonetheless both filter encodings eliminate the shortcomings of the SAS filter 
+	capabilities described above.
+	
+	The third filter level of the SES uses Complex Event Processing (CEP) and Event Stream Processing (ESP) to derive information 
+	from the stream of incoming sensor notifications. The rules for CEP and ESP are formalized in so called event patterns encoded 
+	in an event pattern language. The SES makes use of the Event Pattern Markup Language (EML) which was developed in parallel. 
+	As the concepts of CEP and ESP are not obvious to understand they are further outlined in the next section.
+	
+	
+** Event Processing
+	
+	Event Processing in common is creating, deleting, reading and editing of and reacting to events 
+	({{{http://complexevents.com/?p=212}Chandy and Schulte 2007}}). In this 
+	context events can be defined as "anything that happens or is contemplated as happening" 
+	({{{http://www.ep-ts.com/component/option,com_docman/task,d oc_download/gid,66/Itemid,84/}Luckham and Schulte 2008}}) which is a 
+	very broad definition. It also makes no distinction between an event as a real world phenomenon and an event object as the 
+	representation in a computer of a real world event. Following this definition the term event can have both meanings whereas 
+	the actual meaning is given by the context (Luckham, Schulte 2008). Other definitions often add further restrictions for 
+	instance on temporal aspects of events. As these restrictions do not influence the ideas of event processing they are not 
+	further discussed.
+	
+	Complex Event Processing (CEP) is a specialization of Event Processing. In CEP relations between multiple events are used 
+	to derive higher level information. The relations may be temporal (e.g. A followed by B) spatial (e.g. A intersects B), 
+	causal (e.g. A is cause of B) or of any other relation type that can be applied to events. The derived information is usually 
+	stored in complex events. These are event objects representing a complex real world phenomenon which consists of multiple 
+	sub-phenomenon. Likewise a complex event object can store references to its sub-event objects. As an example the event "Buy 
+	a car" consists of the sub-events like "Select a favorite car", "Gather money for a new car", "Negotiate the price", "Pay the 
+	price" and so on. An event like "Old car broke down" may be the cause for "Buy a car" (causal relationship) and therefore also 
+	be referenced as sub-event.
+	
+** EML
+	
+	The Event Pattern Markup Language (EML) which is used in the third SES filter level is a means to describe rules for CEP and 
+	ESP so called event patterns. Its specification is available as OGC discussion paper 
+	({{{http://portal.opengeospatial.org/modules/admin/license_agreement.php?suppressHeaders=0&amp;access_license_id=3&amp;target=http://portal.opengeospatial.org/files/index.php?artifact_id=29566}OGC 08-132}}).
+	
+	The EML offers a set of different types of event patterns. Simple patterns are used for common event processing since they operate on 
+	only one event input (e.g. one sensor). They can be used to filter incoming events as done in SES filter level 2 but also allow 
+	deriving values like the average or the maximum from a set of events (e.g. sensor measurements). Complex patterns have two events 
+	streams as input thus allowing to apply CEP functionality. The inputs of complex patterns are always the results of other event 
+	pattern. Only simple patterns can be connected to an external event stream.
+
+	In addition to these two pattern types the EML offers two types for specialized tasks. Repetitive patterns can be used to 
+	count event satisfying a given criterion. Timer patterns can be used to generate events depending on the clock for instance 
+	one event per minute. In the following paragraphs only simple and complex patterns are taken into account because some 
+	statements do not apply for the specialized patterns.
+	
+	An event pattern in EML defines a set of select functions, a view (see ESP above) and a guard. This can be compared to the 
+	standard SQL phrase "SELECT FROM WHERE". The select functions obviously are the SELECT part defining how the results of an 
+	event pattern are calculated (e.g. the maximum of the available events, an average, ...) and also what is done with the result. 
+	This can for instance be further use in other (complex) event patterns or the output for instance to a client subscribed at 
+	the SES. The view is the FROM part of the pattern. It contains a subset of the received events. This may for example be the 
+	events received in the last five minutes or the newest ten events. The guards are the WHERE part of an event pattern. In EML 
+	a guard is defined using the OGC filter encoding as in the SES filter level 2. This filter is applied to every incoming event.
+	
+	The execution of an event pattern is performed in the opposite order. At first the actual events has to be available. For 
+	simple patterns this is always the case if a new event is received on the specified input whereas for complex patterns the 
+	defined relation between these events has to be present. If a new event or set of events are available the guard is executed. 
+	Only if the guard is satisfied the events are forwarded to the view for insertion (which might be rejected). Afterwards the 
+	view decides whether the select functions are triggered. If this is the case the select function are executed on the set of 
+	events provided by the view.
+	
+	To demonstrate the benefits of using CEP a short example is given. In this example the temperature in a room is observed. 
+	When the temperature exceeds a given threshold an alarm shall be triggered. When using an SAS, this alarm would be triggered 
+	every time a measurements reports a too high temperature which may be very often (e.g. once per second). On the one hand this 
+	can be very annoying but on the other hand this is also not suitable to trigger an automatic notification of the fire department 
+	or other human user. Figure 5 shows a stream with temperature measurements and the SAS-filtered result stream.
+	
+[../../images/SES/eml-event-stream-simple.gif]Figure 5: Simple filtering of an event stream
+	
+	When using SES and EML, one can subscribe for notifications when the threshold is crossed instead of just too high temperatures. 
+	Therefore one uses two simple patterns, one to filter too high measurements like the SAS does and one to filter measurements 
+	that do not exceed the threshold. The results are then combined in a complex pattern which matches on "a low temperature is 
+	followed by a too high temperature" and thus detecting when the threshold is crossed and publishing the result as one temperature 
+	warning. A second complex pattern can easily be added to detect when a too high temperature is followed by a low temperature to 
+	generate all clear messages. Figure 6 gives an overview of the event processing tanking place.
+	
+[../../images/SES/eml-event-stream-complex-01.gif]Figure 6: Complex filtering of an event stream
+	
+	The results produced by the complex patterns described above can be used in a further step to build a fire detector. This 
+	fire detector would be based on temperature and smoke measurements an would trigger an alert if the temperature id too high 
+	and smoke is detected. Taking the results of the complex patterns above and smoke readings as inputs one can apply two simple 
+	patterns filtering temperature warnings and too much smoke and combine their results in a complex pattern. If both is found 
+	a fire alarm is triggered. This process is illustrated in Figure 7.
+	
+[../../images/SES/eml-event-stream-complex-02.png]Figure 7: Fire detection using Complex Event Processing
+	
+	
+* Unit Conversion
+	
+	Another new feature of the SES is the on the fly unit of measurement conversion. Internally the SES only operates on so 
+	called SI units (Systeme international d'unites) which is a set of base units for physical phenomena. Nearly every physical 
+	unit can be expressed as a combination of these SI units.
+	
+	When receiving new measurements all values are automatically transferred to SI units. The same is done with values given in 
+	subscription requests. This allows users on the one hand to easily specify the desired output units used in notifications 
+	and on the other hand to subscribe also for sensor measurements which use different units.
+	
+	For example if one is interested in notifications if temperatures below the freezing point are measured one could subscribe 
+	for notifications of measurements below 0 degree Celsius. If no unit conversion is used measurements using Fahrenheit as unit for 
+	temperatures would either have to be ignored or would produce incorrect results (e.g. 20 degree Fahrenheit is below 0 degree Celsius but 
+	would not result in a notification because 20 is larger than 0). In this case, the SES coverts all values to degree Kelvin 
+	which is the SI unit for temperatures. This way all measurements can be used in the filtering process, produce correct results 
+	and can be published in any compatible unit of measurement.
+
+	In order to specify the units of measurement it is recommended to use UCUM codes (Footnote: see also http://unitsofmeasure.org/). 
+	These codes can be interpreted by machines but also easily read by humans as they are based on common abbreviations for units 
+	such as m for meter. Also URNs can be used to specify unit of measurements for instance as defined in the OGC document 06-023r1.
+	
+
+* Code Manager
+	
+	* <<Matthes Rieke>>
+
+
+* Contributors
+
+	* Johannes Echterhoff
+	
+	* Thomas Everding
+	
+	* Jan Torben Heuer
+	
+	* Artur Osmanov
+	
+	* {{{http://52north.org/52-north-team/eike-hinderk-juerrens}Eike Hinderk Jürrens}}
+	

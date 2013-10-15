@@ -1,0 +1,47 @@
+ -----
+ uDig SOS Plugin
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-07-19
+ -----
+
+uDig SOS Plugin
+~~~~~~~~~~~~~~~~~~
+  
+  uDig is a Desktop GIS written in Java and based on the eclipse platform. It is a free and open source software 
+  project driven by {{{http://udig.refractions.net/}Refractions Research}}. This application adds the ability to the
+  uDig system to access sensor data served by Sensor Observation Services. On the one hand this application allows 
+  access of the features of interest observed by the sensors of an SOS. Those features can be displayed in the map 
+  view by adding a new layer to uDig. On the other hand it is possible to visualized the observation data served 
+  by the SOS in a table view as shown in the figure below.
+  
+[../../images/uDig_screenshot.png]
+  
+  An overview of the architectural design of the application is given in the figure below. The OX-Framework is used
+  to build the uDig plugin. The functionalities to access the SOS, unmarshal queried data and render visualizations
+  are provided by the framework and reused by the application.
+  
+[../../images/uDig_architecture.gif]
+  
+  Future steps in the development of this project are the implementation of temporal filter mechanisms. This will
+  enable the users to visualize data for specified time spans.
+
+* Download
+
+*---------------+---------+-------------+
+| <<Name>>  | <<Date>> | <<Link>>  | 
+*---------------+-----------+--------------------+-------------------+----------+
+| 52n_uDig-SOS-Plugin_V1(11RC14).zip | 2009-11-23 | {{{http://52north.org/?option=com_jdownloads&amp;view=summary&amp;cid=24&amp;catid=13}download}}  | 
+*---------------+-----------+--------------------+-------------------+----------+
+
+  
+* Code Manager
+	
+	In charge of the quality management and source code control of the uDig SOS Plugin is:
+	
+   * <<Carsten Priess>>
+
+* Contributing Developers
+   
+   * Martin Kiesow

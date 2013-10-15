@@ -1,0 +1,31 @@
+ -----
+ Thin SWE Client 2.0
+ -----
+ Henning Bredel
+ -----
+ 2012-04-04
+ -----
+
+Thin SWE Client 2.0
+~~~~~~~~~~~~~~~~~~
+
+	This is the second version of the ThinSWEClient. It uses the {{{http://code.google.com/intl/de-DE/webtoolkit/}Google Web Toolkit}} and 
+	{{{http://code.google.com/p/smartgwt/}SmartGWT}} for the clientside code. It supports many features, such as: 
+	
+	* Zip-export and export to XLS, CSV and PDF
+	
+	* Pan/Drag/Zoom interaction for diagram with automatic updates
+	
+	* Diagram overview interaction
+	
+	* Timeseries ordering and different styles
+	
+	* Map exploration support with OSM data and spatial station search
+	
+	* Server-sided SOS metadata caching and automatic updating
+	
+  
+[../../../images/TSC_2.0_screen.png]
+
+  Get more <<detailed information from the {{{https://wiki.52north.org/bin/view/Sensornet/ThinSweClient2}related 52&#176;North Twiki site}}>>.
+

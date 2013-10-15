@@ -1,0 +1,26 @@
+ -----
+ OX-Framework
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-07-12
+ -----
+
+Dependencies
+~~~~~~~~~~~~~~~~~~
+
+*------------------+-------------+---------------+----------+
+| <<Library name>> | <<Version>> |	<<Function>> | <<URL>>  | 
+*------------------+-------------+---------------+----------+
+| XML Beans | 2.2.0 | XML Binding | {{{	http://xmlbeans.apache.org/}	http://xmlbeans.apache.org/}}  | 
+*------------------+-------------+---------------+----------+
+| Smack | 2.2.1 | XMPP Function  | {{{http://www.jivesoftware.org/smack/}http://www.jivesoftware.org/smack/}}  | 
+*------------------+-------------+---------------+----------+
+| Log4J | 1.2.14 | Logging  | {{{	http://logging.apache.org/log4j}	http://logging.apache.org/log4j}}  | 
+*------------------+-------------+---------------+----------+
+| Java Mail | 1.4 | Email support  | {{{http://java.sun.com/products/javamail/}	http://java.sun.com/products/javamail/}}  | 
+*------------------+-------------+---------------+----------+
+| eXist Database | 1.1.1 | XML Database  | {{{	http://exist.sourceforge.net/}		http://exist.sourceforge.net/}}  | 
+*------------------+-------------+---------------+----------+
+
+[]

@@ -1,0 +1,67 @@
+ -----
+ Rich OX Client
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-07-19
+ -----
+
+Rich OX Client
+~~~~~~~~~~~~~~~~~~
+  
+  This application realizes a Java-Swing frontend of the OX-Framework. It focuses on the generation of manifold visualizations of O&M-encoded sensor data received from a SOS. But the application allows also the connection to WMS-, WCS- and SAS- instances.
+	
+	The application offers the user basic GIS functionality. This includes e.g.:
+	
+	* Display of a map view
+	
+	* Display of an associated legend
+	
+	* Display of a chart view
+	
+	* Management of map layers
+	
+	* Zooming and panning of the current geospatial extent
+	
+	* Controlling of temporal animations
+	
+	* Picking and selecting of shown map feature objects
+	
+	[]
+
+	The generic architecture of the underlying OX-Framework and the well-structured design of this application make it easy to customize it and to extend it with new use-case specific features. 
+
+* Download & Quickstart
+
+	You can also download the {{{http://52north.org/downloads/sensor-web/clients/52n-swe-oxf-client-20080922/download} Rich OX-Client application}} 
+    built upon the OX-Framework. To start the OX-Client application directly you need a Java 6 RE configured in your PATH variable. Execute the "start.bat" to run the client. (Hint: Your local proxy settings can be configured under the "Options"-menu). The used version of the OX-Framework works fine with 3.0.1 version of the 52\xB0North SOS implementation.
+	
+	If you want to start the Rich OX-Client from the OX-Framework release or the SVN version please run the following class: org.n52.oxf.ui.swing.test.OXClient
+	
+	To see how to use this client application please have a look at the following demo videos.
+
+
+* Demos
+	
+	The following demo videos show the Rich OX Client client application in action. In this example the client is utilized to explore sensor data captured by weather stations in South Africa. The user has already added 3 WMS layers to the map and has zoomed to the region around Cape Town. 
+
+	1. {{{http://ifgiweb.uni-muenster.de/~arneb/videos/oxf_video/Film_04.wmv}Connecting to an SOS}}
+	
+	2. {{{http://ifgiweb.uni-muenster.de/~arneb/videos/oxf_video/Film_05.wmv}Selecting the "Features Of Interest" (4 weather stations close to Capetown)}}
+	
+	3. {{{http://ifgiweb.uni-muenster.de/~arneb/videos/oxf_video/Film_06.wmv}Producing diagram visualizations}}
+	
+	4. {{{http://ifgiweb.uni-muenster.de/~arneb/videos/oxf_video/Film_08.wmv}Producing animated visualizations}}
+	
+	5. {{{http://ifgiweb.uni-muenster.de/~arneb/videos/oxf_video/Film_10.wmv}Rendering an interpolation by using the _Inverse-Distance-Weighting (IDW)_ algorithm}}
+
+	
+* Code Manager
+	
+	In charge of the quality management and source code control of the Rich OX-Client is:
+	
+   * {{{http://arnebroering.de}<<Arne Bröring>>}}
+   
+* Contributing Developers
+   
+   * Daniel Nüst

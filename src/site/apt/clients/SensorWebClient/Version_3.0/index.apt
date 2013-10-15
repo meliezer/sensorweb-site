@@ -1,0 +1,44 @@
+ -----------------
+ Sensor Web Client
+ -----------------
+ Henning Bredel
+ --------------
+ 2012-04-02
+ ----------
+
+Sensor Web Client
+~~~~~~~~~~~~~~~~~
+
+  The application formerly known as ThinSWEClient has been renamed to Sensor Web Client. This better reflects the actual intent of the client to be the exploration and visualisation portal for a generic Sensor Web, not just the OGC SWE concepts.
+Major achievements of the new version are internal refactorings resulting in easier to maintain code and installation process as well as a hugely improved user interface. 
+
+  The client was presented with great success at the {{{http://www.cebit.de/home}CeBIT trade fair}} which took place in Hannover, March 2012. The software was taken as a show case for near real-time data integration into the {{{http://www.geoportal.de}GDI-DE Geoportal}}, the official German geospatial data infrastructure. In constellation with the {{{http://apps4deutschland.de/preistraeger/}Apps4Deutschland award winning}} {{{http://www.pegelonline.wsv.de}PEGELONLINE data service}}, it was used to demonstrate interoperable data visualisations across political borders.
+	
+  <<Go ahead and try out the {{{http://sensorweb.demo.52north.org/sensorwebclient-webapp-stable/}yourself}}>>.
+  
+  For detailed information including how to further develop the client, and build it on your own respectively, visit the {{{https://wiki.52north.org/bin/view/Sensornet/SensorWebClient}Twiki site of the Sensor Web Client}}.
+  
+[../../../images/sensorwebclient_geoportal-integration.png]
+
+~~ * Requirements
+~~ 	
+~~ 	* JDK 1.5 or higher 
+~~ 	
+~~ 	* SVN-Client
+~~ 
+~~  * Apache Tomcat 5.5 or higher
+~~ 	
+~~ 	* Apache Ant 1.7.0 or higher
+~~ 	
+~~ 	* Compliant to all current browsers
+~~ 
+~~ * Installation
+~~ 
+~~ 	* The code is licensed with {{{http://www.gnu.org/licenses/gpl-2.0.html}GPL-2.0}}
+~~ 
+~~ 	* {{{https://svn.52north.org/svn/swe/incubation/ThinSweClient2.0}Repository}}
+~~ 
+~~ 	* {{{https://svn.52north.org/svn/swe/incubation/ThinSweClient2.0/trunk/52n-thinsweclient-api/docs/Installation.pdf}Short installation guide}}
+~~ 	
+~~ 	* {{{./FAQ/index.html}FAQ}} and after that the mailinglist swe@52north.org
+~~ 

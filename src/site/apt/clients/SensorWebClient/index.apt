@@ -1,0 +1,55 @@
+ -----
+Sensor Web Client
+ -----
+ Henning Bredel
+ -----
+ 2012-05-21
+ -----
+
+Sensor Web Client
+~~~~~~~~~~~~~~~~~
+  
+  The "Sensor Web Client" (formaly known as ThinSweClient) is a web-based client application which offers an easy to use interface 
+  to generate graphs from near-realtime sensor data. The client hides technical details of SWE services and protocols, so that
+  even non-experts can use components of the Sensor Web transparantly. To enable maximal platform independence the client is 
+  developed as a web-based browser application, making use of newest web technologies such as asynchronous client/server communication.
+
+	The client is capable of loading multiple time series from multiple {{{../../sos/index.html}SOS}} instances. Sensor data can be 
+	displayed as graphs and exported as varies formats. A table of contents shows information about color and hatching settings of the 
+	displayed measurement series and offers options to manipulate the visualisation. The application allows exploring sensor metadata 
+	and "saving" current view as permalink.
+	
+* Versions
+
+    Different versions are available, including an experts version ({{{./Version_2.0/index.html}Version 2.0}}) and a version for the 
+    general public which hides technical terms and concepts of the Sensor Web ({{{./Version_3.0/index.html}Version 3.0}}). Development 
+    of {{{./Version_1.0/index.html}Version 1.0}} is discontinued.
+ 	
+[../../images/sensorwebclients_versions.png]
+ 	
+	~~Go ahead and try out the {{{http://sensorweb.demo.52north.org/ThinSweClient2.0/Client.html?sos=http://sensorweb.demo.52north.org/PegelOnlineSOSv2/sos&offering=WASSERSTAND_ROHDATEN&stations=Helgoland_Suedhafen_9510075&procedures=Wasserstand-Helgoland_Suedhafen_9510075&phenomenons=Wasserstand&begin=2010-09-29T14:00:43&end=2010-10-02T14:00:43}expert version}} with preloaded data or try to load it {{{http://sensorweb.demo.52north.org/ThinSweClient2.0/Client.html}yourself}}.
+ 	
+ 	~~Go ahead and try out the {{{http://sensorweb.demo.52north.org/ThinSweClient2.0/Client.html?sos=http://sensorweb.demo.52north.org/PegelOnlineSOSv2/sos&offering=WASSERSTAND_ROHDATEN&stations=Helgoland_Suedhafen_9510075&procedures=Wasserstand-Helgoland_Suedhafen_9510075&phenomenons=Wasserstand&begin=2010-09-29T14:00:43&end=2010-10-02T14:00:43}expert version}} with preloaded data or try to load it {{{http://sensorweb.demo.52north.org/ThinSweClient2.0/Client.html}yourself}}.
+ 	
+ 	~~You can also watch the functionality of a previous version of the Thin SWE Client in this {{{http://ifgiweb.uni-muenster.de/~arneb/videos/swe_client_video/swe_client_public.htm}video}}.
+
+
+* Code Manager
+	
+	In charge of the quality management and source code control of the browser-based SWE clients is:
+	
+   * <<Henning Bredel>>
+
+* Contributing Developers
+   
+   * Jan Schulte
+   
+   * {{{http://52north.org/52-north-team/eike-hinderk-juerrens}Eike Hinderk Jürrens}}
+   
+   * Arthur Osmanov
+   
+   * Felix Bache
+   
+   * Philipp Verhoeven
+   
+   * Arne Bröring

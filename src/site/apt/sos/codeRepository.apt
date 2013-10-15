@@ -1,0 +1,24 @@
+ -----
+ Sensor Observation Service
+ -----
+ Carsten Hollmann
+ -----
+ 2013-07-26
+ -----
+
+Code Repository
+~~~~~~~~~~~~~~~~~~
+
+  Here you can find the code repositories for the 52°North SOS services.
+  
+* SOS main repository
+  
+  * {{{https://svn.52north.org/svn/swe/main/SOS/}https://svn.52north.org/svn/swe/main/SOS/}}
+  
+* SOS version 4.0.0
+
+  * {{{https://svn.52north.org/svn/swe/main/SOS/Service/branches/52n-sos-400-refactored/}https://svn.52north.org/svn/swe/main/SOS/Service/branches/52n-sos-400-refactored/}}
+
+* SOS version 3.5.x
+
+  * {{{https://svn.52north.org/svn/swe/main/SOS/Service/trunk/SOS/52n-sos/}https://svn.52north.org/svn/swe/main/SOS/Service/trunk/SOS/52n-sos/}}

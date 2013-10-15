@@ -1,0 +1,85 @@
+ -----
+ OX-Framework
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-07-19
+ -----
+
+OX-Framework
+~~~~~~~~~~~~~~~~~~
+  
+    The <OX-Framework> (short for <<O>>gc web service a<<X>>ess Framework>) is a generic software framework which addresses the needs 
+    of application developers who want to access and use OGC Web Services, and in particular <Sensor Web> services. 
+	
+	The OX-Framework can be used as a basis for different application types: this can be thin,
+	thick, or mobile client applications, as well as server applications that need to access OGC Web Services. 
+	Client applications developed based on the OX-Framework are described {{{../clients/index.html}here}}.
+	Server applications developed based on the OX-Framework are described {{{./services.html}here}}.
+
+	The primary aim of the OX-Framework is to provide an architecture which is flexible and extendable enough so that 
+	the various kinds of OGC Web Services (OWS) can be easily accessed and the queried data can be processed. The connection to the 
+	OWS is realized by a so-called service-connector component. These components can be implemented for any type of 
+	OGC Web Service. New service-connectors can be added to the system as plug-ins. Thus developers are able to 
+	dynamically customize and extend the framework. Below, you find a list of the currently available service-connector 
+	implementations and their capabilities.
+
+* Currently available Service-Connectors
+	
+   * WMS-Connector:
+	
+	Supported specification versions: 1.0.0, 1.1.0 and 1.1.1
+	
+   * WCS-Connector:
+    
+    Supported specification versions: 1.0.0 and 1.1.1
+	
+   * SOS-Connector:
+	
+	Supported service versions: 1.0.0
+    
+	The sensor data has to be encoded in the format specified in the Observations & Measurements specification (version 1.0 and 0.0.0 are supported).
+	
+	By the means of this connector different visualizations of sensor data can be generated; e.g.:
+	
+	* Standalone time series charts
+	
+	* Standalone scatterplot charts
+	
+	* Small charts in a map
+	
+	* Map interpolations
+	
+	* Temporal animations of map visualizations
+	
+[]	
+	
+   * SAS-Connector
+   
+    Supported specification versions: 0.9.0  (current version which is in RFC process)
+	
+	Currently available Applications
+
+	
+* Publications
+
+	Broering, A., E.H. Jürrens, S. Jirka & C. Stasch (2009): {{{http://arnebroering.de/OSGIS_2009_FullPaper_broering_jirka_juerrens_stasch.pdf}Development of Sensor Web Applications with Open Source Software.}} (Best Paper Award). Proceedings of: First OSGIS UK Conference. June 22. 2009. Nottingham, UK.
+	
+	
+* Code Manager
+	
+	In charge of the OX-Framework's quality management and in control of its source code is:
+	
+	* <<Henning Bredel>>
+   
+
+* Contributing Developers
+   
+   * {{{http://arnebroering.de}Arne Broering}}
+   
+   * Daniel Nüst
+   
+   * {{{http://52north.org/52-north-team/eike-hinderk-juerrens}Eike Hinderk Jürrens}}
+   
+   * Felix Bache
+   

@@ -1,0 +1,13 @@
+ -----
+ Sensor Observation Service (SOS) Extension for ArcGIS Server
+ -----
+ Arne Broering
+ -----
+ 2011-11-17
+ -----
+
+Dependencies
+~~~~~~~~~~~~~~~~~~
+	This SOS-like server is implemented as a Server Object Extension (SOE) for the ArcGIS Server environment and hence dependts on the ESRI ArcObjects SDK. The needed functionality for database access, and geometries handling is taken from ESRI's ArcObjects. Hence, the implementation is currently independent of any other third-party libraries.
+
+[]

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="52N Sensor Web Community">
+	<publishDate format="yyyy-MM-dd" />
+
+	<body>
+
+		<breadcrumbs>
+            <item name="Home" href="../../"/>
+            <item name="Communities" href="../"/>
+            <item name="Sensor Web" href="index.html"/>
+		</breadcrumbs>
+
+		<menu name="Sensor Web Community">
+			<item name="About" href="index.html" />
+			<item name="Mission" href="mission.html" />
+		</menu>
+
+		<menu name="Sub projects">
+			<item name="SOS" href="sos/index.html" collapse="true">
+				<item name="About" href="sos/index.html" />
+				<item name="Design Documentation" href="sos/design.html" />
+				<item name="Installation Instructions"
+					href="sos/instructions.html" />
+				<item name="Download" href="sos/download.html" />
+				<item name="JavaDoc"
+					href="https://52north.org/files/sensorweb/docs/sos/3.2.0/" />
+				<item name="Dependencies" href="sos/dependencies.html" />
+				<item name="Wiki"
+					href="sos/wiki.html" />
+				<item name="Code Repository"
+					href="sos/codeRepository.html" />
+			</item>
+			
+			<item name="SOS RESTful Extension" href="sosREST/index.html"
+				collapse="true">
+				<item name="About" href="sosREST/index.html" />
+				<item name="Documentation" href="http://52north.org/files/sensorweb/docs/sos/restful/restful_sos_documentation.pdf" />
+				<!--<item name="Installation Instructions" href="sosREST/installGuide.html"/>-->
+				<!--<item name="Download" href="sosSOE/download.html"/>-->
+				<!--<item name="Demo" href="sosSOE/demo.html" />-->
+				<!--<item name="JavaDoc" href="http://ags.dev.52north.org:8080/ArcGIS_Server_SOS_Extension/apidoc/" />-->
+				<!--<item name="Dependencies" href="sosSOE/dependencies.html" />-->
+				<item name="Code Repository" href="https://svn.52north.org/svn/swe/main/SOS/Extensions/Binding/RESTful/trunk"/>
+			</item>
+			
+			<item name="SOS for ArcGIS Server" href="sosSOE/index.html"
+				collapse="true">
+				<item name="About" href="sosSOE/index.html" />
+				<item name="REST API Specification" href="docs/specification.htm" />
+				<item name="Database Model" href="docs/dataModel.htm" />
+				<item name="Installation Instructions" href="sosSOE/installGuide.html"/>
+				<item name="Download" href="sosSOE/download.html"/>
+				<item name="Demo" href="sosSOE/demo.html" />
+				<!--<item name="JavaDoc" href="http://ags.dev.52north.org:8080/ArcGIS_Server_SOS_Extension/apidoc/" />-->
+				<item name="Dependencies" href="sosSOE/dependencies.html" />
+				<!--<item name="Code Repository" href="https://svn.52north.org/svn/projects/sensorweb/arcgis-sos-soe/trunk/"/>-->
+				<item name="Code Repository" href="https://github.com/52North/ArcGIS-Server-SOS-Extension"/>
+			</item>
+			
+			<item name="SAS" href="sas/1.0.0/index.html" collapse="true">
+				<item name="About" href="sas/1.0.0/index.html" />
+				<item name="Installation Instructions"
+					href="https://52north.org/twiki/pub/Sensornet/SensorAlertService/how2install_SAS.pdf" />
+				<item name="Download" href="sas/1.0.0/download.html" />
+				<item name="Dependencies" href="sas/1.0.0/dependencies.html" />
+				<item name="Wiki"
+					href="https://52north.org/twiki/bin/view/Sensornet/SensorAlertService" />
+				<item name="Code Repository"
+					href="https://svn.52north.org/svn/swe/main/SAS/Service2.0/sas/trunk/" />
+			</item>
+
+			<item name="SES" href="ses/0.0.1/index.html" collapse="true">
+				<item name="About" href="ses/0.0.1/index.html" />
+				<item name="Installation Instructions"
+					href="https://wiki.52north.org/bin/view/SensorWeb/SensorEventServiceInstallation" />
+				<item name="Download"
+					href="ses/0.0.1/download.html" />
+				<item name="Code Repository"
+					href="https://svn.52north.org/svn/swe/incubation/SES/Service/trunk/52n-ses/" />
+			</item>
+
+			<item name="SPS" href="sps/1.0.0/index.html" collapse="true">
+				<item name="1.0.0" href="sps/1.0.0/index.html" collapse="true">
+					<item name="About" href="sps/1.0.0/index.html" />
+					<item name="Design Documentation" href="sps/1.0.0/design.html" />
+					<item name="Installation Instructions"
+						href="https://svn.52north.org/svn/swe/main/SPS/Services/tags/52N-swe-sps-1.0.1/doc/HowTo-Install_SPS.pdf" />
+					<item name="Download" href="sps/1.0.0/download.html" />
+					<item name="Dependencies" href="sps/1.0.0/dependencies.html" />
+					<item name="Wiki"
+						href="https://wiki.52north.org/bin/view/SensorWeb/SPSv10000" />
+					<item name="Code Repository"
+						href="https://svn.52north.org/svn/swe/main/SPS/Services/tags/52N-swe-sps-1.0.1/" />
+				</item>
+			</item>
+
+			<item name="WNS" href="wns/1.0.0/index.html" collapse="true">
+				<item name="About" href="wns/1.0.0/index.html" />
+				<item name="Installation Instructions"
+					href="https://wiki.52north.org/bin/view/SensorWeb/WebNotificationService" />
+				<item name="Download" href="wns/1.0.0/download.html" />
+				<item name="Dependencies" href="wns/1.0.0/dependencies.html" />
+				<item name="Code Repository"
+					href="https://svn.52north.org/svn/swe/main/WNS/Service" />
+			</item>
+			
+			<item name="Discovery" href="discovery/index.html"
+				collapse="true">
+				<item name="About" href="discovery/index.html" />
+				<item name="Download and Installation" href="discovery/download.html" />
+				<item name="Development and Sources" href="discovery/develop.html" />
+				<item name="Dependencies" href="discovery/dependencies.html" />
+			</item>
+			
+			<item name="OX-Framework" href="oxf/index.html" collapse="true">
+				<item name="About" href="oxf/index.html" />
+				<item name="Design Documentation" href="oxf/design.html" />
+				<!--<item name="Quickstart" href="oxf/quickstart.html" />-->
+				<item name="OX Server Applications" href="oxf/services.html" />
+				<item name="Download" href="oxf/download.html" />
+				<!--<item name="JavaDoc" href="http://ifgi.uni-muenster.de/~arneb/oxf/javadoc/" />-->
+				<item name="Wiki" href="https://wiki.52north.org/bin/view/SensorWeb/OxFramework" />
+				<!--<item name="Dependencies" href="oxf/dependencies.html" />-->
+				<item name="Code Repository"
+					href="https://svn.52north.org/svn/swe/main/OX-Framework/" />
+			</item>
+
+			<item name="SWE Clients" href="clients/index.html" collapse="true">
+				<item name="Rich OX Client" href="clients/Rich_OX_Client/index.html">
+				</item>
+				<item name="Sensor Web Client" href="clients/Thin_SWE_Client/index.html"
+					collapse="true">
+					<!-- <item name="Version 1.0" href="clients/Thin_SWE_Client/Version_1.0/index.html"
+						collapse="true"></item> -->
+					<item name="Version 2.0" href="clients/Thin_SWE_Client/Version_2.0/index.html"
+						collapse="true">
+					</item>
+					<item name="Version 3.0" href="clients/Thin_SWE_Client/Version_3.0/index.html"
+						collapse="true">
+					</item>
+				</item>
+				<item name="ArcGIS SOS Extension" href="clients/ArcGIS_SOS_Extension/index.html"
+					collapse="true">
+					<item name="Code Repository"
+						href="https://svn.52north.org/svn/swe/incubation/ArcGIS-SOS-Adapter/trunk/" />
+				</item>
+				<item name="uDig SOS Plugin" href="clients/uDig_SOS_Plugin/index.html"
+					collapse="true">
+					<item name="Code Repository"
+						href="https://svn.52north.org/svn/swe/main/Clients/uDig/SOS/trunk/" />
+				</item>
+				<!--<item name="OX WMS" href="clients/OX_WMS/index.html"></item>-->
+				<!--<item name="OX RESTful SOS" href="clients/OX_RESTful_SOS/index.html"></item>-->
+				<item name="sos4R" href="clients/sos4R/index.html">
+				</item>
+			</item>
+
+			<item name="Incubator Projects" href="incubation/index.html"
+				collapse="true">
+				<item name="Sensor World" href="incubation/sensorWorld/index.html"
+					collapse="true">
+					<item name="Documentation" href="docs/SW_Documentation.pdf" />
+					<item name="Code Repository"
+						href="https://svn.52north.org/svn/swe/incubation/SensorWorld/SensorWorld2009v1/" />
+				</item>
+				<item name="Sensor Bus" href="incubation/sensorBus/index.html"
+					collapse="true">
+					<item name="About" href="incubation/sensorBus/index.html" />
+					<item name="Design Overview" href="incubation/sensorBus/designOverview.html" />
+					<!--<item name="Quickstart" href="oxf/quickstart.html"/> -->
+					<!--<item name="Download" href="oxf/download.html"/> -->
+					<item name="JavaDoc"
+						href="http://ifgi.uni-muenster.de/~arneb/sensorBus/javadoc/" />
+					<!--<item name="Dependencies" href="oxf/dependencies.html"/> -->
+					<item name="Code Repository"
+						href="https://svn.52north.org/svn/swe/incubation/SensorBus/trunk/52NSensorbus/" />
+				</item>
+				<item name="SIDs" href="incubation/sensorInterfaceDescriptors/index.html"
+					collapse="true">
+					<item name="About" href="incubation/sensorInterfaceDescriptors/index.html" />
+					<item name="Code Repository of SID Interpreter"
+						href="https://svn.52north.org/svn/swe/incubation/SensorConnector/branches/OSC_Rebuild_2" />
+					<item name="Code Repository of SID Creator"
+						href="https://svn.52north.org/svn/swe/incubation/SID/trunk/" />
+					<item name="SID Examples" href="http://arnebroering.de/sid/instances/" />
+				</item>
+				<item name="ifgicopter" href="incubation/ifgicopter/index.html"
+					collapse="true">
+					<item name="About" href="incubation/ifgicopter/index.html" />
+					<item name="Code Repository"
+						href="https://svn.52north.org/svn/swe/incubation/ifgicopter" />
+					<item name="Sensor Platform Framework" href="incubation/ifgicopter/spf/index.html" />
+					<item name="JavaMK" href="incubation/ifgicopter/JavaMK/index.html" />
+				</item>
+				<item name="SenseBox" href="incubation/sensebox/index.html"
+					collapse="true">
+					<item name="About" href="incubation/sensebox/index.html" />
+					<item name="Wiki" href="https://wiki.52north.org/bin/view/SensorWeb/SenseBox" />
+					<item name="Code Repository" href="https://svn.52north.org/svn/swe/incubation/sensebox/" />
+				</item>
+			</item>
+			
+			<item name="amused" href="amused/index.html" collapse="true">
+				<item name="About" href="amused/index.html" />
+				<item name="Code Repository"
+					href="https://svn.52north.org/svn/swe/incubation/amused/trunk/" />
+			</item>
+		</menu>
+
+		<menu name="Extras">
+			<item name="Publications"
+				href="http://52north.org/images/stories/52nadmin/publications/52n_swe_publications.pdf" />
+			<item name="Project References" href="references.html" />
+			<item name="Demos" href="demos.html" />
+		</menu>
+
+		<menu name="Resources">
+			<item name="Bugzilla" href="bugzilla_note.html" />
+			<item name="Browse Source"
+				href="https://svn.52north.org/cgi-bin/viewvc.cgi/?root=sensorweb" />
+			<item name="Wiki"
+				href="https://52north.org/twiki/bin/view/Sensornet/WebHome" />
+			<item name="XML Schema Repo" href="http://52north.org/schema" />
+		</menu>
+
+		<menu name="Contact">
+			<item name="Community" href="contact.html" />
+			<item name="Mailing Lists" href="mail-lists.html" />
+		</menu>
+	</body>
+</project>

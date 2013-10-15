@@ -1,0 +1,32 @@
+ -----
+ Sensor Planning Service (SPS)
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-07-12
+ -----
+
+Sensor Planning Service (SPS)
+~~~~~~~~~~~~~~~~~~
+
+	The Sensor Planning Service is intended to provide a standard interface to collection assets (i.e., sensors, and other information gathering assets) and to support systems that surround them. An SPS not only has to support different kinds of assets with differing capabilities, but also different kinds of request processing systems, which may or may not provide access to the different stages of planning, scheduling, tasking, collection, processing, archiving, and distribution of resulting observation data. 
+
+	The SPS enables easy integration of new sensors into an SDI by providing a standard interface to a wide variety of collection devices (i.e., sensors, and other information gathering devices) and their support systems. This tasking service makes interoperable sensor control and maintenance possible. 
+
+ 
+
+ 	An exemplary workflow of an SPS controlling a UAV is shown in the following figure:
+
+[../../images/sps_exemplary_workflow_600.png]
+
+[]
+
+* Code Manager
+	
+	In charge of the SPS quality management and in control of its source code is:
+	
+   * <<Henning Bredel>>
+   
+* Contributing Developers
+   
+   * Johannes Echterhoff

@@ -1,0 +1,72 @@
+ -----
+ sos4R
+ -----
+ Daniel Nuest
+ -----
+ 2010-11-02
+ -----
+
+sos4R
+~~~~~~~~~~~~~~~~~~
+  
+* About
+
+  sos4R is an extension for the {{{http://cran.r-project.org/}R environment for statistical computing and visualization}}. It allows to query data from standard conform SOS instances using simple R function calls and does no require any knowledge about the Sensor Web. It is easily extendible for new data models and opens the huge amount of analysis and visualization features of the R environment for the Sensor Web.
+  
+[../../images/sos4R-idw-example_preview.png]
+
+  <Spatial interpolation of air pollutant data (Click {{{../../images/sos4R-idw-example.png}here}} to enlarge the image).>
+
+[../../images/sos4R-weathersos-example_preview.png]
+
+  <Time series modelling with temperature data (Click  {{{../../images/sos4R-weathersos-example.png}here}} to enlarge the image).>
+
+* Concept
+
+  sos4R targets environmental scientics and analysts not familiar with the sensor web who use the R environment for their analysis. Thanks to this extension package they can now easily download observational data into their chosen analysis environment. But since not all SOS can be tested and not all available data models can be supported out of the box, sos4R utilizes very flexible programming paradigms to allow R developers to extend the functionality at all important points the the analysis process. These interaction points are shown in the diagram below. 
+
+[../../images/sos4R-analysis-workflow.png]
+
+  <Flexible sos4R workflow using only R code.>
+
+  Users can add or replace functions for <<encoding>> of requests (for example for specific SOS extensions or filtering parameters), <<parsing>> of responses (for specific observation models and encodings, even if not conform to the SOS standard), and <<conversion>> of data fields (i.e. to automatically store values in the correct R base type such as string, integer or double). sos4R itself heavily relies on the <<<XML>>> package for this functionality, but implementers may choose their own method.
+  
+  Both parsing and encoding is broken down to functions for every XML element respectively, so that replacement of only parts for the processes is possible. For example a user parsing a response such as {{{http://sensorweb.demo.52north.org/RESTfulSOS/sos/PegelOnlineSOSv2/WASSERTEMPERATUR_ROHDATEN/Hetlingen_5970010/Temperatur/2012-03-05T00:00:00+01/2012-04-05T00:00:00+02/Observation/OM}this one}} can replace the parsing of a <<<\<swe:DataRecord\>>>> element without touching any of the surrounding elements. But he can subsequently re-use the parsing functions for a <<<\<swe:Quantity\>>>> element within his own function.
+
+* Using sos4R
+
+** Installation
+
+  {{{http://cran.r-project.org/web/packages/sos4R/}sos4R is available on CRAN}} an hence can be easily installed in an R console with <<<\> install.packages("sos4R")>>>.
+  
+** Getting Started
+
+  The best way to get started with sos4R is the {{{http://cran.r-project.org/web/packages/sos4R/vignettes/sos4R.pdf}Vignette}} and the demos. A quick reference for experienced users is provided in form of a cheat sheet. 
+  
++---
+> library("sos4R")
+> vignette("sos4R")
+> demo(package = "sos4R")
+> sosCheatSheet()
++---
+  
+* Development Blog
+
+  For up to date announcements and further information please take a look at the sos4R development blog: {{{http://www.nordholmen.net/sos4r}http://www.nordholmen.net/sos4r}}
+ 
+* Publications
+
+  <If you want to reference this work, please cite the following paper - thanks!>
+  
+  Nüst, D., Stasch, C. & Pebesma, E. J. (2011): {{{http://ifgi.uni-muenster.de/~d_nues01/pub/agile2011_connecting-R-to-the-Sensor-Web_final-draft.pdf}Connecting R to the Sensor Web}} in Geertman, S.; Reinhardt, W. & Toppen, F. (Eds.) Advancing Geoinformation Science for a Changing World, Springer Lecture Notes in Geoinformation and Cartography, 2011, 227 - 246.
+
+* Code Repository
+	
+	The source code of sos4R can be found {{{https://svn.52north.org/svn/geostatistics/main/sos4R/}here}}.
+	
+* Code Manager
+	
+	In charge of the quality management and source code control of sos4R is:
+	
+   * {{{http://ifgi.uni-muenster.de/~d_nues01/}<<Daniel Nüst>>}} (d.nuest@52north.org)
+	

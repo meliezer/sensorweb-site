@@ -1,0 +1,51 @@
+ -----
+ Sensor World
+ -----
+ Arne Broering
+ -----
+ 2009-07-28
+ -----
+
+Sensor World
+~~~~~~~~~~~~~~~~~~
+
+  Sensor World, a distributed sensor network simulation environment, was developed by the 
+  {{{http://swsl.uni-muenster.de}Sensor Web and Simluation Lab (SWSL)}} at the Institute
+  for Geoinformatics (ifgi) in the context of the EC-project OSIRIS. It
+  enables the simulation of realistic sensor behavior and phenomena models in order to test and
+  evaluate sensor networks before deployment.
+  
+  Overall Sensor World consists of 4 autonomous core components:
+   
+   * Sensor,
+   
+   * Phenomenon (measured by the sensors)
+   
+   * Communication Model (describes the connectivity between the sensors)
+   
+   * Control layer
+
+  The Control layer is the connection between all components in the network and enables the
+  communication and interaction between each other via a Java messaging system. The
+  components do not have knowledge about the other components in the network due to a potential
+  distribution to multiple machines and need to get the information about how to reach each other .
+  This is achieved by the Virtual Communication layer through sending updated dictionaries,
+  containing information about all components in the network.
+  
+  One important aspect in the distributed architecture is the possibility to exchange the simulation
+  components by open interfaces and to integrate different, application dependent models for
+  communication, sensor behavior and phenomena.
+  
+  A next step in the development of Sensor World is the integration of standardized OGC Web
+  Services and the interaction with higher level applications.
+  The Sensor Observation Service adapter enables the publishing of simulated measurements
+  retrievable through the web whereas the Sensor Planning Service adapter facilitates the tasking of
+  the virtual sensors.
+  
+[]
+
+* Code Manager
+	
+	In charge of the Sensor World quality management and in control of its source code is:
+	
+   * <<Birte Luetkebohmert>>

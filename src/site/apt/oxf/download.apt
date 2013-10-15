@@ -1,0 +1,34 @@
+ -----
+ OX-Framework
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-07-02
+ -----
+
+Download
+~~~~~~~~~~~~~~~~~~
+
+	If you want to use the most recent state of the code please check out the OX-Framework from the SVN. Use the following SVN URL:
+    
+    {{{https://svn.52north.org/svn/swe/main/OX-Framework/}https://svn.52north.org/svn/swe/main/OX-Framework/}}
+
+	How to check out and install the current Maven release of the <OX-Framework 1.12> is described in the {{{https://wiki.52north.org/bin/view/SensorWeb/OxFramework#Maven}Wiki}}.
+	
+	An earlier version of the OX-Framework as an Eclipse project can be downloaded {{{http://52north.org/downloads/sensor-web/clients/52n-swe-oxf-eclipseproject-20100515/download}here}}.
+	
+	
+
+	
+	
+	
+~~~*---------------+---------+-------------+
+~~~| <<Name>>  | <<Date>> | <<Link>>  | 
+~~~*---------------+-----------+--------------------+-------------------+----------+
+~~~| 52n-swe-oxf-eclipseproject-20100515.zip | 2010-05-15 | {{{http://52north.org/downloads/sensor-web/clients/52n-swe-oxf-eclipseproject-20100515/download}download}}  | 
+~~~*---------------+-----------+--------------------+-------------------+----------+
+~~~| 52n-swe-oxf-eclipseproject-20080307.zip | 2008-03-07 | {{{http://52north.org/downloads/sensor-web/clients/52n-swe-oxf-eclipseproject-20080307/download}download}}  | 
+~~~*---------------+-----------+--------------------+-------------------+----------+
+
+
+	

@@ -1,0 +1,30 @@
+ -----
+ Sensor Planning Service (SPS)
+ -----
+ Julian Kuhlmann
+ -----
+ 2009-07-12
+ -----
+
+Dependencies
+~~~~~~~~~~~~~~~~~~
+
+*---------------+---------+-------------+-------------+-------------+-----------+
+| <<lib name>>  | <<jar>> | <<license>> | <<version>> |	<<function>> | <<URL>>  | 
+*---------------+---------+-------------+-------------+-------------+-----------+
+| <<xmlbeans>>      | Xbean.jar | apache license 2.0 | 2.0 |XML binding |  |
+*---------------+---------+-------------+-------------+-------------+-----------+
+|  | xbean_xpath.jar | apache license 2.0 |  |  |  |
+*---------------+---------+-------------+-------------+-------------+-----------+
+|  | 	 jsr173_1.0_api.jar | apache license 2.0 | 2.0 | XML binding | {{{http://jcp.org/aboutJava/ communityprocess/final/ jsr173/index.html}http://jcp.org/aboutJava/communityprocess/final/jsr173/index.html}} |
+*---------------+---------+-------------+-------------+-------------+-----------+
+|  | resolver.jar | apache license 1.1 | 1.2 |  | {{{http://xml.apache.org/commons/} http://xml.apache.org/commons/}} |
+*---------------+---------+-------------+-------------+-------------+-----------+
+|  | xercesImpl.jar | apache license 2.0 | 2.7.1 | | {{{http://xerces.apache.org/xerces2-j/} http://xerces.apache.org/xerces2-j/}} |
+*---------------+---------+-------------+-------------+-------------+-----------+
+| <<log4J>> |  log4j-1.2.11.jar | apache license 2.0 | 1.2.11 |  Event logging | {{{http://logging.apache.org/log4j/docs/} http://logging.apache.org/log4j/docs/}} |
+*---------------+---------+-------------+-------------+-------------+-----------+ 
+| <<JODA Time>> | 	 Joda-time-1.4.jar | apache license 2.0 | 1.4 | Date Handling | {{{http://joda-time.sourceforge.net/index.html}http://joda-time.sourceforge.net/index.html}} |
+*---------------+---------+-------------+-------------+-------------+-----------+ 
+	 
+[]

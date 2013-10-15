@@ -1,0 +1,200 @@
+ -----
+ ifgicopter - Sensor Platform Framework
+ -----
+Matthes Rieke
+ -----
+ 2011-04-05
+ -----
+
+Sensor Platform Framework
+~~~~~~~~~~~~~~~~~~
+
+  The 52\xB0North Sensor Platform Framework was developed as part of Matthes Rieke's Diploma Thesis 'Entwicklung eines Frameworks zur Anbindung von Multi-Sensor-Plattformen an das Sensor Web' in Geoinformation Science at the Institute for Geoinformatics of the University of Muenster (Germany). The intention of this work is to ease the integration of (mobile) sensor platforms into the Sensor Web. Thus the framework makes use of proofed concepts of the OGC community like SensorML, Observation&Measurements, GML or SWE Common. 
+
+* Dedicated Twiki Pages
+
+  <<For up-to-date information>>, releases and HowTos please visit the <<{{{https://wiki.52north.org/bin/view/Sensornet/SensorPlatformFramework}Sensor Platform Framework Twiki page}}>>.
+
+* Architecture
+
+  The main goal of the framework is a high reusability factor. This is achieved by a plugin-based architecture (see figure 1). Sensor platforms as data sources can be integrated by realizing the Input-Plugin interface. Output-Plugins form an extension point for data processing and provision/supply. An additional interface for data processing components activates complex computation capabilities (e.g., SensorML processes).
+
+[../../../images/ifgicopter/spf-overview.png] Framework Architecture
+
+
+* Features
+
+  A short overview of the built-in features of the framework:
+  
+    * Straight-forward plugin-based integration of any sensor platform, mobile or stationary
+
+    * Built-in Output-Plugins for logging to Harddrive (O&M or CSV) and OGC Web Services (using the Sensor Bus)
+
+    * Extension point for custom data processing components and Output-Plugins
+
+    * Language-independent interface for Input-Plugins using XML-RPC
+
+    * Platform-independent implementation (Java Runtime Environment 1.6.x required)
+
+    * planned features: language-independent interface for Output-Plugins using XML-RPC. Thus the framework can be used as a server - local or remote
+
+  []\
+
+  Framework GUI:
+
+[../../../images/ifgicopter/spf-gui.png] SPF GUI
+
+* Documentation
+
+  The framework comes besides the textual part of the Diploma Thesis with a complete Javadoc-API-Documentation and a few examples.
+  
+  * A tutorial video how to use the framework with a mikrokopter is available {{{http://ifgi.uni-muenster.de/~m_riek02/spf/tutorial-SPF.avi}here}}.
+  
+  * A demo video presenting the ifgicopter used as a mobile multi-sensor platform to gather atmospheric data: {{http://www.youtube.com/watch?v=EXL8VxdzBPE}} 
+
+** Writing an Input-Plugin
+
+  Implementing an Input-Plugin is pretty straight-forward. Your Java class only needs to implement org.n52.swe.ifgicopter.spf.input.IInputPlugin (included in the SPF API release). In particular, the method <<getConfigFile()>>
+  must provide an InputStream holding the xml-encoded description of the plugin.
+~~ MISSING LINK
+~~The schemata needed to create such an XML instance can be found {{{}here}}.
+  
+  Hence the two steps to implement your own Input-Plugin are
+  
+  * Make your Java class implement <<org.n52.swe.ifgicopter.spf.input.IInputPlugin>>
+  
+  * Provide the plugin description (as an instance of this schema) using the method <<getConfigFile()>>
+
+** Writing an Output-Plugin, Interpolator, Data-Processor
+
+  You only need to implement/extend the following classes:
+  
+  * org.n52.swe.ifgicopter.spf.output.IOutputPlugin
+  
+  * org.n52.swe.ifgicopter.spf.data.AbstractInterpolator
+  
+  * org.n52.swe.ifgicopter.spf.data.AbstractDataProcessor
+  
+** Registering your Plugins at the Framework
+
+  In order to get the framework into using your newly created plugins you have to include the qualified names to the Frameworks configuration.
+  
+  The configuration file is located at <spf-directory>/config/spf.properties and looks like the following listing.
+  
++-------------------------------+
+### Semicolon seperated list of classes implementing org.n52.swe.ifgicopter.spf.input.IInputPlugin
+IOutputPlugins = org.n52.swe.ifgicopter.spf.output.FileWriterPlugin(| )
+#IOutputPlugins = 
+
+### Semicolon seperated list of classes implementing org.n52.swe.ifgicopter.spf.output.IOutputPlugin
+IInputPlugins = org.n52.swe.ifgicopter.spf.xmlrpc.XMLRPCInputPlugin(config/spf/xml-rpc-sample.cfg)
+#IInputPlugins = 
+
+### Semicolon seperated list of classes extending org.n52.swe.ifgicopter.spf.data.AbstractDataProcessor
+AbstractDataProcessors = org.n52.swe.ifgicopter.spf.data.UnitConverter
+
+### class extending org.n52.swe.ifgicopter.spf.data.AbstractInterpolator
+AbstractInterpolator = org.n52.swe.ifgicopter.spf.data.LinearInterpolator
+
+ValidateXML = true
++-------------------------------+
+  
+  If your Plugin has a different constructor than the default one (with no arguments) you can or have to define String values (in braces, see example of FileWriterPlugin above) which are then passed to the constructor. Hence only String arguments are allowed for your custom constructors.
+
+* Download
+
+** Current Release:
+
+  <<For releases and HowTos>> please visit the <<{{{https://wiki.52north.org/bin/view/Sensornet/SensorPlatformFramework}Sensor Platform Framework Twiki page}}>>.
+
+* Source code
+
+  The sources of the Sensor Platform Framework are divided into several sub-projects. All sub-projects are managed using Apache Maven 2.2.1. Instructions on how to use Maven can be found {{{http://maven.apache.org}here}}.
+
+** SPF API
+
+  The API can be used to write Input-Plugin, Output-Plugins, Interpolator-Implementations and complex data processing units.
+  
+  * Dependencies: SPF Bindings
+  
+  * Instructions
+    
+    * checkout from SVN
+    
+    * run 'mvn install' in the main folder of the API projects (where the pom.xml is located)
+    
+    * a JAR file is created in the target-directory. You can use this file inside your projects.
+  
+  * Source Code: {{https://svn.52north.org/svn/swe/incubation/ifgicopter/spf-api/trunk/}}
+
+** SPF Bindings
+
+  The Bindings provide access to the used XML schemata (all compiled using XMLBeans) and some other mandatory dependencies.
+  
+  * Instructions
+    
+    * checkout from SVN
+    
+    * go to the 'install_lib' directory and perform the platform-specific installation script - it installs the needed libraries to your local maven repository
+    
+    * run 'mvn install' in the main folder of the bindings projects (where the pom.xml is located)
+  
+  * Source Code: {{https://svn.52north.org/svn/swe/incubation/ifgicopter/spf-bindings/trunk/}}
+  
+** SPF Core
+
+  The Core is the heart of the Sensor Platform Framework. Here the business model, the controller and the GUI are implemented.
+  
+  * Dependencies:
+  
+    * SPF Api
+    
+    * SPF Bindings
+    
+    * SPF OutputPlugins
+  
+  * Instructions
+    
+    * checkout from SVN
+    
+    * go to the 'external_lib' directory and perform the platform-specific installation script - it installs the needed libraries to your local maven repository. Probably some needed 3rd party libraries are not included in the SVN checkout due to licensing issues. Follow the instructions in the spf-core/install.html file to fill the gap.
+    
+    * run 'mvn install' in the main folder of the bindings projects (where the pom.xml is located)
+  
+  * Source Code: {{https://svn.52north.org/svn/swe/incubation/ifgicopter/spf-core/trunk/}}
+  
+** SPF OutputPlugins
+
+  This project holds several built-in Output-Plugins (CSV file logging, Sensor-Bus-connection). 
+  
+  * Dependencies:
+  
+    * SPF Api
+    
+    * SPF Bindings
+    
+  * Instructions
+    
+    * checkout from SVN
+    
+    * run 'mvn install' in the main folder of the bindings projects (where the pom.xml is located)
+  
+  * Source Code: {{https://svn.52north.org/svn/swe/incubation/ifgicopter/spf-outputPlugins/trunk/}}
+
+* Contact
+
+  Matthes Rieke, author of this software:
+
+    * Email: {{{mailto:m.rieke_AT_uni-muenster.de}m.rieke_AT_uni-muenster.de}}
+    
+    * Homepage: {{http://www.matthesrieke.de}}
+
+* Code Manager
+
+  In charge of the Sensor Platform Framework quality management and in control of its source code is:
+  
+  * <<Matthes Rieke>>
+
+* Contributing Developers
+   
+    * Matthes Rieke

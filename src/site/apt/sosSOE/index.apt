@@ -1,0 +1,32 @@
+ -----
+ Sensor Observation Service (SOS) Extension for ArcGIS Server
+ -----
+ Arne Broering
+ -----
+ 2011-11-17
+ -----
+
+ArcGIS Server SOS Extension
+~~~~~~~~~~~~~~~~~~
+
+  The <<ArcGIS Server SOS Extension>> is implemented as a so-called <<Server Object Extension>>, or short <<SOE>>, for ArcGIS Server 10.1. It allows querying of <<observations>>, metadata about <<procedures>> (= sensors), as well as descriptions of <<features>> (of interest) observed by the sensors. Either all available resource instances can be queried or the resources can be filtered with powerful query operations.
+
+  The ArcGIS Server SOS Extension is compliant with the {{{http://www.ogcnetwork.net/SOS_2_0/tutorial}Sensor Observation Service (SOS) 2.0}} standard defined by the Open Geospatial Consortium (OGC) and fully OGC compliant responses (O&M 2.0, SensorML 2.0) are returned. Additionally, the SOE provides a new REST interface to sensor resources which complies to the {{{http://help.arcgis.com/en/arcgisserver/10.0/apis/rest/index.html}Geoservices REST API}} developed by ESRI, which is currently going through the standardization process at OGC. The defined REST API of the ArcGIS Server SOS Extension (as described  in this {{{../docs/specification.htm}document}}) significantly simplifies the request and response encoding of the SOS 2.0, by providing most of the SOS 2.0 functionality.
+
+  As an ArcGIS Server SOE, the service needs to be installed via the ArcGIS Server Manager as an extension to a registered Map Service. To have a well-defined underlying database schema, the Map Service needs to be setup on a specific database model as described {{{../docs/dataModel.htm}here}}.
+
+  This {{{http://www.youtube.com/watch?v=xcgsQGv9ggg&feature=plcp}youtube video}} presents the key features and explains some background of the ArcGIS Server SOS Extension.
+  
+  A demo instance of this software is described {{{./demo.html}here}}.
+
+* Code Manager
+	
+	In charge of the quality management of this software project and in control of its source code is:
+	
+   * {{{http://arnebroering.de}<<Arne Broering>>}}
+	
+* Contributing Developers
+   
+   * Jan Schulte
+   
+   * Carsten Hollmann

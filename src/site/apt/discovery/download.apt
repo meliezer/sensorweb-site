@@ -1,0 +1,24 @@
+ -----
+ Download 52\xB0North Sensor Discovery Components
+ -----
+Daniel Nüst
+ -----
+ 2010-11-12
+ -----
+
+52\xB0North Sensor Discovery Components - Download and Installation Instructions
+~~~~~~~~~~~~~~~~~~
+
+* Download
+
+  Source and binary releases for SIR and SOR are available on the 52\xB0North Sensor Web community download page: {{http://52north.org/downloads/sensor-web/}}.
+
+* Installation
+
+  Detailed Installation instructions can be downloaded from the following URLs. These are also included in the download packages.
+  
+    [<<SIR>>] {{https://wiki.52north.org/bin/view/Sensornet/SirTutorial}}
+  
+    [<<SOR>>] {{https://svn.52north.org/svn/swe/incubation/SOR/doc/how2install_SOR.pdf}}
+
+  More information for developers {{{./develop.html}here}}.

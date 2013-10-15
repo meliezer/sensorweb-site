@@ -1,0 +1,144 @@
+ -----
+ 52\xB0North Sensor Discovery
+ -----
+Daniel Nuest
+ -----
+ 2010-11-12
+ -----
+
+Sensor Discovery
+~~~~~~~~~~~~~~~~~~
+
+  The 52\xB0North Sensor Registry framework relies on work performed within the EU funded projects {{{http://www.osiris-fp6.eu/}OSIRIS}} and {{{http://genesis-fp7.eu/}GENESIS}}. This page first gives an (graphical) overview of the components and then introduces them in detail.
+
+* Sensor Discovery Service Integration and Workflow
+
+  <<What can the framework provide?>>
+  
+  * End-users with a specific field of expertise might use a catalogue client to query potentially interesting sensors, to which they can connect and retrieve date afterwards.
+  
+  * Data providers who publish their data through supported services (like the OGC Sensor Observation Service - SOS) can insert they sensor description directly into the sensor catalogue (Sensor Instance Registry - SIR). But most probably they will trigger a harvesting of their data providing service.
+  
+  * Sensor network administrators (or other end-users) can discover sensors directly via a sensor catalogue and take advantage of the sementical enhancement of requests. They can also establish a connection to a generic catalogue service (like the OGC Catalogue Service for the Web - CSW) including a regular publishing of all data to that catalogue instance.
+
+[]
+
+  This graphic gives an overview of the interaction between SIR, SOR, and CSW-ebRIM, and shows potential users:
+
+[../images/52N-sensor-discovery.png] Sensor Discovery Overview
+
+[]
+
+* 52\xB0North Sensor Instance Registry
+
+** Outline
+  
+  The first component of the Sensor Discovery framework is the Sensor Instance Registry (SIR). It provides functionality for discovering sensors as well as SWE services.
+  
+  Generally the SIR interface consists of three parts:
+
+    * sensor discovery
+
+    * sensor status handling
+    
+    * catalog connection
+
+  The discovery part of the SIR interface deals with sensor metadata (based on SensorML) and metadata of the services that encapsulate the sensors. It comprises the following operations:
+
+    * <<SearchSensors>> can be used for retrieving sensor metadata and information about the services that make the sensors available. Several search criteria like the observed phenomenon, the region of interest and keywords can be specified. Text fields (in this case for phenomenon, textual information and unit of measurement) can be combined in a search request. The search can also be semantically enhanced by including a SOR instance, which provides semantic matching of equal or hierarchically related phenomena. The different elements within one search field are connected with the OR operator, different search fields are linked with "AND".
+    
+    * <<HarvestService>> is designed for automatically adding information about all sensors within a SWE service to the SIR. In case of a SOS this can be achieved by sending a GetCapabilites request to the SOS. The returned capabilities document provides the service specific identifiers of all contained sensors. These identifiers can be used for collecting SensorML descriptions by using the Describe Sensor operation. Currently the SIR supports the SOS and SPS with the SensorML version 1.0 and 1.0.1.
+    
+    * <<InsertSensorInfo>>, <<DeleteSensorInfo>>, and <<UpdateSensorDescription>> can be used for inserting, deleting, and updating sensor information without harvesting it from a SWE service instance.
+
+  The sensor status handling part provides functionality for handling the status of sensors. Whereas the data contained in a SensorML description is usually more focussed on providing information for discovering sensors and for interpreting their data, the  highly dynamic sensor status information is often not fully covered. Thus a specific set of operations for dealing with the status of sensors is defined:
+
+    * <<GetSensorStatus>> allows to select sensors and to filter certain status properties when querying for the status of sensors.
+
+    * <<InsertSensorStatus>> allows inserting status information for individual sensors into the SIR. This operation can be used for example to publish the latest sensor status.
+
+    * <<SubscribeSensorStatus>>, <<RenewStatusSubscription>> and <<CancelStatusSubscription>> operations support event based notifications to clients about sensor status changes.
+
+  And like all OGC compliant services a GetCapabilities operation is offered for the SIR. Besides the usual content for service and provider identification and the operations' metadata, it also contains a special Contents section which holds a list of all harvested services.
+
+[]
+
+** Specification
+
+  A first version of the SIR interface was first specified during OSIRIS ({{{http://osiris-fp6.eu/doc/OSIRIS-WP6000-DEL-0037-Archi%20Spec%20and%20Justification.pdf}document}}, section 5.3).  A significantly updated version has been published as a public OGC Discussion Paper (the OGC Discussion Paper reflect the SIR interface implemented by the 52North SIR):
+  
+  * Jirka S., Nuest D. (2010): OGC Sensor Instance Registry Discussion Paper. Public Discussion Paper. Open Geospatial Consortium: 10-171. {{{http://portal.opengeospatial.org/files/?artifact_id=40609}Download from OGC}}.
+
+[]
+
+
+* 52\xB0North Sensor Observable Registry
+
+** Outline
+
+  The second component of the 52\xB0North Sensor Discovery framework is the Sensor Observable Registry (SOR). It provides an interface for managing the definitions of phenomena measured by sensors as well as exploring semantic relationships between these phenomena.
+
+  Generally the SOR functionalities can be divided into two parts:
+  
+    * definition discovery
+  
+    * definition management
+  
+  The discovery part of the SOR interface deals with phenomenon descriptions based on SWE Common and GML which are identified by Uniform Resource Identifiers (URIs).
+  
+    * <<GetDefinition>> returns the phenomenon description document for a given identifier.
+  
+    * <<InsertDefinition>> and <<DeleteDefinition>> provide means to manage available definitions in a SOR instance.
+  
+    * <<GetDefinitionURIs>> allows requesting all available URIs of a SOR instance. This request can be parameterised for partial request and paging mechanisms.
+    
+    * <<GetMatchingDefinitions>> returns related phenomena for a given phenomenon identifier. The matching can look for super, sub, or equivalent types and can also be limited to a certain search depth.
+  
+    * <<A RESTful service>> allows resource-oriented access to the phenomenon definitions based on HTTP GET requests.
+
+  And like all OGC compliant services a GetCapabilities operation is offered for the SOR. Besides the usual content for service and provider identification and the operations' metadata, it also contains a special Contents section which lists: the number of phenomenon definition entries, keywords, application domains, and URLs of the used ontologies.
+
+[]
+
+** Specification
+
+  The SIR interface is specified in a public OGC Discussion Paper:
+  
+    * Jirka S., Broering, A., Nuest D. (2010): OGC Sensor Observable Registry (SOR) Discussion Paper. Public Discussion Paper. Open Geospatial Consortium: 09-112r1. {{{http://portal.opengeospatial.org/files/?artifact_id=40571}Download from OGC}}.
+
+[]
+
+
+* Demos
+	
+  We will publish demo videos of the features of SIR and SOR here soon. Until then, check out the <<demo services>> (these links lead you to the graphical test clients):
+  
+    * {{http://geoviqua.dev.52north.org/SIR/}} running version 0.5.x
+  
+    * (There currently is no public instance of a SOR available)
+  
+  If you want to query the service interface directly, please use the following endpoints for both GET and POST requests:
+  
+    * http://geoviqua.dev.52north.org/SIR/sir
+      
+* Schemata
+
+  The XML Schemata of SIR and SOR are available in the schema repository: {{http://52north.org/schema/}}.
+
+* Download and Develop
+
+  Please go to the page {{{./download.html}Download and Installation}} to find instruction to download binary distribution packages of the services. The page {{{./develop.html}Delopment and Sources}} provides information for using the latest SVN releases for development or deployment or the newest version.
+
+* Code Manager
+
+  In charge of the Sensor Discovery quality management and in control of its source code is:
+
+    * <<Daniel Nüst>> (d.nuest@52north.org)
+
+* Contributing Developers
+   
+    * Jan Schulte
+   
+    * Alejandro Llaves
+   
+    * Simon Jirka

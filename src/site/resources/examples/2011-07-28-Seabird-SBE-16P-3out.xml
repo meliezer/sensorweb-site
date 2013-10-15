@@ -1,0 +1,391 @@
+<sml:System xmlns:sml="http://www.opengis.net/sensorML/1.0.1" xmlns:gml="http://www.opengis.net/gml" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sid="http://www.orangenkiste.de/SID/0.5.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" gml:id="watersensor">
+  <sml:identification>
+    <sml:IdentifierList>
+      <sml:identifier name="uniqueID">
+        <sml:Term definition="urn:ogc:def:identifier:OGC:uniqueID">
+          <sml:value>urn:ogc:object:feature:SARTI_SEABIRD_16P57353_6479</sml:value>
+        </sml:Term>
+      </sml:identifier>
+      <sml:identifier name="longName">
+        <sml:Term definition="urn:ogc:def:identifier:OGC:1.0:longName">
+          <sml:value>salinity, pressure, salinity and temperature</sml:value>
+        </sml:Term>
+      </sml:identifier>
+    </sml:IdentifierList>
+  </sml:identification>
+  <sml:capabilities>
+    <swe:SimpleDataRecord definition="urn:ogc:def:property:OGC::status">
+      <swe:field name="status">
+        <swe:Boolean>
+          <swe:value>true</swe:value>
+        </swe:Boolean>
+      </swe:field>
+      <swe:field name="mobile">
+        <swe:Boolean>
+          <swe:value>false</swe:value>
+        </swe:Boolean>
+      </swe:field>
+      <swe:field name="measuringInterval">
+        <swe:Quantity definition="urn:ogc:def:property:OGC:1.0:measuringInterval">
+          <swe:uom code="ms" />
+          <swe:value>0.0</swe:value>
+        </swe:Quantity>
+      </swe:field>
+    </swe:SimpleDataRecord>
+  </sml:capabilities>
+  <sml:position>
+    <swe:Position definition="urn:ogc:def:property:OGC:1.0:stationPosition" referenceFrame="urn:ogc:def:crs:EPSG:4326">
+      <swe:location>
+        <swe:Vector>
+          <swe:coordinate name="latitude">
+            <swe:Quantity axisID="y">
+              <swe:uom code="deg" />
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>-180 180</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+              <swe:value>43.25</swe:value>
+            </swe:Quantity>
+          </swe:coordinate>
+          <swe:coordinate name="longitude">
+            <swe:Quantity axisID="x">
+              <swe:uom code="deg" />
+              <swe:constraint>
+                <swe:AllowedValues>
+                  <swe:interval>-180 180</swe:interval>
+                </swe:AllowedValues>
+              </swe:constraint>
+              <swe:value>5.21</swe:value>
+            </swe:Quantity>
+          </swe:coordinate>
+        </swe:Vector>
+      </swe:location>
+    </swe:Position>
+  </sml:position>
+  <sml:interfaces>
+    <sml:InterfaceList>
+      <sml:interface name="connector1" xlink:role="urn:ogc:def:connection:OGC:serial">
+        <sml:InterfaceDefinition>
+          <sml:applicationLayer>
+            <sid:CommandDefinition>
+              <sid:commands>
+                <sid:CommandList>
+                  <sid:command name="getDataCommand" auto="true" interval="10">
+                    <sid:Command>
+                      <swe:DataRecord gml:id="TS">
+                        <swe:field name="command" xlink:role="urn:ogc:def:command:OGC:name">
+                          <swe:Text>
+                            <swe:value>TS</swe:value>
+                          </swe:Text>
+                        </swe:field>
+                      </swe:DataRecord>
+                    </sid:Command>
+                    <sid:ResponseList>
+                    </sid:ResponseList>
+                  </sid:command>
+                  <sid:command name="init" auto="true" interval="1">
+                    <sid:Command>
+                      <sid:CommandParameters>
+                        <swe:SimpleDataRecord gml:id="carriageReturn">
+                          <swe:field name="command" xlink:role="urn:ogc:def:command:OGC:name">
+                            <swe:Text>
+                              <swe:value>
+                              </swe:value>
+                            </swe:Text>
+                          </swe:field>
+                        </swe:SimpleDataRecord>
+                      </sid:CommandParameters>
+                      <sid:ResponseList>
+                      </sid:ResponseList>
+                    </sid:Command>
+                  </sid:command>
+                </sid:CommandList>
+              </sid:commands>
+            </sid:CommandDefinition>
+          </sml:applicationLayer>
+          <sml:presentationLayer>
+            <sid:DataInputStream>
+              <dataInputComponents>
+                <ComponentList>
+                  <component name="getDataCommand" xlink:href="#TS" />
+                </ComponentList>
+              </dataInputComponents>
+            </sid:DataInputStream>
+            <sid:DataOutputStream>
+              <dataOutputComponents>
+                <ComponentList>
+                  <component name="getDataAck">
+                    <swe:DataRecord gml:id="">
+                      <swe:field name="ack" xlink:role="urn:ogc:def:encoding:assertedValue">
+                        <swe:Text>
+                          <swe:value xsi:nil="true" />
+                        </swe:Text>
+                      </swe:field>
+                    </swe:DataRecord>
+                  </component>
+                  <component name="TS_Value">
+                    <swe:DataRecord>
+                      <swe:field name="ts">
+                      </swe:field>
+                    </swe:DataRecord>
+                  </component>
+                  <component name="getDataNack">
+                    <swe:DataRecord gml:id="">
+                      <swe:field name="nack" xlink:role="urn:ogc:def:encoding:assertedValue">
+                        <swe:Text>
+                          <swe:value xsi:nil="true" />
+                        </swe:Text>
+                      </swe:field>
+                    </swe:DataRecord>
+                  </component>
+                  <component name="watersensor">
+                    <swe:DataRecord>
+                      <swe:field name="SARTI_TEMPERATURE">
+                        <swe:Quantity gml:id="SARTI_TEMPERATURE" definition="urn:ogc:def:phenomenon:OGC:1.0.30:temperature">
+                          <gml:metaDataProperty>
+                            <offering>
+                              <id>SARTI_TEMPERATURE</id>
+                              <name>SARTI_TEMPERATURE</name>
+                            </offering>
+                          </gml:metaDataProperty>
+                          <gml:description />
+                          <swe:uom code="cel" />
+                        </swe:Quantity>
+                      </swe:field>
+                      <swe:field name="SARTI_PRESSURE">
+                        <swe:Quantity gml:id="SARTI_PRESSURE" definition="urn:ogc:def:phenomenon:OGC:1.0.30:pressure">
+                          <gml:metaDataProperty>
+                            <offering>
+                              <id>SARTI_PRESSURE</id>
+                              <name>SARTI_PRESSURE</name>
+                            </offering>
+                          </gml:metaDataProperty>
+                          <gml:description />
+                          <swe:uom code="dBar" />
+                        </swe:Quantity>
+                      </swe:field>
+                      <swe:field name="SARTI_CONDUCTIVITY">
+                        <swe:Quantity gml:id="SARTI_CONDUCTIVITY" definition="urn:ogc:def:phenomenon:OGC:1.0.30:conductivity">
+                          <gml:metaDataProperty>
+                            <offering>
+                              <id>SARTI_CONDUCTIVITY</id>
+                              <name>SARTI_CONDUCTIVITY</name>
+                            </offering>
+                          </gml:metaDataProperty>
+                          <gml:description />
+                          <swe:uom code="ppt" />
+                        </swe:Quantity>
+                      </swe:field>
+                    </swe:DataRecord>
+                  </component>
+                </ComponentList>
+              </dataOutputComponents>
+            </sid:DataOutputStream>
+          </sml:presentationLayer>
+          <sml:physicalLayer>
+            <sid:DataInputStream>
+              <dataInputComponents>
+                <ComponentList>
+                  <component name="getDataCommand" xlink:href="#TS" />
+                </ComponentList>
+              </dataInputComponents>
+            </sid:DataInputStream>
+            <sid:DataOutputStream>
+              <dataOutputComponents>
+                <ComponentList>
+                  <!-- 
+                  <component name="TS_Value">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="ts">
+                        <swe:DataRecord>
+                          <swe:field name="ts" xlink:role="urn:ogc:def:encoding:assertedValue">
+                         	 <swe:Text>
+                         		 <swe:value>TS\r</swe:value>
+                          	</swe:Text>
+                          </swe:field>
+                          
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator=" " blockSeparator="\n" decimalSeparator="."/>
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>  -->
+                  <component name="getDataNack">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="nack" />
+                    </swe:DataBlockDefinition>
+                  </component>
+                  <component name="Block0">
+                    <swe:DataBlockDefinition>
+                      <swe:components name="dataBlock0">
+                        <swe:DataRecord>
+                          <swe:field name="Block0">
+                            <swe:Text>
+                              <gml:description>data block identifier</gml:description>
+                            </swe:Text>
+                          </swe:field>
+                          <swe:field name="Block1">
+                            <swe:Text>
+                              <gml:description>data block identifier</gml:description>
+                            </swe:Text>
+                          </swe:field>
+                          <swe:field name="Block2">
+                            <swe:Text>
+                              <gml:description>data block identifier</gml:description>
+                            </swe:Text>
+                          </swe:field>
+                          <swe:field name="Block3">
+                            <swe:Text>
+                              <gml:description>data block identifier</gml:description>
+                            </swe:Text>
+                          </swe:field>
+                          <swe:field name="Block4">
+                            <swe:Text>
+                              <gml:description>data block identifier</gml:description>
+                            </swe:Text>
+                          </swe:field>
+                          <swe:field name="Block5">
+                            <swe:Text>
+                              <gml:description>data block identifier</gml:description>
+                            </swe:Text>
+                          </swe:field>
+                        </swe:DataRecord>
+                      </swe:components>
+                      <swe:encoding>
+                        <swe:TextBlock tokenSeparator="," blockSeparator="&#xD;" decimalSeparator="." />
+                      </swe:encoding>
+                    </swe:DataBlockDefinition>
+                  </component>
+                </ComponentList>
+              </dataOutputComponents>
+            </sid:DataOutputStream>
+          </sml:physicalLayer>
+          <sml:connections>
+            <sml:ConnectionList>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="applicationLayer/commands/getDataCommand/TS" />
+                  <sml:destination ref="presentationLayer/dataInputComponents/getDataCommand" />
+                </sml:Link>
+              </sml:connection>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="presentationLayer/dataInputComponents/getDataCommand" />
+                  <sml:destination ref="physicalLayer/dataInputComponents/getDataCommand" />
+                </sml:Link>
+              </sml:connection>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="physicalLayer/dataOutputComponents/Block0/dataBlock0/Block0" />
+                  <sml:destination ref="presentationLayer/dataOutputComponents/watersensor/SARTI_TEMPERATURE" />
+                </sml:Link>
+              </sml:connection>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="physicalLayer/dataOutputComponents/Block0/dataBlock0/Block1" />
+                  <sml:destination ref="presentationLayer/dataOutputComponents/watersensor/SARTI_PRESSURE" />
+                </sml:Link>
+              </sml:connection>
+              <sml:connection>
+                <sml:Link type="urn:ogc:def:link:OGC:sid">
+                  <sml:source ref="physicalLayer/dataOutputComponents/Block0/dataBlock0/Block2" />
+                  <sml:destination ref="presentationLayer/dataOutputComponents/watersensor/SARTI_CONDUCTIVITY" />
+                </sml:Link>
+              </sml:connection>
+            </sml:ConnectionList>
+          </sml:connections>
+        </sml:InterfaceDefinition>
+      </sml:interface>
+    </sml:InterfaceList>
+  </sml:interfaces>
+  <sml:inputs>
+    <sml:InputList>
+      <sml:input name="temperature">
+        <swe:ObservableProperty definition="urn:ogc:def:property:OGC::temperature">
+        </swe:ObservableProperty>
+      </sml:input>
+      <sml:input name="depth">
+        <swe:ObservableProperty definition="urn:ogc:def:property:OGC::depth" />
+      </sml:input>
+      <sml:input name="conductivity">
+        <swe:ObservableProperty definition="urn:ogc:def:property:OGC::conductivity" />
+      </sml:input>
+    </sml:InputList>
+  </sml:inputs>
+  <sml:outputs>
+    <sml:OutputList>
+      <sml:output name="SARTI_TEMPERATURE">
+        <swe:Quantity definition="urn:ogc:def:phenomenon:OGC:1.0.30:temperature">
+          <gml:metaDataProperty>
+            <offering>
+              <id>SARTI_TEMPERATURE</id>
+              <name>SARTI_TEMPERATURE</name>
+            </offering>
+          </gml:metaDataProperty>
+          <gml:description />
+          <swe:uom code="cel" />
+        </swe:Quantity>
+      </sml:output>
+      <sml:output name="SARTI_PRESSURE">
+        <swe:Quantity definition="urn:ogc:def:phenomenon:OGC:1.0.30:pressure">
+          <gml:metaDataProperty xmlns:gml="http://www.opengis.net/gml">
+            <offering>
+              <id>SARTI_PRESSURE</id>
+              <name>SARTI_PRESSURE</name>
+            </offering>
+          </gml:metaDataProperty>
+          <gml:description />
+          <swe:uom code="dBar" />
+        </swe:Quantity>
+      </sml:output>
+      <sml:output name="SARTI_CONDUCTIVITY">
+        <swe:Quantity definition="urn:ogc:def:phenomenon:OGC:1.0.30:conductivity">
+          <gml:metaDataProperty xmlns:gml="http://www.opengis.net/gml">
+            <offering>
+              <id>SARTI_CONDUCTIVITY</id>
+              <name>SARTI_CONDUCTIVITY</name>
+            </offering>
+          </gml:metaDataProperty>
+          <gml:description xmlns:gml="http://www.opengis.net/gml" />
+          <swe:uom code="ppt" />
+        </swe:Quantity>
+      </sml:output>
+    </sml:OutputList>
+  </sml:outputs>
+  <sml:components>
+    <sml:ComponentList>
+      <sml:component name="watersensor_Parameters" xlink:role="urn:ogc:def:sensor:OGC:detector">
+        <sml:Component gml:id="detector:watersensor">
+          <sml:inputs />
+          <sml:outputs />
+          <sml:parameters />
+          <sml:method />
+        </sml:Component>
+      </sml:component>
+    </sml:ComponentList>
+  </sml:components>
+  <sml:connections>
+    <sml:ConnectionList>
+      <sml:connection>
+        <sml:Link type="urn:ogc:def:link:OGC:sid">
+          <sml:source ref="this/interfaces/connector_serial/presentationLayer/dataOutputComponents/watersensor/SARTI_TEMPERATURE" />
+          <sml:destination ref="this/outputs/SARTI_TEMPERATURE" />
+        </sml:Link>
+      </sml:connection>
+      <sml:connection>
+        <sml:Link type="urn:ogc:def:link:OGC:sid">
+          <sml:source ref="this/interfaces/connector_serial/presentationLayer/dataOutputComponents/watersensor/SARTI_PRESSURE" />
+          <sml:destination ref="this/outputs/SARTI_PRESSURE" />
+        </sml:Link>
+      </sml:connection>
+      <sml:connection>
+        <sml:Link type="urn:ogc:def:link:OGC:sid">
+          <sml:source ref="this/interfaces/connector_serial/presentationLayer/dataOutputComponents/watersensor/SARTI_CONDUCTIVITY" />
+          <sml:destination ref="this/outputs/SARTI_CONDUCTIVITY" />
+        </sml:Link>
+      </sml:connection>
+    </sml:ConnectionList>
+  </sml:connections>
+</sml:System>

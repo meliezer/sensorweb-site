@@ -1,0 +1,42 @@
+ -----
+ Sensor Observation Service (SOS) Extension for ArcGIS Server
+ -----
+ Arne Broering
+ -----
+ 2012-07-11
+ -----
+
+Demo of the ArcGIS Server SOS Extension
+~~~~~~~~~~~~~~~~~~
+
+  This is the {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQuality/MapServer/exts/52nArcGisSos}link}} to a demo instance of the ArcGIS Server SOS Extension.
+  This demo instance serves an air quality data set from the {{{http://www.eea.europa.eu/}European Environment Agency (EEA)}}. Please find {{{http://www.eea.europa.eu/maps/ozone/resources/about-the-data}here}} more information about the data provided by EEA.
+  
+  The excerpt of the EEA air quality data set used here includes over 1.000.000 observations from around 1.500 air quality stations across Europe. The figure below shows the network of air quality stations (source of background image is {{{http://www.nps.gov/}US National Park Service}})
+  
+[../images/ArcGIS-SOS-Extension/AirQualityEurope.png]
+
+  In ESRI's ArcMap, you can access the following <<Map Service>> upon which this ArcGIS Server SOS Extension is based: {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQuality/MapServer}http://ags.dev.52north.org:6080/arcgis/rest/services/AirQuality/MapServer}}
+  
+  In the following, example requests for the SOS interface of this ArcGIS Server SOS Extension demo instance are presented.
+
+  [[1]] <<GetCapabilities>>
+
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQuality/MapServer/exts/52nArcGisSos/GetCapabilities?service=SOS&request=GetCapabilities&f=xml}http://ags.dev.52north.org:6080/arcgis/rest/services/AirQuality/MapServer/exts/52nArcGisSos/GetCapabilities\
+  ?service=SOS\
+  &request=GetCapabilities}}
+
+  [[2]] <<GetObservation>>
+  
+  For example, all observations regarding the observed property 'Ozone' (identified by the URI http://dd.eionet.europa.eu/vocabulary/aq/pollutant/7) measured by the British air quality sensor no. 2 (identified by the id 'GB_StationProcess_2') and within the time span 1st of May 2013 until 3rd of May 2013 can be requested:
+  
+  {{{http://ags.dev.52north.org:6080/arcgis/rest/services/AirQuality/MapServer/exts/52nArcGisSos/GetObservation?service=SOS&version=2.0.0&request=GetObservation&offering=&observedProperty=http%3A%2F%2Fdd.eionet.europa.eu%2Fvocabulary%2Faq%2Fpollutant%2F7&procedure=GB_StationProcess_2&featureOfInterest=&namespaces=&spatialFilter=&temporalFilter=2013-05-01T01%3A00%3A00%2B00%3A00%2F2013-05-03T00%3A00%3A00%2B00%3A00&responseFormat=&f=xml}
+  http://ags.dev.52north.org:6080/arcgis/rest/services/AirQuality/MapServer/exts/52nArcGisSos/GetObservation\
+  ?service=SOS\
+  &version=2.0.0\
+  &request=GetObservation\
+  &observedProperty=http://dd.eionet.europa.eu/vocabulary/aq/pollutant/7\
+  &procedure=GB_StationProcess_2\
+  &spatialFilter=&temporalFilter=2013-05-01T01%3A00%3A00%2B00%3A00%2F2013-05-03T00%3A00%3A00%2B00%3A00}}
+
+  
