@@ -128,14 +128,14 @@
 			<item name="SWE Clients" href="clients/index.html" collapse="true">
 				<item name="Rich OX Client" href="clients/Rich_OX_Client/index.html">
 				</item>
-				<item name="Sensor Web Client" href="clients/Thin_SWE_Client/index.html"
+				<item name="Sensor Web Client" href="clients/SensorWebClient/index.html"
 					collapse="true">
-					<!-- <item name="Version 1.0" href="clients/Thin_SWE_Client/Version_1.0/index.html"
+					<!-- <item name="Version 1.0" href="clients/SensorWebClient/Version_1.0/index.html"
 						collapse="true"></item> -->
-					<item name="Version 2.0" href="clients/Thin_SWE_Client/Version_2.0/index.html"
+					<item name="Version 2.0" href="clients/SensorWebClient/Version_2.0/index.html"
 						collapse="true">
 					</item>
-					<item name="Version 3.0" href="clients/Thin_SWE_Client/Version_3.0/index.html"
+					<item name="Version 3.0" href="clients/SensorWebClient/Version_3.0/index.html"
 						collapse="true">
 					</item>
 				</item>
